@@ -1,214 +1,146 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<link rel="shortcut icon" href="<?= base_url() ?>Resources/images/Dirtyllas/DIRTYllasLogo.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>DIRTYLLAS CHILE - ADM</title>
+	<title>ZICARO PAPEL</title>
 
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
-     <!-- Bootstrap core CSS     -->
-    <link type='text/css' href="<?= base_url() ?>Resources/css/bootstrap.min.css" rel="stylesheet" />
+	<!--     Fonts and icons     -->
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
 
-    <!--  Paper Dashboard core CSS    -->
-    <link type='text/css' href="<?= base_url() ?>Resources/css/Dashboard.css" rel="stylesheet" />
-
-    <!--  Fonts and icons     -->
-    <link type='text/css' href="<?= base_url() ?>Resources/css/font-awesome.min.css" rel="stylesheet" />
-    <link type='text/css' href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet'>
+	<!-- CSS Files -->
+    <link href="<?= base_url('Resources/css/bootstrap.min.css"') ?>" rel="stylesheet" />
+    <link href="<?= base_url('Resources/css/MaterialKitPro.min.css') ?>" rel="stylesheet"/>
 </head>
-<?php $user = $this->session->userdata('logged_in');?>
-<body>
-    <div class="wrapper">
-        <div class="sidebar" data-active-color="black" data-background-color="white" data-image="<?= base_url() ?>Resources/img/sidebar-1.jpg">
-            <!--
-        Tip 1: You can change the color of active element of the sidebar using: data-active-color="purple | blue | green | orange | red | rose"
-        Tip 2: you can also add an image using data-image tag
-        Tip 3: you can change the color of the sidebar with data-background-color="white | black"
-    -->
-            <div class="logo">
-                <a href="#" class="simple-text">
-                    DIRTYllas CHILE
-                </a>
-            </div>
-            <div class="logo logo-mini">
-                <a href="#" class="simple-text">
-                  	DC
-                </a>
-            </div>
-            <div class="sidebar-wrapper">
-                <div class="user">
-                    <div class="photo">
-                        <img src="<?= base_url() ?>Resources/images/Dirtyllas/DIRTYllasLogo.png" />
-                    </div>
-                    <div class="info">
-												<a class="collapsed"> <?=$user["correo"];?> </a>
-                    </div>
-                </div>
-                <ul class="nav">
-									<li <?php if (isset($AddActive) and $AddActive == "Zapatillas"): ?> class="active" <?php endif ?>>
-										<a href="<?= site_url('/BackOffice/shoes')  ?>">
-											<i class='fa fa-tag'></i>
-											<p>Zapatillas</p>
+
+<body class="blog-post">
+
+	<nav class="navbar navbar-primary navbar-transparent navbar-absolute">
+    	<div class="container">
+        	<!-- Brand and toggle get grouped for better mobile display -->
+        	<div class="navbar-header">
+        		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
+            		<span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+        		</button>
+        		<a class="navbar-brand" href="../presentation.html">ZICARO PAPEL</a>
+        	</div>
+
+        	<div class="collapse navbar-collapse">
+        		<ul class="nav navbar-nav navbar-right">
+								<li>
+									<a href="../index.html">
+									<i class="material-icons">apps</i> Components
+									</a>
+								</li>
+
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<i class="material-icons">view_day</i> Sections
+										<b class="caret"></b>
+									</a>
+									<ul class="dropdown-menu dropdown-with-icons">
+									<li>
+										<a href="../sections.html#headers">
+											<i class="material-icons">dns</i> Headers
 										</a>
-									</li>
-									<li <?php if (isset($AddActive) and $AddActive == "Categorias"): ?> class="active" <?php endif ?>>
-										<a href="<?= site_url('/BackOffice/category')  ?>">
-											<i class="fa fa-bookmark"></i>
-											<p>Categorias</p>
-										</a>
-									</li>
-									<li <?php if (isset($AddActive) and $AddActive == "Marcas"): ?> class="active" <?php endif ?>>
-										<a href="<?= site_url('/BackOffice/brands')  ?>">
-											<i class='fa fa-tags'></i>
-											<p>Marcas</p>
-										</a>
-									</li>
-                </ul>
-            </div>
-        </div>
-        <div class="main-panel">
-            <nav class="navbar navbar-transparent navbar-absolute">
-                <div class="container-fluid">
-                    <div class="navbar-minimize">
-                        <button id="minimizeSidebar" class="btn btn-round btn-white btn-fill btn-just-icon">
-														<i class='fa fa-barsvisible-on-sidebar-regular '></i>
-														<i class='fa fa-list visible-on-sidebar-mini'></i>
-                        </button>
-                    </div>
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#"> Bienvenido - <?=$user["nombre"];?> </a>
-                    </div>
-                    <div class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class='fa fa-user'></i>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="<?= site_url('BackOffice/logout') ?>">Salir</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="separator hidden-lg hidden-md"></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <div class="content">
-								<div class="container-fluid">
-											<?php echo $content_for_layout; ?>
-								</div>
-            </div>
-            <footer class="footer">
-                <div class="container-fluid">
-                    <nav class="pull-left">
-                        <ul>
-                        </ul>
-                    </nav>
-                    <p class="copyright pull-right">
-                        &copy;
-                        <script>
-                            document.write(new Date().getFullYear())
-                        </script>
-                        <a href="#"><span class="text-danger">CPQM07</span></a>, Coded with <i class='fa fa-heart text-danger'></i>
-                    </p>
-                </div>
-            </footer>
-        </div>
-    </div>
+										</li>
+									</ul>
+								</li>
+        		</ul>
+        	</div>
+    	</div>
+    </nav>
+
+	<div class="page-header header-filter" data-parallax="true" style="background-image: url('../assets/img/bg5.jpg');">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center">
+					<h1 class="title">Bienvenidos</h1>
+					<h4>AL RECICLAJE DE PAPEL EN ARTE</h4>
+					<br />
+					</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="main main-raised">
+		<div class="container">
+			<?php echo $content_for_layout;	 ?>
+		</div>
+	</div>
+
+	<footer class="footer footer-black">
+		<div class="container">
+			<a class="footer-brand" href="#pablo">ZICARO PAPEL</a>
+
+
+			<ul class="pull-center">
+				<li>
+					<a href="#pablo">
+						Contactanos
+					</a>
+				</li>
+			</ul>
+
+			<ul class="social-buttons pull-right">
+				<li>
+					<a href="" target="_blank" class="btn btn-just-icon btn-simple">
+						<i class="fa fa-twitter"></i>
+					</a>
+				</li>
+				<li>
+					<a href="" target="_blank" class="btn btn-just-icon btn-simple">
+						<i class="fa fa-facebook-square"></i>
+					</a>
+				</li>
+				<li>
+					<a href="" target="_blank" class="btn btn-just-icon btn-simple">
+						<i class="fa fa-instagram"></i>
+					</a>
+				</li>
+			</ul>
+
+		</div>
+	</footer>
+
 </body>
+	<!--   Core JS Files   -->
+	<script src="../assets/js/jquery.min.js" type="text/javascript"></script>
+	<script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="../assets/js/material.min.js"></script>
 
-<!--   Core JS Files   -->
-<script src="<?= base_url() ?>Resources/jsBack/jquery.min.js" type="text/javascript"></script>
-<script src="<?= base_url() ?>Resources/jsBack/jquery-ui.min.js" type="text/javascript"></script>
-<script src="<?= base_url() ?>Resources/jsBack/bootstrap.min.js" type="text/javascript"></script>
-<script src="<?= base_url() ?>Resources/jsBack/material.min.js" type="text/javascript"></script>
-<script src="<?= base_url() ?>Resources/jsBack/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
-<!-- Forms Validations Plugin -->
-<script src="<?= base_url() ?>Resources/jsBack/jquery.validate.min.js"></script>
-<!--  Plugin for Date Time Picker and Full Calendar Plugin-->
-<script src="<?= base_url() ?>Resources/jsBack/moment.min.js"></script>
-<!--  Charts Plugin -->
-<script src="<?= base_url() ?>Resources/jsBack/chartist.min.js"></script>
-<!--  Plugin for the Wizard -->
-<script src="<?= base_url() ?>Resources/jsBack/jquery.bootstrap-wizard.js"></script>
-<!--  Notifications Plugin    -->
-<script src="<?= base_url() ?>Resources/jsBack/bootstrap-notify.js"></script>
-<!--   Sharrre Library    -->
-<script src="<?= base_url() ?>Resources/jsBack/jquery.sharrre.js"></script>
-<!-- DateTimePicker Plugin -->
-<script src="<?= base_url() ?>Resources/jsBack/bootstrap-datetimepicker.js"></script>
-<!-- Vector Map plugin -->
-<script src="<?= base_url() ?>Resources/jsBack/jquery-jvectormap.js"></script>
-<!-- Sliders Plugin -->
-<script src="<?= base_url() ?>Resources/jsBack/nouislider.min.js"></script>
-<!--  Google Maps Plugin    -->
-<script src="https://maps.googleapis.com/maps/api/js"></script>
-<!-- Select Plugin -->
-<script src="<?= base_url() ?>Resources/jsBack/jquery.select-bootstrap.js"></script>
-<!--  DataTables.net Plugin    -->
-<script src="<?= base_url() ?>Resources/jsBack/jquery.datatables.js"></script>
-<!-- Sweet Alert 2 plugin -->
-<script src="<?= base_url() ?>Resources/jsBack/sweetalert2.js"></script>
-<!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
-<script src="<?= base_url() ?>Resources/jsBack/jasny-bootstrap.min.js"></script>
-<!--  Full Calendar Plugin    -->
-<script src="<?= base_url() ?>Resources/jsBack/fullcalendar.min.js"></script>
-<!-- TagsInput Plugin -->
-<script src="<?= base_url() ?>Resources/jsBack/jquery.tagsinput.js"></script>
-<!-- Material Dashboard javascript methods -->
-<script src="<?= base_url() ?>Resources/jsBack/material-dashboard.js"></script>
-<!-- Material Dashboard DEMO methods, don't include it in your project! -->
-<script src="<?= base_url() ?>Resources/jsBack/demo.js"></script>
-<script>
-    $(document).ready(function() {
-				$('#datatables').DataTable({
-						"pagingType": "full_numbers",
-						"lengthMenu": [
-								[10, 25, 50, -1],
-								[10, 25, 50, "All"]
-						],
-						responsive: true,
-						language: {
-								search: "_INPUT_",
-								searchPlaceholder: "Buscar...",
-						}
+	<!--    Plugin for Date Time Picker and Full Calendar Plugin   -->
+	<script src="../assets/js/moment.min.js"></script>
 
-				});
+	<!--	Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/   -->
+	<script src="../assets/js/nouislider.min.js" type="text/javascript"></script>
 
+	<!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker   -->
+	<script src="../assets/js/bootstrap-datetimepicker.js" type="text/javascript"></script>
 
-				var table = $('#datatables').DataTable();
+	<!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select   -->
+	<script src="../assets/js/bootstrap-selectpicker.js" type="text/javascript"></script>
 
-				// Edit record
-				table.on('click', '.edit', function() {
-						$tr = $(this).closest('tr');
+	<!--	Plugin for Tags, full documentation here: http://xoxco.com/projects/code/tagsinput/   -->
+	<script src="../assets/js/bootstrap-tagsinput.js"></script>
 
-						var data = table.row($tr).data();
-						alert('You press on Row: ' + data[0] + ' ' + data[1] + ' ' + data[2] + '\'s row.');
-				});
+	<!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput   -->
+	<script src="../assets/js/jasny-bootstrap.min.js"></script>
 
-				// Delete a record
-				table.on('click', '.remove', function(e) {
-						$tr = $(this).closest('tr');
-						table.row($tr).remove().draw();
-						e.preventDefault();
-				});
+	<!--    Plugin For Google Maps   -->
+	<script  type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFPQibxeDaLIUHsC6_KqDdFaUdhrbhZ3M"></script>
 
-				//Like record
-				table.on('click', '.like', function() {
-						alert('You clicked on Like button');
-				});
+	<!--    Plugin for 3D images animation effect, full documentation here: https://github.com/drewwilson/atvImg    -->
+	<script src="../assets/js/atv-img-animation.js" type="text/javascript"></script>
 
-				$('.card .material-datatables label').addClass('form-group');
-				});
-</script>
+	<!--    Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc    -->
+	<script src="../assets/js/material-kit.min.js?v=1.1.0" type="text/javascript"></script>
 </html>
