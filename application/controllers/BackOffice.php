@@ -7,63 +7,6 @@ class BackOffice extends CI_Controller{
   {
     parent::__construct();
     $this->layout->setLayout('/BackOffice/MasterPage', false);
-    $this->load->model('Zapatillas_Model', 'Zapatillas');
-    $this->load->model('Categorias_Model', 'Categorias');
-    $this->load->model('Usuarios_Model', 'Usuarios');
-    $this->load->model('Marcas_Model', 'Marcas');
-  }
-
-  function shoes()
-  {
-    $datos['Zapatillas'] = $this->Zapatillas->findAll();
-    $datos['AddActive'] = "Zapatillas";
-    $this->layout->view('/BackOffice/Zapatillas', $datos);
-  }
-
-  function showByCategory($Categoria)
-  {
-    $datos['Categorias'] = $this->Zapatillas->findByCategory($Categoria);
-    $datos['AddActive'] = "Categorias";
-    $this->layout->view('/BackOffice/VerPorCategoria', $datos);
-  }
-
-  function category()
-  {
-    $datos['Categorias'] = $this->Categorias->findAll();
-    $datos['AddActive'] = "Categorias";
-    $this->layout->view('/BackOffice/Categorias', $datos);
-  }
-
-  function showByBrands($Marca)
-  {
-    $datos['Marcas'] = $this->Zapatillas->findByBrand($Marca);
-    $datos['AddActive'] = "Marcas";
-    $this->layout->view('/BackOffice/VerPorMarca', $datos);
-  }
-
-  function brands()
-  {
-    $datos['Marcas'] = $this->Marcas->findAll();
-    $datos['AddActive'] = "Marcas";
-    $this->layout->view('/BackOffice/Marcas', $datos);
-  }
-
-  function newShoes()
-  {
-    $datos['AddActive'] = "Zapatillas";
-    $this->layout->view('/BackOffice/RegistroZapatilla', $datos);
-  }
-
-  function newCategory()
-  {
-    $datos['AddActive'] = "Categorias";
-    $this->layout->view('/BackOffice/RegistroCategoria', $datos);
-  }
-
-  function newBrand()
-  {
-    $datos['AddActive'] = "Marcas";
-    $this->layout->view('/BackOffice/RegistroMarca', $datos);
   }
 
   function login(){
