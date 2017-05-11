@@ -1,26 +1,29 @@
-<div class="section section-text">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <h3 class="title"></h3>
+  		<div class="col-md-8 col-md-offset-2">
+        <div class="row">
+          <div class="col-md-2">
+            <img class="img-responsive" src="<?= base_url('Resources/images/ZicaroPapel/ZicaroTree.png') ?>" width="100px" alt="ZICARO PAPEL">
+          </div>
+          <div class="col-md-6 ">
+            <h2 class=" title text-center">Zicaro Papel</h2>
+          </div>
+        </div>
 
-        <img src="<?= base_url('Resources/images/ZicaroPapel/ZicaroTree.png') ?>" width="100px" alt="ZICARO PAPEL">
-        <p>
+        <p><br>
         A través del reciclaje de papel de diarios y revistas quiere contribuir al planeta,
         con piezas de arte únicas tanto en la moda como en el diario vivir…! <br><br>
 
-        Queremos marcar tendencia en moda y reciclaje donde todos podemos ser parte de un mundo más limpio,
-        para ello queremos aportan recuperando las caja de Tetrapack, Revistas y Papel de diario para transformarlos
-        e incorporarlos  a nuestro uso cotidiano. <br><br>
+        Queremos marcar tendencia en moda y reciclaje, donde todos podemos ser parte de un mundo más limpio,
+        para ello queremos aportar recuperando las caja de Tetrapack, Revistas y Papel de diario para transformarlos
+        e incorporarlos a nuestro uso cotidiano. <br><br>
 
-        Además El diseño y el buen gusto permiten que  las Artesanías destaquen por su  alta calidad y se han utilizadas
-         en forma decorativa en nuestro hogares y uso personal. <br><br>
+        Además El diseño y el buen gusto permiten que  las Artesanías destaquen por su  alta calidad y sean utilizadas
+        de manera decorativa en nuestros hogares y por que no, en nuestro uso personal. <br><br>
 
-        Con nuestro trabajo queremos aporta a un nuevo estilo de vida, al de aquellos que aman nuestro planeta y con su
-        forma de ser contribuyen a un mundo menos contaminado,<br><br>
+        Con nuestro trabajo queremos apostar a un nuevo estilo de vida, al de aquellos que aman nuestro planeta y con su
+        forma de ser contribuyen a un mundo menos contaminado, un planeta  limpio es un Planeta Sano.<br><br>
 
-        Un planeta  limpio es un Planeta Sano.
-
-        Zicaropapel  quiere además apoyar a nuestros jóvenes, mujeres, hombres y  adultos mayores creando oportunidades de trabajo simple e incorporándolos a nuestros procesos productivos limpios y amigables con el medio ambiente.
+        Zicaropapel  quiere además apoyar a nuestros jóvenes, mujeres, hombres y adultos mayores creando oportunidades de trabajo simple e incorporándolos a nuestros procesos productivos limpios y amigables con el medio ambiente.
         <br><br>
         </p>
 
@@ -47,4 +50,3 @@
       </div>
 
     </div>
-</div>

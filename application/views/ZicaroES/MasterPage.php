@@ -7,7 +7,7 @@
 	<link rel="shortcut icon" href="<?= base_url('Resources/images/ZicaroPapel/LogoZicaroTransparent.ico') ?>">
 
 	<title>ZICARO PAPEL</title>
-
+	<meta name="theme-color" content="#00695C">
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
 	<!--     Fonts and icons     -->
@@ -20,69 +20,239 @@
 </head>
 
 <body class="blog-post">
+  <div class="header-3">
 
-	<nav class="navbar navbar-primary navbar-transparent navbar-absolute">
-    	<div class="container">
-        	<!-- Brand and toggle get grouped for better mobile display -->
-        	<div class="navbar-header">
-        		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
-            		<span class="sr-only">Toggle navigation</span>
-		            <span class="icon-bar"></span>
-		            <span class="icon-bar"></span>
-		            <span class="icon-bar"></span>
-        		</button>
-        		<a class="navbar-brand" href=""><h5><em>ZICARO PAPEL</em></h5></a>
-        	</div>
+		<nav class="navbar navbar-transparent navbar-absolute">
+			<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="">
+							<img src="<?= base_url('Resources/images/ZicaroPapel/LogoZicaroTransparent.png') ?>" alt="Zicaro Papel" width="90px">
+						</a>
+					</div>
 
-        	<div class="collapse navbar-collapse">
-        		<ul class="nav navbar-nav navbar-right">
-								<li>
-									<a href="../index.html">
-									<i class='fa fa-home'></i> INICIO
-									</a>
-								</li>
-								<li>
-									<a href="../index.html">
-									<i class='fa fa-star-o'></i> PROYECTO
-									</a>
-								</li>
-								<li>
-									<a href="../index.html">
-									<i class='fa fa-tags'></i> CATALOGO
-									</a>
-								</li>
-								<li>
-									<a href="../index.html">
-									<i class='fa fa-newspaper-o'></i> BLOG
-									</a>
-								</li>
-								<li>
-									<a href="../index.html">
-									<i class='fa fa-comment-o'></i> CONTACTO
-									</a>
-								</li>
-        		</ul>
-        	</div>
-    	</div>
-    </nav>
+					<div class="collapse navbar-collapse" id="navigation-example">
+								<ul class="nav navbar-nav navbar-center">
+									<li>
+					          <a href="<?= site_url('/ZicaroES/index') ?>">
+					          <i class='fa fa-home'></i> INICIO
+					          </a>
+					        </li>
+					        <li>
+					          <a href="<?= site_url('/ZicaroES/QuienesSomos') ?>">
+					          <i class='fa fa-star-o'></i> QUIENES SOMOS
+					          </a>
+					        </li>
+					        <li>
+					          <a href="<?= site_url('/ZicaroES/Catalogo') ?>">
+					          <i class='fa fa-tags'></i> CATALOGO
+					          </a>
+					        </li>
+					        <li>
+					          <a href="<?= site_url('/ZicaroES/Publicaciones') ?>">
+					          <i class='fa fa-newspaper-o'></i> PUBLICACIONES
+					          </a>
+					        </li>
+					        <li>
+					          <a href="<?= site_url('/ZicaroES/Contacto') ?>">
+					          <i class='fa fa-comment-o'></i> CONTACTO
+					          </a>
+					        </li>
+									<li>
+										<a href="<?= site_url('/ZicaroES/ZicaroAmigos') ?>">
+										<i class='fa fa-users'></i> ZICARO AMIGOS
+										</a>
+									</li>
+								</ul>
 
-	<div class="page-header header-filter" data-parallax="true"
-		style="background-image: url('<?= base_url("Resources/images/ZicaroPapel/Background.jpg") ?>');">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center">
-					<img src='<?= base_url("Resources/images/ZicaroPapel/LogoZicaroTransparent.png") ?>' width="250px" alt="ZICARO PAPEL">
-					<h1 class="title">Bienvenidos</h1>
-					<h4>AL RECICLAJE DE PAPEL EN ARTE</h4>
-					<br />
+						<ul class="nav navbar-nav navbar-right">
+							<li>
+								<a href="https://twitter.com/zicaropapel" target="_blank" class="btn btn-just-icon btn-simple">
+									<i class="fa fa-twitter"></i>
+								</a>
+							</li>
+							<li>
+								<a href="https://www.facebook.com/zicaro.papel" target="_blank" class="btn btn-just-icon btn-simple">
+									<i class="fa fa-facebook-square"></i>
+								</a>
+							</li>
+						</ul>
+
 					</div>
 			</div>
+		</nav>
+
+		<?php if ($TipeView == "DEFAULT"): ?>
+
+				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+					<div class="carousel slide" data-ride="carousel">
+
+						<!-- Indicators -->
+						<ol class="carousel-indicators">
+							<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+						</ol>
+
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner">
+
+								<div class="item active">
+								<div class="page-header header-filter" style="background-image: url('<?= base_url("Resources/images/ZicaroPapel/Background.jpg") ?>');">
+									<div class="container">
+										<div class="row">
+											<div class="col-md-8 col-md-offset-2 text-left">
+												<h1 class="title"><?= $Enunciado ?></h1>
+												<h4>TEST</h4>
+												<br/>
+
+												<div class="buttons">
+													<a href="" class="btn btn-primary btn-round">
+									  				<i class="material-icons">format_align_left</i> Leer Mas
+									  			</a>
+													<a href="" class="btn btn-just-icon btn-white btn-simple btn-lg">
+														<i class="fa fa-twitter"></i>
+													</a>
+													<a href="" class="btn btn-just-icon btn-white btn-simple btn-lg">
+														<i class="fa fa-facebook-square"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+						    </div>
+							</div>
+
+								<div class="item">
+									<div class="page-header header-filter" style="background-image: url('<?= base_url("Resources/images/ZicaroPapel/Background.jpg") ?>');">
+										<div class="container">
+											<div class="row">
+												<div class="col-md-8 col-md-offset-2 text-center">
+													<h1 class="title"><?= $Enunciado ?></h1>
+													<h4>TEST</h4>
+													<br/>
+
+													<div class="buttons">
+														<a href="" class="btn btn-primary btn-round">
+															<i class="material-icons">format_align_left</i> Leer Mas
+														</a>
+														<a href="" class="btn btn-just-icon btn-white btn-simple btn-lg">
+															<i class="fa fa-twitter"></i>
+														</a>
+														<a href="" class="btn btn-just-icon btn-white btn-simple btn-lg">
+															<i class="fa fa-facebook-square"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="item">
+									<div class="page-header header-filter" style="background-image: url('<?= base_url("Resources/images/ZicaroPapel/Background.jpg") ?>');">
+										<div class="container">
+											<div class="row">
+												<div class="col-md-8 col-md-offset-2 text-right">
+													<h1 class="title"><?= $Enunciado ?></h1>
+													<h4>TEST</h4>
+													<br/>
+
+													<div class="buttons">
+														<a href="" class="btn btn-primary btn-round">
+															<i class="material-icons">format_align_left</i> Leer Mas
+														</a>
+														<a href="" class="btn btn-just-icon btn-white btn-simple btn-lg">
+															<i class="fa fa-twitter"></i>
+														</a>
+														<a href="" class="btn btn-just-icon btn-white btn-simple btn-lg">
+															<i class="fa fa-facebook-square"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Controls -->
+								<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+									<i class="material-icons">keyboard_arrow_left</i>
+								</a>
+								<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+									<i class="material-icons">keyboard_arrow_right</i>
+								</a>
+
+				<?php else: ?>
+
+					<?php if ($TipeView == "NOTICE"): ?>
+						<div class="item">
+									<div class="page-header header-filter" style="background-image: url('<?= base_url("Resources/images/Publicaciones/".$Imagen.".jpg") ?>');">
+										<div class="container">
+											<div class="row">
+												<div class="col-md-8 col-md-offset-2 text-center">
+													<h1 class="title">Titulo Publicacion</h1>
+													<h3>24 - 06 - 2017</h3>
+													<h4><i class='fa fa-map-marker'></i> Ubicacion</h4>
+													<br/>
+
+													<div class="buttons">
+														<a href="" class="btn btn-just-icon btn-white btn-simple btn-lg">
+															<i class="fa fa-twitter"></i>
+														</a>
+														<a href="" class="btn btn-just-icon btn-white btn-simple btn-lg">
+															<i class="fa fa-facebook-square"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+					<?php else: ?>
+						<div class="item">
+									<div class="page-header header-filter" style="background-image: url('<?= base_url("Resources/images/ZicaroPapel/Background.jpg") ?>');">
+										<div class="container">
+											<div class="row">
+												<div class="col-md-8 col-md-offset-2 text-center">
+													<h1 class="title">ZICARO AMIGOS</h1>
+													<br/>
+
+													<div class="buttons">
+														<a href="" class="btn btn-just-icon btn-white btn-simple btn-lg">
+															<i class="fa fa-twitter"></i>
+														</a>
+														<a href="" class="btn btn-just-icon btn-white btn-simple btn-lg">
+															<i class="fa fa-facebook-square"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+					<?php endif; ?>
+
+
+				<?php endif; ?>
+						</div>
 		</div>
 	</div>
 
+</div><br><br>
+
 	<div class="main main-raised">
 		<div class="container">
-			<?php echo $content_for_layout;	 ?>
+			<div class="section section-text">
+				<?php echo $content_for_layout;	 ?>
+				<br>
+			</div>
 		</div>
 	</div>
 
@@ -93,7 +263,7 @@
 
 			<ul class="pull-center">
 				<li>
-					<a href="">
+					<a href="<?= site_url('/ZicaroES/Contacto') ?>">
 						Contactanos
 					</a>
 				</li>
@@ -122,34 +292,38 @@
 
 </body>
 	<!--   Core JS Files   -->
-	<script src="../assets/js/jquery.min.js" type="text/javascript"></script>
-	<script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="../assets/js/material.min.js"></script>
+	<script src="<?= base_url('Resources/jsFront/jquery.min.js') ?>" type="text/javascript"></script>
+	<script src="<?= base_url('Resources/jsFront/bootstrap.min.js') ?>" type="text/javascript"></script>
+	<script src="<?= base_url('Resources/jsFront/material.min.js') ?>"></script>
 
-	<!--    Plugin for Date Time Picker and Full Calendar Plugin   -->
-	<script src="../assets/js/moment.min.js"></script>
+	<!--  Plugin for Date Time Picker and Full Calendar Plugin-->
+	<script src="<?= base_url('Resources/jsFront/moment.min.js') ?>" type="text/javascript"></script>
 
-	<!--	Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/   -->
-	<script src="../assets/js/nouislider.min.js" type="text/javascript"></script>
+	<!--	Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+	<script src="<?= base_url('Resources/jsFront/nouislider.min.js" type="text/javascript') ?>" type="text/javascript"></script>
 
-	<!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker   -->
-	<script src="../assets/js/bootstrap-datetimepicker.js" type="text/javascript"></script>
+	<!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+	<script src="<?= base_url('Resources/jsFront/bootstrap-datetimepicker.js" type="text/javascript') ?>" type="text/javascript"></script>
 
-	<!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select   -->
-	<script src="../assets/js/bootstrap-selectpicker.js" type="text/javascript"></script>
+	<!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+	<script src="<?= base_url('Resources/jsFront/bootstrap-selectpicker.js" type="text/javascript') ?>" type="text/javascript"></script>
 
-	<!--	Plugin for Tags, full documentation here: http://xoxco.com/projects/code/tagsinput/   -->
-	<script src="../assets/js/bootstrap-tagsinput.js"></script>
+	<!--	Plugin for Tags, full documentation here: http://xoxco.com/projects/code/tagsinput/  -->
+	<script src="<?= base_url('Resources/jsFront/bootstrap-tagsinput.js') ?>" type="text/javascript"></script>
 
-	<!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput   -->
-	<script src="../assets/js/jasny-bootstrap.min.js"></script>
+	<!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+	<script src="<?= base_url('Resources/jsFront/jasny-bootstrap.min.js') ?>" type="text/javascript"></script>
 
-	<!--    Plugin For Google Maps   -->
-	<script  type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFPQibxeDaLIUHsC6_KqDdFaUdhrbhZ3M"></script>
+	<!-- Plugin For Google Maps -->
+	<script  type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFPQibxeDaLIUHsC6_KqDdFaUdhrbhZ3M') ?>" type="text/javascript"></script>
 
-	<!--    Plugin for 3D images animation effect, full documentation here: https://github.com/drewwilson/atvImg    -->
-	<script src="../assets/js/atv-img-animation.js" type="text/javascript"></script>
+	<script src="<?= base_url('Resources/jsFront/atv-img-animation.js" type="text/javascript') ?>" type="text/javascript"></script>
 
-	<!--    Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc    -->
-	<script src="../assets/js/material-kit.min.js?v=1.1.0" type="text/javascript"></script>
+	<!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
+	<script src="<?= base_url('Resources/jsFront/material-kit.min.js?v=1.1.0" type="text/javascript') ?>" type="text/javascript"></script>
+
+	<!-- Fixed Sidebar Nav - JS For Demo Purpose, Don't Include it in your project -->
+	<script src="assets/assets-for-demo/modernizr.js" type="text/javascript') ?>" type="text/javascript"></script>
+	<script src="assets/assets-for-demo/vertical-nav.js" type="text/javascript') ?>" type="text/javascript"></script>
+
 </html>
