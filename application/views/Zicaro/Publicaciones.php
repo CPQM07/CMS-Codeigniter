@@ -1,31 +1,21 @@
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3 text-center">
-        <ul class="nav nav-pills nav-pills-primary">
-          <li class="active"><a href="">Todas</a></li>
-          <li><a href="">Categoria 1</a></li>
-          <li><a href="">Categoria 2</a></li>
-        </ul>
-    </div>
-  </div> <br>
-
-  <div class="row">
-    <div class="col-md-6">
-  	<div class="card card-raised card-background" style="background-image: url('<?= base_url("Resources/images/Publicaciones/Publicacion1.jpg") ?>')">
-  		<div class="card-content">
-  			<h6 class="category text-info">Categoria</h6>
-  			<a href="">
-  				<h3 class="card-title">Titulo</h3>
-  			</a>
-  			<p class="card-description">
-  				<span class="category text-info">Descripcion</span>
-  			</p>
-  			<a href="" class="btn btn-primary btn-round">
-  				<i class="material-icons">format_align_left</i> Leer Articulo
-  			</a>
-  		</div>
-  	</div>
-  </div>
-  </div>
-
-
+<div class="row">
+      <?php foreach ($Publicaciones as $key => $value): ?>
+          <div class="col-md-4">
+            <div class="card card-raised card-background" style="background-image: url('<?= base_url("Resources/images/Publicaciones/".$value->get('PUB_IMAGEN').".jpg") ?>')">
+              <div class="card-content">
+                <h6 class="category text-info"><?= $value->get('USU_NOMBRES'); ?></h6>
+                <a href="">
+                  <h3 class="card-title"><?= $value->get('PUB_TITULO'); ?></h3>
+                </a>
+                <p class="card-description">
+                <span class="category text-info"><?= $value->get('PUB_DESC_C'); ?></span>
+                </p>
+                <h6 class="category text-info"><?= $value->get('PUB_FECHA'); ?></h6>
+                <a href="<?= site_url('/Zicaro/PublicacionDetalle/'); ?><?= $value->get('PUB_ID'); ?>" class="btn btn-primary btn-round">
+                  <i class="material-icons">format_align_left</i> Leer Articulo
+                </a>
+              </div>
+            </div>
+          </div>
+      <?php endforeach; ?>
 </div>

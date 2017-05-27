@@ -6,6 +6,9 @@ class Zicaro extends CI_Controller{
   public function __construct()
   {
     parent::__construct();
+    $this->load->model('Publicaciones_Model', 'Publicaciones');
+    $this->load->model('Productos_Model', 'Productos');
+    $this->load->model('Categorias_Model', 'Categorias');
     $this->layout->setLayout('/Zicaro/MasterPage', false);
   }
 
@@ -32,6 +35,8 @@ class Zicaro extends CI_Controller{
 
   function Catalogo()
   {
+    $datos['Productos'] = $this->Productos->findAll();
+    $datos['Categorias'] = $this->Categorias->findAll();
     $datos['TipeView'] = "DEFAULT";
     $datos['Enunciado'] = "CATALOGO";
     $this->layout->view('/Zicaro/Catalogo', $datos, false);
@@ -39,16 +44,18 @@ class Zicaro extends CI_Controller{
 
   function Publicaciones()
   {
+    $datos['Publicaciones'] = $this->Publicaciones->findAll();
     $datos['TipeView'] = "DEFAULT";
     $datos['Enunciado'] = "PUBLICACIONES";
     $this->layout->view('/Zicaro/Publicaciones', $datos, false);
   }
 
-  function PublicacionDetalle()
+  function PublicacionDetalle($ID)
   {
+    $datos['Detalles'] = $this->Publicaciones->findById($ID);
     $datos['TipeView'] = "NOTICE";
     $datos['Imagen'] = "Publicacion1";
-    $datos['Enunciado'] = "TITULO PUBLICACION";
+    $datos['Enunciado'] = $datos['Detalles']->get('PUB_TITULO');
     $this->layout->view('/Zicaro/PublicacionDetalle', $datos, false);
   }
 }

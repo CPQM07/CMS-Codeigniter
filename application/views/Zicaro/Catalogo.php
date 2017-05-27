@@ -14,7 +14,9 @@
 
           <div id="collapse" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading">
             <div class="panel-body">
-              <a class="btn btn-block btn-default btn-sm btn-round" href="">Categoria Uno</a>
+              <?php foreach ($Categorias as $key => $value): ?>
+                <a class="btn btn-block btn-default btn-sm btn-round" href=""><?= $value->get('CAT_NOMBRE'); ?></a>
+              <?php endforeach; ?>
             </div>
           </div>
         </div>
@@ -23,23 +25,26 @@
 
     <div class="col-md-9">
       <div class="row">
+        <?php foreach ($Productos as $key => $value): ?>
         <div class="col-sm-4">
           <div class="card card-blog">
-        <div class="card-image">
-          <img src="<?= base_url("Resources/images/ZicaroPapel/Background.jpg") ?>" alt="">
-        </div>
+            <div class="card-image">
+              <img src="<?= base_url("Resources/images/ZicaroPapel/Background.jpg") ?>" alt="">
+            </div>
 
-        <div class="card-content">
-          <h6 class="category text-rose">Categoria</h6>
-          <h4 class="card-title">
-          <a href="">Nombre Producto</a>
-          </h4>
-          <p class="card-description">
-          Descripcion
-          </p>
+            <div class="card-content">
+                <h6 class="category text-rose"> <span><i class="fa fa-dollar"></i></span> <?= $value->get('PROD_PRECIO'); ?></h6>
+                <h4 class="card-title">
+                <?= $value->get('PROD_NOMBRE'); ?>  
+                </h4>
+                <p class="card-description">
+                <?= $value->get('PROD_DESC_C'); ?>
+                </p>
+            </div>
+          </div>
         </div>
-      </div>
-        </div>
+        <?php endforeach; ?>
+
       </div>
     </div>
 

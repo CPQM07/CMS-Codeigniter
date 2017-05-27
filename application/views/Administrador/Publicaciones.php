@@ -1,7 +1,12 @@
+<div class="col-sm-12 col-md-6 pull-right">
+  <a href="<?= site_url('/Administrador/AgregarPublicacion'); ?>" class="btn btn-fill btn-success btn-block pull-rigth">Nueva Publicacion</a>
+</div>
+
 <div class="card">
     <div class="card-header card-header-icon" data-background-color="purple">
         <i class="fa fa-tags fa-2x"></i>
     </div>
+
     <div class="card-content">
         <h3 class="card-title">PUBLICACIONES</h3>
         <div class="toolbar">

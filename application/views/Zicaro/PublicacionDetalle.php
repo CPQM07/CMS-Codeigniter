@@ -1,6 +1,8 @@
 <div class="row">
 			<div class="col-md-8 col-md-offset-2">
-				<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p class="text-justify">
+					<?= $Detalles->get('PUB_DESC_L'); ?>
+				</p>
 
 			<blockquote>
 				<p>
@@ -9,14 +11,14 @@
 					</em>
 				</p>
 				<small>
-				Autor.
+				<?= $Detalles->get('USU_NOMBRES'); ?><?= $Detalles->get('USU_APELLIDOS'); ?>
 				</small>
 			</blockquote>
 		</div>
 
 		<div class="section col-md-10 col-md-offset-1">
 			<div class="col-md-12">
-				<img class="img-rounded img-responsive img-raised" alt="<?= $Enunciado ?>" src="<?= base_url("Resources/images/Publicaciones/".$Imagen.".jpg") ?>">
+				<img class="img-rounded img-responsive img-raised" alt="<?= $Enunciado ?>" src="<?= base_url("Resources/images/Publicaciones/".$Detalles->get('PUB_IMAGEN').".jpg") ?>">
 			</div>
 		</div>
 
@@ -48,7 +50,7 @@
 										<div class="ripple-container"></div></div>
 									</div>
 									<div class="col-md-8">
-										<h4 class="card-title">Autor del Post</h4>
+										<h4 class="card-title"><?= $Detalles->get('USU_NOMBRES'); ?><?= $Detalles->get('USU_APELLIDOS'); ?></h4>
 										<p class="description">Resumen</p>
 									</div>
 									<div class="col-md-2">

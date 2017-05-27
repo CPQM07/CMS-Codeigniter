@@ -1,3 +1,7 @@
+<div class="col-sm-12 col-md-6 pull-right">
+  <a href="<?= site_url('/Administrador/AgregarCategoria'); ?>" class="btn btn-fill btn-success btn-block pull-rigth">Nueva Categoria</a>
+</div>
+
 <div class="card">
     <div class="card-header card-header-icon" data-background-color="purple">
         <i class="fa fa-tags fa-2x"></i>

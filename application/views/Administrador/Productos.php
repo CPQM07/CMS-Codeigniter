@@ -1,3 +1,7 @@
+<div class="col-sm-12 col-md-6 pull-right">
+  <a href="<?= site_url('/Administrador/AgregarProducto'); ?>" class="btn btn-fill btn-success btn-block pull-rigth">Nuevo Producto</a>
+</div>
+
 <div class="card">
     <div class="card-header card-header-icon" data-background-color="purple">
         <i class="fa fa-tags fa-2x"></i>
@@ -12,7 +16,6 @@
                 <thead>
                     <tr>
                       <th>ID</th>
-                      <th>IMAGEN</th>
                       <th>NOMBRE</th>
                       <th>PRECIO</th>
                       <th>CATEGORIA</th>
@@ -23,7 +26,6 @@
                 <tfoot>
                     <tr>
                         <th>ID</th>
-                        <th>IMAGEN</th>
                         <th>NOMBRE</th>
                         <th>PRECIO</th>
                         <th>CATEGORIA</th>
@@ -35,7 +37,6 @@
                     <?php foreach ($Productos as $key => $value): ?>
                       <tr>
                           <td><?= $value->get('PROD_ID'); ?></td>
-                          <td><?= $value->get('PROD_IMAGEN'); ?></td>
                           <td><?= $value->get('PROD_NOMBRE'); ?></td>
                           <td><?= $value->get('PROD_PRECIO'); ?></td>
                           <td><?= $value->get('CAT_NOMBRE'); ?></td>

@@ -188,35 +188,13 @@
 
 					<?php if ($TipeView == "NOTICE"): ?>
 						<div class="item">
-									<div class="page-header header-filter" style="background-image: url('<?= base_url("Resources/images/Publicaciones/".$Imagen.".jpg") ?>');">
+									<div class="page-header header-filter" style="background-image: url('<?= base_url("Resources/images/Publicaciones/".$Detalles->get('PUB_IMAGEN').".jpg") ?>');">
 										<div class="container">
 											<div class="row">
 												<div class="col-md-8 col-md-offset-2 text-center">
-													<h1 class="title">Titulo Publicacion</h1>
-													<h3>24 - 06 - 2017</h3>
-													<h4><i class='fa fa-map-marker'></i> Ubicacion</h4>
-													<br/>
-
-													<div class="buttons">
-														<a href="" class="btn btn-just-icon btn-white btn-simple btn-lg">
-															<i class="fa fa-twitter"></i>
-														</a>
-														<a href="" class="btn btn-just-icon btn-white btn-simple btn-lg">
-															<i class="fa fa-facebook-square"></i>
-														</a>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-					<?php else: ?>
-						<div class="item">
-									<div class="page-header header-filter" style="background-image: url('<?= base_url("Resources/images/ZicaroPapel/Background.jpg") ?>');">
-										<div class="container">
-											<div class="row">
-												<div class="col-md-8 col-md-offset-2 text-center">
-													<h1 class="title">ZICARO AMIGOS</h1>
+													<h1 class="title"><?= $Detalles->get('PUB_TITULO'); ?></h1>
+													<h3><?= $Detalles->get('PUB_FECHA'); ?></h3>
+													<h4><i class='fa fa-map-marker'></i>&#32;<?= $Detalles->get('PUB_UBICACION'); ?></h4>
 													<br/>
 
 													<div class="buttons">
