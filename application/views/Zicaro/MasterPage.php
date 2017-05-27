@@ -40,35 +40,30 @@
 					<div class="collapse navbar-collapse" id="navigation-example">
 								<ul class="nav navbar-nav navbar-center">
 									<li>
-					          <a href="<?= site_url('/ZicaroES/index') ?>">
+					          <a href="<?= site_url('/Zicaro/Inicio') ?>">
 					          <i class='fa fa-home'></i> INICIO
 					          </a>
 					        </li>
 					        <li>
-					          <a href="<?= site_url('/ZicaroES/QuienesSomos') ?>">
+					          <a href="<?= site_url('/Zicaro/QuienesSomos') ?>">
 					          <i class='fa fa-star-o'></i> QUIENES SOMOS
 					          </a>
 					        </li>
 					        <li>
-					          <a href="<?= site_url('/ZicaroES/Catalogo') ?>">
+					          <a href="<?= site_url('/Zicaro/Catalogo') ?>">
 					          <i class='fa fa-tags'></i> CATALOGO
 					          </a>
 					        </li>
 					        <li>
-					          <a href="<?= site_url('/ZicaroES/Publicaciones') ?>">
+					          <a href="<?= site_url('/Zicaro/Publicaciones') ?>">
 					          <i class='fa fa-newspaper-o'></i> PUBLICACIONES
 					          </a>
 					        </li>
 					        <li>
-					          <a href="<?= site_url('/ZicaroES/Contacto') ?>">
+					          <a href="<?= site_url('/Zicaro/Contacto') ?>">
 					          <i class='fa fa-comment-o'></i> CONTACTO
 					          </a>
 					        </li>
-									<li>
-										<a href="<?= site_url('/ZicaroES/ZicaroAmigos') ?>">
-										<i class='fa fa-users'></i> ZICARO AMIGOS
-										</a>
-									</li>
 								</ul>
 
 						<ul class="nav navbar-nav navbar-right">
@@ -263,7 +258,7 @@
 
 			<ul class="pull-center">
 				<li>
-					<a href="<?= site_url('/ZicaroES/Contacto') ?>">
+					<a href="<?= site_url('/Zicaro/Contacto') ?>">
 						Contactanos
 					</a>
 				</li>

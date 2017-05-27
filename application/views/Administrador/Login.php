@@ -5,7 +5,7 @@
 	<link rel="shortcut icon" href="<?= base_url() ?>Resources/images/Dirtyllas/DIRTYllasLogo.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>DIRTYllas CHILE - ADM</title>
+	<title>ZICARO PAPEL - ADM</title>
 
 
      <!-- Bootstrap core CSS     -->
@@ -21,16 +21,17 @@
 
 <body>
     <div class="wrapper wrapper-full-page">
-        <div class="full-page login-page" filter-color="" data-image="<?= base_url('Resources/images/Dirtyllas/Banner3.jpg') ?>">
+        <div class="full-page login-page" filter-color="" data-image="<?= base_url('Resources/images/ZicaroPapel/Background.jpg') ?>">
             <!--   you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
             <div class="content">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
-													<form action="<?=site_url('BackOffice/login')?>" method="POST" >
+													<form action="<?=site_url('Login/Login')?>" method="POST">
                                 <div class="card card-login card-hidden">
-                                    <div class="card-header text-center" data-background-color="dark">
+                                    <div class="card-header text-center" data-background-color="orange">
                                         <h4 class="card-title">Bienvenido</h4>
+																				<img src="<?= base_url('Resources/images/ZicaroPapel/LogoZicaroTransparent.png') ?>" width="80px" alt="">
 																				<?=(isset($error))? $error : ""; ?>
                                     </div>
                                     <div class="card-content">
@@ -39,8 +40,8 @@
                                                 <i class='fa fa-envelope-o'></i>
                                             </span>
                                             <div class="form-group label-floating">
-                                                <label class="control-label">Correo</label>
-                                                <input type="email"  name="correo" class="form-control">
+                                                <label class="control-label">Rut</label>
+                                                <input type="text"  name="usuario" class="form-control">
                                             </div>
                                         </div>
                                         <div class="input-group">
@@ -49,7 +50,7 @@
                                             </span>
                                             <div class="form-group label-floating">
                                                 <label class="control-label">Contraseña</label>
-                                                <input type="password"  name="contrasena" class="form-control">
+                                                <input type="password"  name="clave" class="form-control">
                                             </div>
                                         </div>
                                     </div>
