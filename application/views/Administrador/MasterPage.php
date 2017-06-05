@@ -109,9 +109,31 @@
             </nav>
             <div class="content">
 								<div class="container-fluid">
+									<?php if (isset($_SESSION['Deshabilitar'])): ?>
+										<div class="row">
+											<div class="notificacion col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 pull-right">
+													<div class="alert alert-rose alert-with-icon" data-notify="container">
+														<i class="material-icons" data-notify="icon">notifications</i>
+														<span data-notify="message"><?= $_SESSION['Deshabilitar'];?></span>
+												</div>
+											</div>
+										</div>
+									<?php endif; ?>
+
+									<?php if (isset($_SESSION['Habilitar'])): ?>
+										<div class="row">
+											<div class="notificacion col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 pull-right">
+												<div class="alert alert-info alert-with-icon" data-notify="container">
+														<i class="material-icons" data-notify="icon">notifications</i>
+														<span data-notify="message"><?= $_SESSION['Habilitar'];?></span>
+												</div>
+											</div>
+										</div>
+									<?php endif; ?>
 											<?php echo $content_for_layout; ?>
 								</div>
             </div>
+
             <footer class="footer">
                 <div class="container-fluid">
                     <nav class="pull-left">
@@ -155,8 +177,6 @@
 <script src="<?= base_url() ?>Resources/jsBack/jquery-jvectormap.js"></script>
 <!-- Sliders Plugin -->
 <script src="<?= base_url() ?>Resources/jsBack/nouislider.min.js"></script>
-<!--  Google Maps Plugin    -->
-<script src="https://maps.googleapis.com/maps/api/js"></script>
 <!-- Select Plugin -->
 <script src="<?= base_url() ?>Resources/jsBack/jquery.select-bootstrap.js"></script>
 <!--  DataTables.net Plugin    -->
@@ -252,6 +272,14 @@ $('.datetimepicker').datetimepicker({
 				inline: true
 		}
  });
+</script>
+
+<script type="text/javascript">
+$(function () {
+    setTimeout(function() {
+        $(".notificacion").fadeOut(3000);
+    },2000);
+});
 </script>
 
 </html>

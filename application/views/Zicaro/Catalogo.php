@@ -26,25 +26,26 @@
     <div class="col-md-9">
       <div class="row">
         <?php foreach ($Productos as $key => $value): ?>
-        <div class="col-sm-4">
-          <div class="card card-blog">
-            <div class="card-image">
-              <img src="<?= base_url("Resources/images/ZicaroPapel/Background.jpg") ?>" alt="">
-            </div>
+          <?php if ($value->get('PROD_ESTADO') == 1): ?>
+            <div class="col-sm-4">
+              <div class="card card-blog">
+                <div class="card-image">
+                  <img src="<?= base_url("Resources/images/Productos/").$value->get('PROD_IMAGEN').".jpg" ?>" alt="">
+                </div>
 
-            <div class="card-content">
-                <h6 class="category text-rose"> <span><i class="fa fa-dollar"></i></span> <?= $value->get('PROD_PRECIO'); ?></h6>
-                <h4 class="card-title">
-                <?= $value->get('PROD_NOMBRE'); ?>  
-                </h4>
-                <p class="card-description">
-                <?= $value->get('PROD_DESC_C'); ?>
-                </p>
+                <div class="card-content">
+                    <h6 class="category text-rose"> <span><i class="fa fa-dollar"></i></span> <?= $value->get('PROD_PRECIO'); ?></h6>
+                    <h4 class="card-title">
+                    <?= $value->get('PROD_NOMBRE'); ?>
+                    </h4>
+                    <p class="card-description">
+                    <?= $value->get('PROD_DESC_C'); ?>
+                    </p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <?php endforeach; ?>
-
+          <?php endif; ?>
+          <?php endforeach; ?>
       </div>
     </div>
 

@@ -1,5 +1,6 @@
 <div class="row">
       <?php foreach ($Publicaciones as $key => $value): ?>
+        <?php if ($value->get('PUB_ESTADO') == 1): ?>
           <div class="col-md-4">
             <div class="card card-raised card-background" style="background-image: url('<?= base_url("Resources/images/Publicaciones/".$value->get('PUB_IMAGEN').".jpg") ?>')">
               <div class="card-content">
@@ -17,5 +18,6 @@
               </div>
             </div>
           </div>
+        <?php endif; ?>
       <?php endforeach; ?>
 </div>

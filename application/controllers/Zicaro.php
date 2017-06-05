@@ -21,14 +21,14 @@ class Zicaro extends CI_Controller{
 
   function QuienesSomos()
   {
-    $datos['TipeView'] = "DEFAULT";
+    $datos['TipeView'] = "NOTICE";
     $datos['Enunciado'] = "QUIENES SOMOS";
     $this->layout->view('/Zicaro/QuienesSomos', $datos, false);
   }
 
   function Contacto()
   {
-    $datos['TipeView'] = "DEFAULT";
+    $datos['TipeView'] = "NOTICE";
     $datos['Enunciado'] = "CONTACTO";
     $this->layout->view('/Zicaro/Contacto', $datos, false);
   }
@@ -37,7 +37,7 @@ class Zicaro extends CI_Controller{
   {
     $datos['Productos'] = $this->Productos->findAll();
     $datos['Categorias'] = $this->Categorias->findAll();
-    $datos['TipeView'] = "DEFAULT";
+    $datos['TipeView'] = "NOTICE";
     $datos['Enunciado'] = "CATALOGO";
     $this->layout->view('/Zicaro/Catalogo', $datos, false);
   }
@@ -45,7 +45,7 @@ class Zicaro extends CI_Controller{
   function Publicaciones()
   {
     $datos['Publicaciones'] = $this->Publicaciones->findAll();
-    $datos['TipeView'] = "DEFAULT";
+    $datos['TipeView'] = "NOTICE";
     $datos['Enunciado'] = "PUBLICACIONES";
     $this->layout->view('/Zicaro/Publicaciones', $datos, false);
   }

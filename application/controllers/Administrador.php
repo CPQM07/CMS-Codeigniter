@@ -17,30 +17,49 @@ class Administrador extends CI_Controller{
     $this->layout->view('/Administrador/Inicio');
   }
 
+  function CambiarEstado($tipo, $id){
+    if ($tipo == 1) {
+      $this->session->set_flashdata('Deshabilitar', 'Se Deshabilitó Correctamente');
+      $this->Productos->update($id, array('PROD_ESTADO' => 2));
+      redirect('/Administrador/Productos');
+    } elseif ($tipo == 2) {
+      $this->session->set_flashdata('Habilitar', 'Se Habilitó Correctamente');
+      $this->Productos->update($id, array('PROD_ESTADO' => 1));
+      redirect('/Administrador/Productos');
+    } elseif ($tipo == 3) {
+      $this->session->set_flashdata('Deshabilitar', 'Se Deshabilitó Correctamente');
+      $this->Categorias->update($id, array('CAT_ESTADO' => 2));
+      redirect('/Administrador/Categorias');
+    } elseif ($tipo == 4) {
+      $this->session->set_flashdata('Habilitar', 'Se Habilitó Correctamente');
+      $this->Categorias->update($id, array('CAT_ESTADO' => 1));
+      redirect('/Administrador/Categorias');
+    } elseif ($tipo == 5) {
+      $this->session->set_flashdata('Deshabilitar', 'Se Deshabilitó Correctamente');
+      $this->Publicaciones->update($id, array('PUB_ESTADO' => 2));
+      redirect('/Administrador/Publicaciones');
+    } elseif ($tipo == 6) {
+      $this->session->set_flashdata('Habilitar', 'Se Habilitó Correctamente');
+      $this->Publicaciones->update($id, array('PUB_ESTADO' => 1));
+      redirect('/Administrador/Publicaciones');
+    }
+  }
+
+  //Inicio Productos
   function Productos()
   {
     $datos['Productos'] = $this->Productos->findAll();
+    $datos['Categorias'] = $this->Categorias->findAll();
     $datos['URL'] = "Productos";
     $this->layout->view('/Administrador/Productos', $datos);
   }
 
-  function AgregarProducto()
-  {
-    $datos['URL'] = "Productos";
-    $datos['Categorias'] = $this->Categorias->findAll();
-    $this->layout->view('/Administrador/AgregarProducto', $datos);
-  }
-
   public function NuevoProducto(){
-    if (isset($_POST['PROD'])) {
-      $NuevoProducto = $this->Productos->create($_POST['PROD']);
-      $NuevoProducto->insert();
-      redirect('/Administrador/Productos');
-    } else {
-      echo "NO AGRAGADO";
-    }
-  }
 
+	}
+  //Fin Productos
+
+  //Inicio Categorias
   function Categorias()
   {
     $datos['Categorias'] = $this->Categorias->findAll();
@@ -48,13 +67,7 @@ class Administrador extends CI_Controller{
     $this->layout->view('/Administrador/Categorias', $datos);
   }
 
-  function AgregarCategoria()
-  {
-    $datos['URL'] = "Categorias";
-    $this->layout->view('/Administrador/AgregarCategoria', $datos);
-  }
-
-  public function NuevaCategoria(){
+  function NuevaCategoria(){
     if (isset($_POST['CAT'])) {
       $NuevaCategoria = $this->Categorias->create($_POST['CAT']);
       $NuevaCategoria->insert();
@@ -63,7 +76,9 @@ class Administrador extends CI_Controller{
       echo "NO AGRAGADO";
     }
   }
+  //Fin Categorias
 
+  //Inicio Publicaciones
   function Publicaciones()
   {
     $datos['Publicaciones'] = $this->Publicaciones->findAll();
@@ -77,7 +92,7 @@ class Administrador extends CI_Controller{
     $this->layout->view('/Administrador/AgregarPublicacion', $datos);
   }
 
-  public function NuevaPublicacion(){
+  function NuevaPublicacion(){
     if (isset($_POST['PUB'])) {
       $NuevaPublicacion = $this->Publicaciones->create($_POST['PUB']);
       $NuevaPublicacion->insert();
@@ -86,5 +101,6 @@ class Administrador extends CI_Controller{
       echo "NO AGRAGADO";
     }
   }
+  //Fin Publicaciones
 
 }

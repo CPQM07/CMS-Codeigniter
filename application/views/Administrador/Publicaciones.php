@@ -43,15 +43,14 @@
                           <td><?= $value->get('USU_NOMBRES'); ?></td>
 
                           <?php if ($value->get('PUB_ESTADO') == 1): ?>
-                          <td><a href="#" class="btn btn-info"><i class="fa fa-eye"></i></a></td>
+                          <td><a href="<?= site_url('/Administrador/CambiarEstado/5/');?><?=$value->get('PUB_ID');?>" class="btn btn-info"><i class="fa fa-eye"></i></a></td>
                           <?php else: ?>
-                          <td><a href="#" class="btn btn-warning"><i class="fa fa-eye-slash"></i></a></td>
+                          <td><a href="<?= site_url('/Administrador/CambiarEstado/6/');?><?=$value->get('PUB_ID');?>" class="btn btn-warning"><i class="fa fa-eye-slash"></i></a></td>
                           <?php endif; ?>
 
                           <td class="text-right">
                               <a href="#" class="btn btn-simple btn-info btn-icon like"><i class="fa fa-eye"></i></a>
                               <a href="#" class="btn btn-simple btn-warning btn-icon edit"><i class="fa fa-pencil"></i></a>
-                              <a href="#" class="btn btn-simple btn-danger btn-icon remove"><i class="fa fa-close"></i> </a>
                           </td>
                       </tr>
                     <?php endforeach; ?>
