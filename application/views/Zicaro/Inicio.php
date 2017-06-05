@@ -9,7 +9,7 @@
           </div>
         </div>
 
-        <p><br>
+        <h3 style="font-size: 25px;"><br>
         A través del reciclaje de papel de diarios y revistas quiere contribuir al planeta,
         con piezas de arte únicas tanto en la moda como en el diario vivir…! <br><br>
 
@@ -25,11 +25,11 @@
 
         Zicaropapel  quiere además apoyar a nuestros jóvenes, mujeres, hombres y adultos mayores creando oportunidades de trabajo simple e incorporándolos a nuestros procesos productivos limpios y amigables con el medio ambiente.
         <br><br>
-        </p>
+      </h3 style="font-size: 25px;">
 
         <blockquote>
           <p>
-          “Bienvenidos al mundo del Arte del papel! Bienvenidos a Zicaropapel”
+          “Bienvenidos al mundo del arte del papel! Bienvenidos a Zicaropapel”
           </p>
           <small>
           ZICAROPAPEL

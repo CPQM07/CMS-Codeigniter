@@ -69,7 +69,7 @@
 	              </li>
 	              <li>
 	                <a href="<?= site_url('/Zicaro/Catalogo') ?>">
-	                <i class='fa fa-tags'></i> CATALOGO
+	                <i class='fa fa-tags'></i> CATÁLOGO
 	                </a>
 	              </li>
 	              <li>
@@ -209,7 +209,7 @@
 			<ul class="pull-center">
 				<li>
 					<a href="<?= site_url('/Zicaro/Contacto') ?>">
-						Contactanos
+						Contáctanos
 					</a>
 				</li>
 			</ul>

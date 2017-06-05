@@ -1,4 +1,3 @@
-<?php $usuario = $this->session->userdata('logged_in');?>
 <div class="card">
   <form class="form-horizontal" action="<?= site_url('/Administrador/NuevaPublicacion'); ?>" method="post">
         <div class="card-header card-header-text" data-background-color="purple">
@@ -16,7 +15,7 @@
                               <h4 class="card-title">TITULO</h4>
                               <div class="form-group">
                                   <label class="label-control">Titulo Publicacion</label>
-                                  <input name="PUB[PUB_TITULO]" type="text" class="form-control" value>
+                                  <input name="PUB_TITULO" type="text" class="form-control" value>
                               </div>
                           </div>
                       </div>
@@ -31,7 +30,7 @@
                           <h4 class="card-title">FECHA</h4>
                           <div class="form-group">
                               <label class="label-control">Fecha Publicacion</label>
-                              <input name="PUB[PUB_FECHA]" type="text" class="form-control datetimepicker"/>
+                              <input name="PUB_FECHA" type="text" class="form-control datetimepicker"/>
                           </div>
                       </div>
                   </div>
@@ -48,7 +47,7 @@
                               <h4 class="card-title">UBICACION</h4>
                               <div class="form-group">
                                   <label class="label-control">Ubicacion Publicacion</label>
-                                  <input name="PUB[PUB_UBICACION]" type="text" class="form-control">
+                                  <input name="PUB_UBICACION" type="text" class="form-control">
                               </div>
                           </div>
                       </div>
@@ -62,8 +61,8 @@
                           <div class="card-content">
                               <h4 class="card-title">AUTOR</h4>
                               <div class="form-group">
-                                  <label class="label-control">Automatico</label>
-                                  <input name="PUB[PUB_USU_ID]" type="text" class="form-control" value=" <?= $usuario['rut']; ?> "/>
+                                  <label class="label-control">Ingrese Mombre del Autor del POST</label>
+                                  <input name="PUB_AUTOR" type="text" class="form-control"/>
                               </div>
                           </div>
                       </div>
@@ -81,7 +80,7 @@
                               <h4 class="card-title">DESCRIPCION CORTA</h4>
                               <div class="form-group">
                                   <label class="label-control">Descripcion [ min: 20 caracteres ]</label>
-                                  <textarea name="PUB[PUB_DESC_C]" class="form-control" minLength="20"  maxLength="200"></textarea>
+                                  <textarea name="PUB_DESC_C" class="form-control" minLength="20"  maxLength="200"></textarea>
                               </div>
                           </div>
                       </div>
@@ -99,7 +98,7 @@
                             <h4 class="card-title">DESCRIPCION LARGA</h4>
                             <div class="form-group">
                                 <label class="label-control">Descripcion [ min: 200 caracteres ]</label>
-                                <textarea name="PUB[PUB_DESC_L]" class="form-control" minLength="200"  maxLength="2000" rows="8" cols="80"></textarea>
+                                <textarea name="PUB_DESC_L" class="form-control" minLength="200"  maxLength="2000" rows="8" cols="80"></textarea>
                             </div>
                         </div>
                     </div>
@@ -145,12 +144,12 @@
                                   <div class="col-sm-10 checkbox-radios">
                                       <div class="radio">
                                           <label>
-                                              <input type="radio" name="PUB[PUB_ESTADO]" value="1"> VISIBLE
+                                              <input type="radio" name="PUB_ESTADO" value="1"> VISIBLE
                                           </label>
                                       </div>
                                       <div class="radio">
                                           <label>
-                                              <input type="radio" name="PUB[PUB_ESTADO]" value="2"> OCULTO
+                                              <input type="radio" name="PUB_ESTADO" value="2"> OCULTO
                                           </label>
                                       </div>
                                   </div>

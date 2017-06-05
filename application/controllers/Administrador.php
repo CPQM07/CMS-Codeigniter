@@ -83,8 +83,9 @@ class Administrador extends CI_Controller{
               )
             );
             $data->insert();
-            $data = array('upload_data' => $this->upload->data());
-            $this->layout->view('/Administrador/Productos', $data);
+            //$data = array('upload_data' => $this->upload->data());
+
+            $this->layout->view('/Administrador/Productos');
           }
   }
   //Fin Productos
@@ -122,14 +123,39 @@ class Administrador extends CI_Controller{
     $this->layout->view('/Administrador/AgregarPublicacion', $datos);
   }
 
-  function NuevaPublicacion(){
-    if (isset($_POST['PUB'])) {
-      $NuevaPublicacion = $this->Publicaciones->create($_POST['PUB']);
-      $NuevaPublicacion->insert();
-      redirect('/Administrador/Publicaciones');
-    } else {
-      echo "NO AGRAGADO";
-    }
+  public function NuevaPublicacion(){
+          $config['upload_path']          = './Resources/images/Publicaciones/';
+          $config['allowed_types']        = 'gif|jpg|png';
+          $config['file_name']            = 'PUB_';
+          $config['remove_spaces']        = true;
+          $config['max_size']             = 3000;
+
+          $this->load->library('upload', $config);
+
+          if ( ! $this->upload->do_upload('PUB_IMAGEN'))
+          {
+            $error = array('error' => $this->upload->display_errors());
+            $this->layout->view('/Administrador/Publicaciones', $error );
+          }
+          else
+          {
+            $Imagen = array('upload_data' => $this->upload->data());
+            $data = $this->Publicaciones->create(array(
+              'PUB_ID' => 0,
+              'PUB_TITULO' => $_POST['PUB_TITULO'],
+              'PUB_FECHA' => $_POST['PUB_FECHA'],
+              'PUB_UBICACION' => $_POST['PUB_UBICACION'],
+              'PUB_DESC_C' => $_POST['PUB_DESC_C'],
+              'PUB_DESC_L' => $_POST['PUB_DESC_L'],
+              'PUB_AUTOR' => $_POST['PUB_AUTOR'],
+              'PUB_IMAGEN' => $_POST['PUB_IMAGEN'],
+              'PUB_ESTADO' => $_POST['PUB_ESTADO']
+              )
+            );
+            $data->insert();
+            //$data = array('upload_data' => $this->upload->data());
+            $this->layout->view('/Administrador/Publicaciones');
+          }
   }
   //Fin Publicaciones
 

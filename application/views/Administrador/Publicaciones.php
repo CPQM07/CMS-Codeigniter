@@ -40,7 +40,7 @@
                           <td><?= $value->get('PUB_ID'); ?></td>
                           <td><?= $value->get('PUB_TITULO'); ?></td>
                           <td><?= $value->get('PUB_FECHA'); ?></td>
-                          <td><?= $value->get('USU_NOMBRES'); ?></td>
+                          <td><?= $value->get('PUB_AUTOR'); ?></td>
 
                           <?php if ($value->get('PUB_ESTADO') == 1): ?>
                           <td><a href="<?= site_url('/Administrador/CambiarEstado/5/');?><?=$value->get('PUB_ID');?>" class="btn btn-info"><i class="fa fa-eye"></i></a></td>

@@ -13,7 +13,7 @@
                 </p>
                 <h6 class="category text-info"><?= $value->get('PUB_FECHA'); ?></h6>
                 <a href="<?= site_url('/Zicaro/PublicacionDetalle/'); ?><?= $value->get('PUB_ID'); ?>" class="btn btn-primary btn-round">
-                  <i class="material-icons">format_align_left</i> Leer Articulo
+                  <i class="material-icons">format_align_left</i> Leer artículo
                 </a>
               </div>
             </div>

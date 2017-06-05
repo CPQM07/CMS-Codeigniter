@@ -1,8 +1,8 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
-      <h2 class="title">Envianos un Mensaje</h2>
-			<p class="description">Enunciado.<br><br>
+      <h2 class="title">¿Tienes alguna duda?</h2>
+			<p style="font-size: 20px;" class="description">Envianos un mensaje.<br><br>
 			</p>
 			<form role="form" id="contact-form" method="post">
 				<div class="form-group label-floating">
@@ -10,11 +10,11 @@
 					<input type="text" name="name" class="form-control">
 				</div>
 				<div class="form-group label-floating">
-					<label class="control-label">Correo Electronico</label>
+					<label class="control-label">Correo Electrónico</label>
 					<input type="email" name="email" class="form-control"/>
 				</div>
 				<div class="form-group label-floating">
-					<label class="control-label">Telefono</label>
+					<label class="control-label">Teléfono</label>
 					<input type="text" name="phone" class="form-control"/>
 				</div>
 				<div class="form-group label-floating">

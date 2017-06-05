@@ -6,7 +6,7 @@
           <div class="panel-heading" role="tab" id="heading">
           <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse" aria-expanded="true" aria-controls="collapse">
             <h4 class="panel-title">
-            Categorias
+            Categorías
             <i class="material-icons">keyboard_arrow_down</i>
             </h4>
           </a>

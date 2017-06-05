@@ -55,7 +55,6 @@ public function delete($id){
 
 public function findAll(){
   $result=array();
-  $bit = null;
   $consulta = $this->db->join('CATEGORIAS', 'CATEGORIAS.CAT_ID = PRODUCTOS.PROD_CAT_ID');
   $consulta = $this->db->get('PRODUCTOS');
     foreach ($consulta->result() as $row) {
@@ -80,4 +79,5 @@ public function findById($id){
       $this->columns[$key] = $value;
       }
     }
+
 }

@@ -1,6 +1,6 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
-        <p>
+        <p style="font-size: 20px">
         Nace de la idea de unir dos elementos, por un lado recuperar todo el papel que llega a nuestras manos y segundo dar una
         posibilidad de desarrollo a toda persona que necesite trabajar desde su hogar, ya sea dueñas de casa, discapacitados o
         simplemente gente creativa impedida de realizar una labor en otro lugar. <br> <br>
