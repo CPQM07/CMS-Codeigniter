@@ -3,22 +3,21 @@
 				<p class="text-justify">
 					<?= $Detalles->get('PUB_DESC_L'); ?>
 				</p>
-
-			<blockquote>
-				<p>
-					<em>
-						"CITA"
-					</em>
-				</p>
-				<small>
-				<?= $Detalles->get('USU_NOMBRES'); ?><?= $Detalles->get('USU_APELLIDOS'); ?>
-				</small>
-			</blockquote>
-		</div>
+					<blockquote>
+						<p>
+							<em>
+								"CITA"
+							</em>
+						</p>
+						<small>
+						<?= $Detalles->get('PUB_AUTOR'); ?>
+						</small>
+					</blockquote>
+			</div>
 
 		<div class="section col-md-10 col-md-offset-1">
 			<div class="col-md-12">
-				<img class="img-rounded img-responsive img-raised" alt="<?= $Enunciado ?>" src="<?= base_url("Resources/images/Publicaciones/".$Detalles->get('PUB_IMAGEN').".jpg") ?>">
+				<img class="img-rounded img-responsive img-raised" alt="<?= $Titulo ?>" src="<?= base_url("Resources/images/Publicaciones/".$Detalles->get('PUB_IMAGEN').".jpg") ?>">
 			</div>
 		</div>
 
@@ -49,7 +48,7 @@
 										<div class="ripple-container"></div></div>
 									</div>
 									<div class="col-md-8">
-										<h4 class="card-title">Autor: <?= $Detalles->get('USU_NOMBRES'); ?><?= $Detalles->get('USU_APELLIDOS'); ?></h4>
+										<h4 class="card-title">Autor: <?= $Detalles->get('PUB_AUTOR'); ?></h4>
 									</div>
 								</div>
 							</div>

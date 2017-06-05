@@ -1,8 +1,8 @@
 <div class="col-sm-12 col-md-6 pull-right">
   <a data-toggle="modal" data-target="#AgregarProducto" class="btn btn-fill btn-success btn-block pull-rigth">Nuevo Producto</a>
 </div>
-<?php if (isset($success)): ?>
-  <?= var_dump($NuevoProducto); ?>
+<?php if (isset($error)): ?>
+  <?= var_dump($error); ?>
 <?php endif; ?>
 <div class="card">
     <div class="card-header card-header-icon" data-background-color="purple">
@@ -75,7 +75,7 @@
                 <div class="modal-body">
                   <div class="col-sm-12">
                       <div class="card">
-                          <form method="POST" action="<?= site_url('/Administrador/NuevoProducto/1'); ?>" class="form-horizontal" accept-charset="utf-8" enctype="multipart/form-data">
+                          <form method="POST" action="<?= site_url('/Administrador/NuevoProducto'); ?>" class="form-horizontal" accept-charset="utf-8" enctype="multipart/form-data">
                               <div class="card-header card-header-text" data-background-color="purple">
                                   <h4 class="card-title">Nuevo Producto</h4>
                               </div>
@@ -85,7 +85,7 @@
                                       <div class="col-sm-10">
                                           <div class="form-group label-floating is-empty">
                                               <label class="control-label"></label>
-                                              <input name="PROD[PROD_NOMBRE]" type="text" class="form-control">
+                                              <input name="PROD_NOMBRE" type="text" class="form-control">
                                               <span class="help-block">Ingrese nombre asociado al nuevo producto.</span>
                                           </div>
                                       </div>
@@ -96,7 +96,7 @@
                                       <div class="col-sm-10">
                                           <div class="form-group label-floating is-empty">
                                               <label class="control-label"></label>
-                                              <input name="PROD[PROD_PRECIO]" type="text" class="form-control">
+                                              <input name="PROD_PRECIO" type="text" class="form-control">
                                               <span class="help-block">Ingrese precio asociado al nuevo producto.</span>
                                           </div>
                                       </div>
@@ -107,10 +107,10 @@
                                       <div class="col-sm-10">
                                           <div class="form-group label-floating is-empty">
                                               <label class="control-label"></label>
-                                              <select class="selectpicker" data-style="select-with-transition" title="Single Select" data-size="7">
+                                              <select class="selectpicker" name="PROD_CAT_ID" data-style="select-with-transition" title="Single Select" data-size="7">
                                                 <option disabled>Categoria</option>
                                                   <?php foreach ($Categorias as $key => $value): ?>
-                                                    <option name="PROD[PROD_CAT_ID]" value="<?= $value->get('CAT_ID'); ?>"><?= $value->get('CAT_NOMBRE'); ?></option>
+                                                    <option value="<?= $value->get('CAT_ID'); ?>"><?= $value->get('CAT_NOMBRE'); ?></option>
                                                   <?php endforeach; ?>
                                               </select>
                                           </div>
@@ -125,12 +125,12 @@
                                               <div class="col-sm-10 checkbox-radios">
                                                   <div class="radio">
                                                       <label>
-                                                          <input type="radio" name="PROD[PROD_ESTADO]" value="1"> VISIBLE
+                                                          <input type="radio" name="PROD_ESTADO" value="1"> VISIBLE
                                                       </label>
                                                   </div>
                                                   <div class="radio">
                                                       <label>
-                                                          <input type="radio" name="PROD[PROD_ESTADO]" value="2"> OCULTO
+                                                          <input type="radio" name="PROD_ESTADO" value="2"> OCULTO
                                                       </label>
                                                   </div>
                                               </div>
@@ -144,7 +144,7 @@
                                       <div class="col-sm-10">
                                           <div class="form-group label-floating is-empty">
                                               <label class="control-label"></label>
-                                              <textarea name="PROD[PROD_DESC_C]" class="form-control" minLength="20"  maxLength="200" rows="8" cols="80"></textarea>
+                                              <textarea name="PROD_DESC_C" class="form-control" minLength="20"  maxLength="200" rows="8" cols="80"></textarea>
                                               <span class="help-block">Ingrese una descripcion CORTA asociado al nuevo producto.</span>
                                           </div>
                                       </div>
@@ -155,7 +155,7 @@
                                       <div class="col-sm-10">
                                           <div class="form-group label-floating is-empty">
                                               <label class="control-label"></label>
-                                              <textarea name="PROD[PROD_DESC_L]" class="form-control" minLength="200"  maxLength="2000" rows="8" cols="80"></textarea>
+                                              <textarea name="PROD_DESC_L" class="form-control" minLength="200"  maxLength="2000" rows="8" cols="80"></textarea>
                                               <span class="help-block">Ingrese una descripcion LARGA asociado al nuevo producto.</span>
                                           </div>
                                       </div>
@@ -175,7 +175,7 @@
                                                       <span class="btn btn-primary btn-round btn-file">
                                                           <span class="fileinput-new">Seeccionar Imagen</span>
                                                           <span class="fileinput-exists">Cambiar Imagen</span>
-                                                          <input type="file" name="PROD[PROD_IMAGEN]" value="">
+                                                          <input type="file" name="PROD_IMAGEN" value="">
                                                       </span>
                                                       <a href="#" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remover</a>
                                                   </div>

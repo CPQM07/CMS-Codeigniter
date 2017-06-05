@@ -55,8 +55,38 @@ class Administrador extends CI_Controller{
   }
 
   public function NuevoProducto(){
+          $config['upload_path']          = './Resources/images/Productos/';
+          $config['allowed_types']        = 'gif|jpg|png';
+          $config['file_name']            = 'PROD_';
+          $config['remove_spaces']        = true;
+          $config['max_size']             = 3000;
 
-	}
+          $this->load->library('upload', $config);
+
+          if ( ! $this->upload->do_upload('PROD_IMAGEN'))
+          {
+            $error = array('error' => $this->upload->display_errors());
+            $this->layout->view('/Administrador/Productos', $error );
+          }
+          else
+          {
+            $Imagen = array('upload_data' => $this->upload->data());
+            $data = $this->Productos->create(array(
+              'PROD_ID' => 0,
+              'PROD_NOMBRE' => $_POST['PROD_NOMBRE'],
+              'PROD_DESC_C' => $_POST['PROD_DESC_C'],
+              'PROD_DESC_L' => $_POST['PROD_DESC_L'],
+              'PROD_PRECIO' => $_POST['PROD_PRECIO'],
+              'PROD_IMAGEN' => $Imagen['upload_data']['raw_name'],
+              'PROD_CAT_ID' => $_POST['PROD_CAT_ID'],
+              'PROD_ESTADO' => $_POST['PROD_ESTADO']
+              )
+            );
+            $data->insert();
+            $data = array('upload_data' => $this->upload->data());
+            $this->layout->view('/Administrador/Productos', $data);
+          }
+  }
   //Fin Productos
 
   //Inicio Categorias

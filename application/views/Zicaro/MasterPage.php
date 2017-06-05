@@ -147,7 +147,6 @@
 						</div>
 					</div>
 				</div>
-
 			</div>
 
 			<!-- Controls -->
@@ -158,11 +157,26 @@
 				<i class="material-icons">keyboard_arrow_right</i>
 			</a>
 		</div>
-	</div>
+	</div><br><br>
 
 
 <?php else: ?>
-	<div class="page-header header-filter header-small" style="background-image: url('<?= base_url("Resources/images/ZicaroPapel/Background.jpg") ?>');">
+	<?php if ($TipeView == "PUB"): ?>
+		<div class="page-header header-filter header-small" style="background-image: url('<?= base_url("Resources/images/Publicaciones/".$Detalles->get('PUB_IMAGEN').".jpg") ?>');">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<div class="brand">
+							<h1 class="title"><?= $Titulo ?></h1>
+							<h3> <small><i class="fa fa-map-marker"></i></small> <?= $Ubicacion ?></h3>
+							<h6 class="title"><?= $Fecha ?></h6>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<?php else: ?>
+		<div class="page-header header-filter header-small" style="background-image: url('<?= base_url("Resources/images/ZicaroPapel/Background.jpg") ?>');">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
@@ -173,6 +187,7 @@
 			</div>
 		</div>
 	</div>
+<?php endif; ?>
 <?php endif; ?>
 
 

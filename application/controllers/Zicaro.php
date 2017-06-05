@@ -53,9 +53,10 @@ class Zicaro extends CI_Controller{
   function PublicacionDetalle($ID)
   {
     $datos['Detalles'] = $this->Publicaciones->findById($ID);
-    $datos['TipeView'] = "NOTICE";
-    $datos['Imagen'] = "Publicacion1";
-    $datos['Enunciado'] = $datos['Detalles']->get('PUB_TITULO');
+    $datos['TipeView'] = "PUB";
+    $datos['Titulo'] = $datos['Detalles']->get('PUB_TITULO');
+    $datos['Ubicacion'] = $datos['Detalles']->get('PUB_UBICACION');
+    $datos['Fecha'] = $datos['Detalles']->get('PUB_FECHA');
     $this->layout->view('/Zicaro/PublicacionDetalle', $datos, false);
   }
 }

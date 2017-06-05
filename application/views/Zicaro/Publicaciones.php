@@ -4,7 +4,7 @@
           <div class="col-md-4">
             <div class="card card-raised card-background" style="background-image: url('<?= base_url("Resources/images/Publicaciones/".$value->get('PUB_IMAGEN').".jpg") ?>')">
               <div class="card-content">
-                <h6 class="category text-info"><?= $value->get('USU_NOMBRES'); ?></h6>
+                <h6 class="category text-info"><?= $value->get('PUB_AUTOR'); ?></h6>
                 <a href="">
                   <h3 class="card-title"><?= $value->get('PUB_TITULO'); ?></h3>
                 </a>

@@ -15,7 +15,7 @@ private  $_columns  =  array(
 'PUB_UBICACION' => '',
 'PUB_DESC_C' => '',
 'PUB_DESC_L' => '',
-'PUB_USU_ID' => 0,
+'PUB_AUTOR' => '',
 'PUB_IMAGEN' => '',
 'PUB_ESTADO' => ''
 );
@@ -57,7 +57,6 @@ public function delete($id){
 public function findAll(){
   $result=array();
   $bit = null;
-  $consulta = $this->db->join('USUARIO', 'USUARIO.USU_RUT = PUBLICACIONES.PUB_USU_RUT');
   $consulta = $this->db->get('PUBLICACIONES');
     foreach ($consulta->result() as $row) {
     $result[] = $this->create($row);
@@ -68,8 +67,7 @@ public function findAll(){
 public function findById($ID){
    $result = null;
    $this->db->where('PUB_ID',$ID);
-   $consulta = $this->db->join('USUARIO', 'USUARIO.USU_RUT = PUBLICACIONES.PUB_USU_RUT');
-   $consulta = $this->db->get('PUBLICACIONES');
+     $consulta = $this->db->get('PUBLICACIONES');
    if($consulta->num_rows() == 1){
      $result = $this->create($consulta->row());
    }
