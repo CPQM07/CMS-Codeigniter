@@ -13,11 +13,9 @@ private  $_columns  =  array(
 'USU_DV' => 0,
 'USU_NOMBRES' => '',
 'USU_APELLIDOS' => '',
-'USU_PERFIL_ID' => 0,
 'USU_EMAIL' => '',
 'USU_TELEFONO' => 0,
 'USU_CLAVE' => '',
-'USU_IMAGEN' => '',
 'USU_ESTADO' => 0
 );
 
@@ -26,31 +24,31 @@ public function get($attr){
 }
 
 public function create($row){
-  $USUARIO =  new Usuario_Model();
+  $USUARIOS =  new Usuario_Model();
   foreach ($row as $key => $value)
     {
-      $USUARIO->_columns[$key] = $value;
+      $USUARIOS->_columns[$key] = $value;
     }
-  return $USUARIO;
+  return $USUARIOS;
 }
 
 public function insert(){
-$this->db->insert('USUARIO',$this->_columns);
+$this->db->insert('USUARIOS',$this->_columns);
 }
 
 public function update($id, $data) {
-  $USUARIO = $this->db->get_where('USUARIO',array('USU_RUT'=>$id));
-  if($USUARIO->num_rows() > 0){
+  $USUARIOS = $this->db->get_where('USUARIOS',array('USU_RUT'=>$id));
+  if($USUARIOS->num_rows() > 0){
     $this->db->where('USU_RUT', $id);
-    return $this->db->update('USUARIO', $data);
+    return $this->db->update('USUARIOS', $data);
     }else{
   $data['USU_RUT'] = $id;
-  return $this->db->insert('USUARIO',$data);
+  return $this->db->insert('USUARIOS',$data);
   }
 }
 
 public function delete($id){
-  $sql="update USUARIO set USU_ESTADO =0 WHERE USU_RUT=".$id;
+  $sql="update USUARIOS set USU_ESTADO =0 WHERE USU_RUT=".$id;
   $query = $this->db->query($sql);
   return 1;
 }
@@ -59,7 +57,7 @@ public function delete($id){
 public function findAll(){
   $result=array();
   $bit = null;
-  $consulta = $this->db->get('USUARIO');
+  $consulta = $this->db->get('USUARIOS');
     foreach ($consulta->result() as $row) {
     $result[] = $this->create($row);
   }
@@ -69,7 +67,7 @@ public function findAll(){
  public function findById($id){
     $result = null;
     $this->db->where('USU_RUT',$id);
-    $consulta = $this->db->get('USUARIO');
+    $consulta = $this->db->get('USUARIOS');
     if($consulta->num_rows() == 1){
       $result = $this->create($consulta->row());
     }
@@ -83,7 +81,7 @@ public function findAll(){
       }
     }
 
-    public function getPermisos()
+    /*public function getPermisos()
     {
       $result = $this->db->get_where("PERMISO",array('PERMISO_USU_RUT  '=>$this->_columns['USU_RUT']));
       $permisos = array();
@@ -93,11 +91,11 @@ public function findAll(){
         }
       }
       return $permisos;
-    }
+    }*/
 
     public function findByArray($myarray = null){
         $this->load->database();
-        $res = $this->db->get_where('USUARIO',$myarray);
+        $res = $this->db->get_where('USUARIOS',$myarray);
         $result = array();
            foreach ($res->result() as $row) {
             $result[] = $this->create($row);
@@ -110,10 +108,10 @@ public function findAll(){
       $datos=array();
       $user = null;
 
-      $result = $this->db->get_where('USUARIO',array('USU_RUT'=>$rut));
+      $result = $this->db->get_where('USUARIOS',array('USU_RUT'=>$rut));
       if ($result->num_rows() > 0) {
         $row = $result->row_object();
-        if($row->USU_CLAVE == $clave){
+        if($row->USU_CLAVE == $clave && $row->USU_ESTADO == 1){
           $user = $this->create($row);
         }
       }

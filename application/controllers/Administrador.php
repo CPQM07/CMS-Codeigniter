@@ -6,10 +6,15 @@ class Administrador extends CI_Controller{
   public function __construct()
   {
     parent::__construct();
+    if ($this->session->userdata('logged_in')) {
     $this->load->model('Categorias_Model', 'Categorias');
     $this->load->model('Productos_Model', 'Productos');
     $this->load->model('Publicaciones_Model', 'Publicaciones');
+    $this->load->model('Usuario_Model', 'Usuarios');
     $this->layout->setLayout('/Administrador/MasterPage', false);
+  } else {
+    redirect("/Login/Login");
+  }
   }
 
   function Inicio()
@@ -42,6 +47,14 @@ class Administrador extends CI_Controller{
       $this->session->set_flashdata('Habilitar', 'Se Habilitó Correctamente');
       $this->Publicaciones->update($id, array('PUB_ESTADO' => 1));
       redirect('/Administrador/Publicaciones');
+    } elseif ($tipo == 7) {
+      $this->session->set_flashdata('Deshabilitar', 'Se Deshabilitó Correctamente');
+      $this->Usuarios->update($id, array('USU_ESTADO' => 2));
+      redirect('/Administrador/Usuarios');
+    } elseif ($tipo == 8) {
+      $this->session->set_flashdata('Habilitar', 'Se Habilitó Correctamente');
+      $this->Usuarios->update($id, array('USU_ESTADO' => 1));
+      redirect('/Administrador/Usuarios');
     }
   }
 
@@ -74,8 +87,7 @@ class Administrador extends CI_Controller{
             $data = $this->Productos->create(array(
               'PROD_ID' => 0,
               'PROD_NOMBRE' => $_POST['PROD_NOMBRE'],
-              'PROD_DESC_C' => $_POST['PROD_DESC_C'],
-              'PROD_DESC_L' => $_POST['PROD_DESC_L'],
+              'PROD_DESC' => $_POST['PROD_DESC'],
               'PROD_PRECIO' => $_POST['PROD_PRECIO'],
               'PROD_IMAGEN' => $Imagen['upload_data']['raw_name'],
               'PROD_CAT_ID' => $_POST['PROD_CAT_ID'],
@@ -83,8 +95,6 @@ class Administrador extends CI_Controller{
               )
             );
             $data->insert();
-            //$data = array('upload_data' => $this->upload->data());
-
             $this->layout->view('/Administrador/Productos');
           }
   }
@@ -148,15 +158,23 @@ class Administrador extends CI_Controller{
               'PUB_DESC_C' => $_POST['PUB_DESC_C'],
               'PUB_DESC_L' => $_POST['PUB_DESC_L'],
               'PUB_AUTOR' => $_POST['PUB_AUTOR'],
-              'PUB_IMAGEN' => $_POST['PUB_IMAGEN'],
+              'PUB_IMAGEN' => $Imagen['upload_data']['raw_name'],
               'PUB_ESTADO' => $_POST['PUB_ESTADO']
               )
             );
             $data->insert();
-            //$data = array('upload_data' => $this->upload->data());
             $this->layout->view('/Administrador/Publicaciones');
           }
   }
   //Fin Publicaciones
+
+  // Inicio Usuarios
+  function Usuarios()
+  {
+    $datos['Usuarios'] = $this->Usuarios->findAll();
+    $datos['URL'] = "Usuarios";
+    $this->layout->view('/Administrador/Usuarios', $datos);
+  }
+  //Fin Usuarios
 
 }

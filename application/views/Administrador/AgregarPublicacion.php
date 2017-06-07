@@ -1,5 +1,5 @@
 <div class="card">
-  <form class="form-horizontal" action="<?= site_url('/Administrador/NuevaPublicacion'); ?>" method="post">
+  <form class="form-horizontal" action="<?= site_url('/Administrador/NuevaPublicacion'); ?>" method="post" accept-charset="utf-8" enctype="multipart/form-data">
         <div class="card-header card-header-text" data-background-color="purple">
             <h4 class="card-title">NUEVA PUBLICACION</h4>
         </div>
@@ -97,8 +97,12 @@
                         <div class="card-content">
                             <h4 class="card-title">DESCRIPCION LARGA</h4>
                             <div class="form-group">
-                                <label class="label-control">Descripcion [ min: 200 caracteres ]</label>
-                                <textarea name="PUB_DESC_L" class="form-control" minLength="200"  maxLength="2000" rows="8" cols="80"></textarea>
+                                <div id="toolbar"></div>
+                                <div id="PUB_DESC_L" class="editor"></div>
+                                <script type="text/javascript">
+                                  var PUB_DESC_L = $("PUB_DESC_L").html();
+                                  alert(PUB_DESC_L);
+                                </script>
                             </div>
                         </div>
                     </div>
@@ -115,15 +119,12 @@
                               <h4 class="card-title">IMAGEN</h4>
                               <div class="form-group">
                                     <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                                        <div class="fileinput-new thumbnail">
-                                            <img src="../../assets/img/image_placeholder.jpg" alt="...">
-                                        </div>
                                         <div class="fileinput-preview fileinput-exists thumbnail"></div>
                                         <div>
                                             <span class="btn btn-primary btn-round btn-file">
                                                 <span class="fileinput-new">Seeccionar Imagen</span>
                                                 <span class="fileinput-exists">Cambiar Imagen</span>
-                                                <input type="file" name="..." />
+                                                <input type="file" name="PUB_IMAGEN" />
                                             </span>
                                             <a href="#" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remover</a>
                                         </div>

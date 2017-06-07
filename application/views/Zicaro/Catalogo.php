@@ -1,4 +1,4 @@
-  <div class="row">
+<div class="row">
     <div class="col-md-3">
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <div class="panel panel-default">
@@ -38,9 +38,6 @@
                     <h4 class="card-title">
                     <?= $value->get('PROD_NOMBRE'); ?>
                     </h4>
-                    <p class="card-description">
-                    <?= $value->get('PROD_DESC_C'); ?>
-                    </p>
                 </div>
               </div>
             </div>

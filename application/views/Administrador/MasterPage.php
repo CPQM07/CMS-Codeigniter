@@ -6,14 +6,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 	<title>ZICARO PAPEL - ADM</title>
-
-
+		<!-- Theme included stylesheets -->
+		<link href="//cdn.quilljs.com/1.2.6/quill.snow.css" rel="stylesheet">
+		<link href="//cdn.quilljs.com/1.2.6/quill.bubble.css" rel="stylesheet">
      <!-- Bootstrap core CSS     -->
     <link type='text/css' href="<?= base_url() ?>Resources/css/bootstrap.min.css" rel="stylesheet" />
-
     <!--  Paper Dashboard core CSS    -->
     <link type='text/css' href="<?= base_url() ?>Resources/css/Dashboard.css" rel="stylesheet" />
-
     <!--  Fonts and icons     -->
     <link type='text/css' href="<?= base_url() ?>Resources/css/font-awesome.min.css" rel="stylesheet" />
     <link type='text/css' href='https://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet'/>
@@ -66,6 +65,13 @@
 										<a href="<?= site_url('/Administrador/Publicaciones'); ?>">
 											<i class="fa fa-newspaper-o"></i>
 											<p>PUBLICACIONES</p>
+										</a>
+									</li>
+
+									<li <?php if (isset($URL) && $URL == "Usuarios") : ?> class="active" <?php endif ?>>
+										<a href="<?= site_url('/Administrador/Usuarios'); ?>">
+											<i class="fa fa-users"></i>
+											<p>USUARIOS</p>
 										</a>
 									</li>
 
@@ -159,6 +165,9 @@
 <script src="<?= base_url() ?>Resources/jsBack/bootstrap.min.js" type="text/javascript"></script>
 <script src="<?= base_url() ?>Resources/jsBack/material.min.js" type="text/javascript"></script>
 <script src="<?= base_url() ?>Resources/jsBack/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+<!-- Main Quill library -->
+<script src="//cdn.quilljs.com/1.2.6/quill.js"></script>
+<script src="//cdn.quilljs.com/1.2.6/quill.min.js"></script>
 <!-- Forms Validations Plugin -->
 <script src="<?= base_url() ?>Resources/jsBack/jquery.validate.min.js"></script>
 <!--  Plugin for Date Time Picker and Full Calendar Plugin-->
@@ -259,6 +268,8 @@
 
 <script type="text/javascript">
 $('.datetimepicker').datetimepicker({
+
+		format: "YYYY/MM/DD",
 		icons: {
 				time: "fa fa-clock-o",
 				date: "fa fa-calendar",
@@ -280,6 +291,36 @@ $(function () {
         $(".notificacion").fadeOut(3000);
     },2000);
 });
+</script>
+
+<script type="text/javascript">
+var options = {
+  debug: 'info',
+  modules: {
+    toolbar: [
+		  ['bold', 'italic', 'underline', 'strike'],
+		  ['blockquote', 'code-block'],
+
+		  [{ 'header': 1 }, { 'header': 2 }],
+		  [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+		  [{ 'script': 'sub'}, { 'script': 'super' }],
+		  [{ 'indent': '-1'}, { 'indent': '+1' }],
+		  [{ 'direction': 'rtl' }],
+
+		  [{ 'size': ['small', false, 'large', 'huge'] }],
+		  [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+
+		  [{ 'color': [] }, { 'background': [] }],
+		  [{ 'font': [] }],
+		  [{ 'align': [] }],
+
+		  ['clean']
+		]
+  },
+  placeholder: 'Cuerpo de la Publicacion...',
+  theme: 'snow'
+};
+var editor = new Quill('.editor', options);
 </script>
 
 </html>

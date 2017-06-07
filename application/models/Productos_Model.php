@@ -11,8 +11,7 @@ parent::__construct();
 private  $_columns  =  array(
 'PROD_ID' => 0,
 'PROD_NOMBRE' => '',
-'PROD_DESC_C' => '',
-'PROD_DESC_L' => '',
+'PROD_DESC' => '',
 'PROD_PRECIO' => 0,
 'PROD_IMAGEN' => '',
 'PROD_CAT_ID' => 0,

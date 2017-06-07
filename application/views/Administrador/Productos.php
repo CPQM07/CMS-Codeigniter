@@ -108,7 +108,7 @@
                                           <div class="form-group label-floating is-empty">
                                               <label class="control-label"></label>
                                               <select class="selectpicker" name="PROD_CAT_ID" data-style="select-with-transition" title="Single Select" data-size="7">
-                                                <option disabled>Categoria</option>
+                                                <option disabled selected>Seleccione Categoria asociada</option>
                                                   <?php foreach ($Categorias as $key => $value): ?>
                                                     <option value="<?= $value->get('CAT_ID'); ?>"><?= $value->get('CAT_NOMBRE'); ?></option>
                                                   <?php endforeach; ?>
@@ -140,23 +140,12 @@
                                   </div>
 
                                   <div class="row">
-                                      <label class="col-sm-2 label-on-left">Descripcion Corta</label>
+                                      <label class="col-sm-2 label-on-left">Descripcion</label>
                                       <div class="col-sm-10">
                                           <div class="form-group label-floating is-empty">
                                               <label class="control-label"></label>
-                                              <textarea name="PROD_DESC_C" class="form-control" minLength="20"  maxLength="200" rows="8" cols="80"></textarea>
-                                              <span class="help-block">Ingrese una descripcion CORTA asociado al nuevo producto.</span>
-                                          </div>
-                                      </div>
-                                  </div>
-
-                                  <div class="row">
-                                      <label class="col-sm-2 label-on-left">Descripcion Larga</label>
-                                      <div class="col-sm-10">
-                                          <div class="form-group label-floating is-empty">
-                                              <label class="control-label"></label>
-                                              <textarea name="PROD_DESC_L" class="form-control" minLength="200"  maxLength="2000" rows="8" cols="80"></textarea>
-                                              <span class="help-block">Ingrese una descripcion LARGA asociado al nuevo producto.</span>
+                                              <textarea name="PROD_DESC" class="form-control" maxLength="2000" rows="8" cols="80"></textarea>
+                                              <span class="help-block">Ingrese una descripcion asociado al nuevo producto.</span>
                                           </div>
                                       </div>
                                   </div>
@@ -167,9 +156,6 @@
                                           <div class="form-group label-floating is-empty">
                                               <label class="control-label"></label>
                                               <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                                                  <div class="fileinput-new thumbnail">
-                                                      <img src="" alt="...">
-                                                  </div>
                                                   <div class="fileinput-preview fileinput-exists thumbnail"></div>
                                                   <div>
                                                       <span class="btn btn-primary btn-round btn-file">

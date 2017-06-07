@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<link rel="shortcut icon" href="<?= base_url() ?>Resources/images/Dirtyllas/DIRTYllasLogo.ico">
+	<link rel="shortcut icon" href="<?= base_url() ?>Resources/images/ZicaroPapel/LogoZicaroTransparent.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 	<title>ZICARO PAPEL - ADM</title>
@@ -87,44 +87,9 @@
 <script src="<?= base_url() ?>Resources/jsBack/jquery.min.js" type="text/javascript"></script>
 <script src="<?= base_url() ?>Resources/jsBack/jquery-ui.min.js" type="text/javascript"></script>
 <script src="<?= base_url() ?>Resources/jsBack/bootstrap.min.js" type="text/javascript"></script>
-
-<script src="<?= base_url() ?>Resources/jsBack/material.min.js" type="text/javascript"></script>
-<script src="<?= base_url() ?>Resources/jsBack/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
-<!-- Forms Validations Plugin -->
-<script src="<?= base_url() ?>Resources/jsBack/jquery.validate.min.js"></script>
-<!--  Plugin for Date Time Picker and Full Calendar Plugin-->
-<script src="<?= base_url() ?>Resources/jsBack/moment.min.js"></script>
-<!--  Charts Plugin -->
-<script src="<?= base_url() ?>Resources/jsBack/chartist.min.js"></script>
-<!--  Plugin for the Wizard -->
-<script src="<?= base_url() ?>Resources/jsBack/jquery.bootstrap-wizard.js"></script>
-<!--  Notifications Plugin    -->
-<script src="<?= base_url() ?>Resources/jsBack/bootstrap-notify.js"></script>
-<!--   Sharrre Library    -->
-<script src="<?= base_url() ?>Resources/jsBack/jquery.sharrre.js"></script>
-<!-- DateTimePicker Plugin -->
-<script src="<?= base_url() ?>Resources/jsBack/bootstrap-datetimepicker.js"></script>
-<!-- Vector Map plugin -->
-<script src="<?= base_url() ?>Resources/jsBack/jquery-jvectormap.js"></script>
-<!-- Sliders Plugin -->
-<script src="<?= base_url() ?>Resources/jsBack/nouislider.min.js"></script>
-<!--  Google Maps Plugin    -->
-<script src="https://maps.googleapis.com/maps/api/js"></script>
 <!-- Select Plugin -->
 <script src="<?= base_url() ?>Resources/jsBack/jquery.select-bootstrap.js"></script>
-<!--  DataTables.net Plugin    -->
-<script src="<?= base_url() ?>Resources/jsBack/jquery.datatables.js"></script>
-<!-- Sweet Alert 2 plugin -->
-<script src="<?= base_url() ?>Resources/jsBack/sweetalert2.js"></script>
-<!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
-<script src="<?= base_url() ?>Resources/jsBack/jasny-bootstrap.min.js"></script>
-<!--  Full Calendar Plugin    -->
-<script src="<?= base_url() ?>Resources/jsBack/fullcalendar.min.js"></script>
-<!-- TagsInput Plugin -->
-<script src="<?= base_url() ?>Resources/jsBack/jquery.tagsinput.js"></script>
-<!-- Material Dashboard javascript methods -->
-<script src="<?= base_url() ?>Resources/jsBack/material-dashboard.js"></script>
-<!-- Material Dashboard DEMO methods, don't include it in your project! -->
+<!-- Material Dashboard DEMO methods-->
 <script src="<?= base_url() ?>Resources/jsBack/demo.js"></script>
 
 <script type="text/javascript">

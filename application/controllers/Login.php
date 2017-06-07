@@ -22,22 +22,11 @@ class Login extends CI_Controller {
 		   $this->form_validation->set_rules('clave', 'clave', 'trim|required|xss_clean|callback_check_database');
 		   if($this->form_validation->run())
 		   {
-		   		$usuario = $this->session->userdata('logged_in');
-	   			if(count($usuario['permisos']) > 0){
-					if (in_array(1, $usuario['permisos'])) {
-	   					redirect('Administrador/Inicio','refresh');
-	   				}elseif (in_array(2, $usuario['permisos'])) {
-	   					redirect('Administrador/Inicio','refresh');
-	   				}
-	   			}else{
-   					session_destroy();
-  					$this->session->unset_userdata('logged_in');
-	   				$datos['error'] = 'Usted no cuenta con los privilegios necesarios para ingresar al sistema';
-	   			}
-
+		   	 $usuario = $this->session->userdata('logged_in');
+				 redirect('/Administrador/Productos', 'refresh');
 		   }else
 		   {
-		   	   $datos['error'] = "Usuario y/o contraseña incorrecta";
+	   	   $datos['error'] = "Usuario y/o contraseña incorrecta";
 		   }
 
 		}
@@ -66,9 +55,7 @@ class Login extends CI_Controller {
 				  'dv' => $usuario->get('USU_DV'),
 				  'nombres' => $usuario->get('USU_NOMBRES'),
 				  'apellidos' => $usuario->get('USU_APELLIDOS'),
-				  'permisos' =>$usuario->getPermisos(),
 				  'correo' => $usuario->get('USU_EMAIL'),
-					'imagen' => $usuario->get('USU_IMAGEN'),
 				  'telefono' => $usuario->get('USU_TELEFONO')
 				);
 	       $this->session->set_userdata('logged_in', $sess_array);
