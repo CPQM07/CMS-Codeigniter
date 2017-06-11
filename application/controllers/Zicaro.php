@@ -26,6 +26,39 @@ class Zicaro extends CI_Controller{
     $this->layout->view('/Zicaro/QuienesSomos', $datos, false);
   }
 
+  function Enviar(){
+
+    $this->form_validation->set_rules('Nombre','Nombre','trim|required|min_length[3]|alpha');
+    $this->form_validation->set_rules('Correo','Correo Electrónico','trim|required|valid_email');
+    $this->form_validation->set_rules('Asunto','Asunto','trim|required|min_length[3]|alpha');
+    $this->form_validation->set_rules('Mensaje','Mensaje','trim|required|min_length[10]');
+
+    if ($this->form_validation->run() == FALSE) {
+      $datos['TipeView'] = "NOTICE";
+      $datos['Enunciado'] = "CONTACTO";
+      $this->layout->view('/Zicaro/Contacto', $datos, false);
+    } else {
+
+      $datos['Usuario'] = $_POST['Nombre'];
+      $this->email->from($_POST['Correo']);
+      $this->email->to('lmaximo@zicaropapel.cl');
+      $this->email->cc('cpqm07@gmail.com');
+      $this->email->subject($_POST['Asunto']);
+      $this->email->message($_POST['Mensaje']);
+      $this->email->send();
+
+      $datos['TipeView'] = "NOTICE";
+      $datos['Enunciado'] = "GRACIAS!";
+      $this->layout->view('/Zicaro/Gracias', $datos);
+    }
+  }
+
+  function Gracias(){
+    $datos['TipeView'] = "NOTICE";
+    $datos['Enunciado'] = "Correo Enviado";
+    $this->layout->view('/Zicaro/Gracias', $datos, false);
+  }
+
   function Contacto()
   {
     $datos['TipeView'] = "NOTICE";

@@ -17,28 +17,10 @@
 	<!-- CSS Files -->
     <link href="<?= base_url('Resources/css/bootstrap.min.css"') ?>" rel="stylesheet" />
     <link href="<?= base_url('Resources/css/MaterialKitPro.min.css') ?>" rel="stylesheet"/>
+		<link href="<?= base_url('Resources/css/flag-icon.min.css') ?>" rel="stylesheet"/>
 </head>
 
 <body class="pricing">
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId            : 'your-app-id',
-      autoLogAppEvents : true,
-      xfbml            : true,
-      version          : 'v2.9'
-    });
-    FB.AppEvents.logPageView();
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
 
 	<nav class="navbar navbar-default navbar-transparent navbar-fixed-top navbar-color-on-scroll" color-on-scroll="100">
 	  <div class="container">
@@ -130,6 +112,7 @@
 							<div class="row">
 								<div class="col-md-8 col-md-offset-2 text-center">
 									<h1 class="title"><?= $Enunciado ?></h1>
+									<img src="<?= base_url('/Resources/images/ZicaroPapel/Slide1.jpg'); ?>" alt="">
 								</div>
 							</div>
 						</div>
@@ -142,6 +125,7 @@
 							<div class="row">
 								<div class="col-md-8 col-md-offset-2 text-right">
 									<h1 class="title"><?= $Enunciado ?></h1>
+									<img src="<?= base_url('/Resources/images/ZicaroPapel/Slide2.jpg'); ?>" alt="">
 								</div>
 							</div>
 						</div>
@@ -208,8 +192,13 @@
 
 			<ul class="pull-center">
 				<li>
-					<a href="<?= site_url('/Zicaro/Contacto') ?>">
-						Contáctanos
+					<a href="https://www.fairtrade.net/">
+						<img width="80px" src="<?= base_url('/Resources/images/ZicaroPapel/FairTrade.png'); ?>">
+					</a>
+				</li>
+				<li>
+					<a href="https://simple.ripley.cl/tienda/zicaropapel-2244">
+						<img width="80px" src="<?= base_url('/Resources/images/ZicaroPapel/MercadoRipley.png'); ?>">
 					</a>
 				</li>
 			</ul>

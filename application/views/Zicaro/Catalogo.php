@@ -37,6 +37,7 @@
                     <h6 class="category text-rose"> <span><i class="fa fa-dollar"></i></span> <?= $value->get('PROD_PRECIO'); ?></h6>
                     <h4 class="card-title">
                     <?= $value->get('PROD_NOMBRE'); ?>
+                    <span class="label label-default pull-right"><span class="flag-icon flag-icon-cl"></span> CL</span>
                     </h4>
                 </div>
               </div>

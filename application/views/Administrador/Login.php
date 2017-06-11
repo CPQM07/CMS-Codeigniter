@@ -30,8 +30,8 @@
 													<form action="<?=site_url('Login/Login')?>" method="POST">
                                 <div class="card card-login card-hidden">
                                     <div class="card-header text-center" data-background-color="orange">
-                                        <h4 class="card-title">Bienvenido</h4>
-																				<img src="<?= base_url('Resources/images/ZicaroPapel/LogoZicaroTransparent.png') ?>" width="80px" alt="">
+                                        <h4 class="card-title">Bienvenido</h4>																				
+																				<img width="80px" src="<?= base_url('Resources/images/ZicaroPapel/LogoZicaroTransparent.png') ?>">
 																				<?=(isset($error))? $error : ""; ?>
                                     </div>
                                     <div class="card-content">

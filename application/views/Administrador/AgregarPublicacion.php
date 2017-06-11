@@ -80,7 +80,7 @@
                               <h4 class="card-title">DESCRIPCION CORTA</h4>
                               <div class="form-group">
                                   <label class="label-control">Descripcion [ min: 20 caracteres ]</label>
-                                  <textarea name="PUB_DESC_C" class="form-control" minLength="20"  maxLength="200"></textarea>
+                                  <textarea name="PUB_DESC_C" class="form-control" minLength="20"></textarea>
                               </div>
                           </div>
                       </div>
@@ -91,20 +91,18 @@
           <div class="row">
                 <div class="col-sm-12">
                     <div class="card">
-                        <div class="card-header card-header-icon" data-background-color="purple">
-                            <i class="fa fa-align-center"></i>
-                        </div>
-                        <div class="card-content">
-                            <h4 class="card-title">DESCRIPCION LARGA</h4>
-                            <div class="form-group">
-                                <div id="toolbar"></div>
-                                <div id="PUB_DESC_L" class="editor"></div>
-                                <script type="text/javascript">
-                                  var PUB_DESC_L = $("PUB_DESC_L").html();
-                                  alert(PUB_DESC_L);
-                                </script>
-                            </div>
-                        </div>
+                      <div class="card">
+                          <div class="card-header card-header-icon" data-background-color="purple">
+                              <i class="fa fa-text-width"></i>
+                          </div>
+                          <div class="card-content">
+                              <h4 class="card-title">DESCRIPCION LARGA</h4>
+                              <div class="form-group">
+                                  <label class="label-control">Descripcion [ min: 20 caracteres ]</label>
+                                  <textarea name="PUB_DESC_L" class="form-control" minLength="20"></textarea>
+                              </div>
+                          </div>
+                      </div>
                     </div>
                   </div>
           </div>
