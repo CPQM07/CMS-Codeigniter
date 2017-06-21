@@ -1,4 +1,5 @@
 <div class="row">
+  <div class="col-md-9">
       <?php foreach ($Publicaciones as $key => $value): ?>
         <?php if ($value->get('PUB_ESTADO') == 1): ?>
           <div class="col-md-6">
@@ -33,4 +34,9 @@
           </div>
         <?php endif; ?>
       <?php endforeach; ?>
+    </div>
+  <div class="col-md-3">
+    <a class="twitter-timeline" data-height="2000px" data-dnt="true" data-theme="light" data-link-color="#981CEB" href="https://twitter.com/zicaropapel">Zicaropapel</a>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
 </div>

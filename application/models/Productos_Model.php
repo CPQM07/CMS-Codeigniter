@@ -76,7 +76,13 @@ public function findById($id){
   public function setColumns ($row = null){
     foreach ($row as $key => $value) {
       $this->columns[$key] = $value;
-      }
     }
+  }
+
+  public function countAll($Categoria = null){
+    if ($Categoria!= null) $this->db->where('PROD_CAT_ID',$Categoria);
+    $result = $this->db->count_all('PRODUCTOS');
+    return intval($result);
+  }
 
 }

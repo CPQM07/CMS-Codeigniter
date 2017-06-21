@@ -192,42 +192,88 @@
 		</div>
 	</div>
 
-	<footer class="footer footer-black">
+	<footer class="footer footer-black footer-big">
 		<div class="container">
-			<a class="footer-brand" href="">ZICARO PAPEL</a>
+
+			<div class="content">
+				<div class="row">
+					<div class="col-md-4">
+						<h5>ZICARO PAPEL</h5>
+						<p></p>
+					</div>
+
+					<div class="col-md-4">
+						<ul class="social-buttons pull-right">
+							<li>
+								<a href="https://www.fairtrade.net/">
+									<img width="80px" src="<?= base_url('/Resources/images/ZicaroPapel/FairTrade.png'); ?>">
+								</a>
+							</li>
+							<li>
+								<a href="https://simple.ripley.cl/tienda/zicaropapel-2244">
+									<img width="80px" src="<?= base_url('/Resources/images/ZicaroPapel/MercadoRipley.png'); ?>">
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="col-md-4">
+						<ul class="social-buttons pull-right">
+							<li>
+								<a href="https://twitter.com/zicaropapel" target="_blank" class="btn btn-just-icon btn-simple">
+									<i class="fa fa-twitter"></i>
+								</a>
+							</li>
+							<li>
+								<a href="https://www.facebook.com/zicaro.papel" target="_blank" class="btn btn-just-icon btn-simple">
+									<i class="fa fa-facebook-square"></i>
+								</a>
+							</li>
+							<li>
+								<a href="" target="_blank" class="btn btn-just-icon btn-simple">
+									<i class="fa fa-mail"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
 
 
-			<ul class="pull-center">
+			<hr />
+
+			<ul class="pull-left">
 				<li>
-					<a href="https://www.fairtrade.net/">
-						<img width="80px" src="<?= base_url('/Resources/images/ZicaroPapel/FairTrade.png'); ?>">
+					<a href="<?= site_url('/Zicaro/Inicio') ?>">
+					<i class='fa fa-home'></i> INICIO
 					</a>
 				</li>
 				<li>
-					<a href="https://simple.ripley.cl/tienda/zicaropapel-2244">
-						<img width="80px" src="<?= base_url('/Resources/images/ZicaroPapel/MercadoRipley.png'); ?>">
+					<a href="<?= site_url('/Zicaro/QuienesSomos') ?>">
+					<i class='fa fa-star-o'></i> QUIENES SOMOS
+					</a>
+				</li>
+				<li>
+					<a href="<?= site_url('/Zicaro/Catalogo') ?>">
+					<i class='fa fa-tags'></i> CATÁLOGO
+					</a>
+				</li>
+				<li>
+					<a href="<?= site_url('/Zicaro/Publicaciones') ?>">
+					<i class='fa fa-newspaper-o'></i> PUBLICACIONES
+					</a>
+				</li>
+				<li>
+					<a href="<?= site_url('/Zicaro/Contacto') ?>">
+					<i class='fa fa-comment-o'></i> CONTACTO
 					</a>
 				</li>
 			</ul>
 
-			<ul class="social-buttons pull-right">
-				<li>
-					<a href="https://twitter.com/zicaropapel" target="_blank" class="btn btn-just-icon btn-simple">
-						<i class="fa fa-twitter"></i>
-					</a>
-				</li>
-				<li>
-					<a href="https://www.facebook.com/zicaro.papel" target="_blank" class="btn btn-just-icon btn-simple">
-						<i class="fa fa-facebook-square"></i>
-					</a>
-				</li>
-				<li>
-					<a href="" target="_blank" class="btn btn-just-icon btn-simple">
-						<i class="fa fa-mail"></i>
-					</a>
-				</li>
-			</ul>
-
+			<div class="copyright pull-right">
+				<a href="https://github.com/CPQM07"><i class="fa fa-github"></i>   </a><a href="https://www.linkedin.com/in/christopher-quezada-409308124/"><i class="fa fa-linkedin"></i></a>    CPQM07  - <script>document.write(new Date().getFullYear())</script>
+			</div>
 		</div>
 	</footer>
 

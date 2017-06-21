@@ -26,7 +26,7 @@
       <div class="row">
         <?php foreach ($Productos as $key => $value): ?>
           <?php if ($value->get('PROD_ESTADO') == 1): ?>
-            <div class="col-sm-6">
+            <div class="col-sm-4">
               <div class="card card-blog">
                 <div class="card-image">
                   <img src="<?= base_url("Resources/images/Productos/").$value->get('PROD_IMAGEN').".jpg" ?>" alt="">
@@ -44,6 +44,7 @@
           <?php endif; ?>
           <?php endforeach; ?>
       </div>
+      <?= $Paginacion ?>
     </div>
 
   </div>

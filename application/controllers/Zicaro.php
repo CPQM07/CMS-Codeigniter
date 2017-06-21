@@ -68,8 +68,21 @@ class Zicaro extends CI_Controller{
 
   function Catalogo()
   {
+    $config['base_url'] = base_url("index.php/Zicaro/Catalogo/");
+    $config['total_rows'] = $this->Productos->countAll(null);
+    $config['per_page'] = 6;
+    $config['uri_segment'] = 3;
+    $config['num_links'] = 5;
+    $config['use_page_numbers'] = TRUE;
+    $config['firts_url'] = base_url("index.php/Zicaro/Catalogo/");
+
+    $this->pagination->initialize($config);
+
+    $datos['Paginacion'] = $this->pagination->create_links();
+
     $datos['Productos'] = $this->Productos->findAll();
     $datos['Categorias'] = $this->Categorias->findAll();
+
     $datos['TipeView'] = "NOTICE";
     $datos['Enunciado'] = "CATALOGO";
     $this->layout->view('/Zicaro/Catalogo', $datos, false);
