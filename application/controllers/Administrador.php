@@ -67,36 +67,63 @@ class Administrador extends CI_Controller{
     $this->layout->view('/Administrador/Productos', $datos);
   }
 
+  function AgregarProducto()
+  {
+    $datos['Categorias'] = $this->Categorias->findAll();
+    $this->layout->view('/Administrador/AgregarProducto', $datos);
+  }
+
+  function Mensajes()
+  {
+    $this->layout->view('/Administrador/Mensajes');
+  }
+
   public function NuevoProducto(){
-          $config['upload_path']          = './Resources/images/Productos/';
-          $config['allowed_types']        = 'gif|jpg|png';
-          $config['file_name']            = 'PROD_';
-          $config['remove_spaces']        = true;
-          $config['max_size']             = 3000;
 
-          $this->load->library('upload', $config);
+    $this->form_validation->set_rules('PROD_NOMBRE','Nombre','trim|required|min_length[3]|alpha');
+    $this->form_validation->set_rules('PROD_PRECIO','Precio','trim|required|numeric');
+    $this->form_validation->set_rules('PROD_DESC','Descripcion','trim|required|min_length[3]|max_length[200]');
 
-          if ( ! $this->upload->do_upload('PROD_IMAGEN'))
-          {
-            $error = array('error' => $this->upload->display_errors());
-            $this->layout->view('/Administrador/Productos', $error );
-          }
-          else
-          {
-            $Imagen = array('upload_data' => $this->upload->data());
-            $data = $this->Productos->create(array(
-              'PROD_ID' => 0,
-              'PROD_NOMBRE' => $_POST['PROD_NOMBRE'],
-              'PROD_DESC' => $_POST['PROD_DESC'],
-              'PROD_PRECIO' => $_POST['PROD_PRECIO'],
-              'PROD_IMAGEN' => $Imagen['upload_data']['raw_name'],
-              'PROD_CAT_ID' => $_POST['PROD_CAT_ID'],
-              'PROD_ESTADO' => $_POST['PROD_ESTADO']
-              )
-            );
-            $data->insert();
-            $this->layout->view('/Administrador/Productos');
-          }
+    if ($this->form_validation->run() == FALSE) {
+      $datos['Categorias'] = $this->Categorias->findAll();
+      $this->layout->view('/Administrador/AgregarProducto', $datos);
+    } else {
+      $config['upload_path']          = './Resources/images/Productos/';
+      $config['allowed_types']        = 'gif|jpg|png';
+      $config['file_name']            = 'PROD_';
+      $config['remove_spaces']        = true;
+      $config['max_size']             = 5000;
+
+      $this->load->library('upload', $config);
+
+      if ( ! $this->upload->do_upload('PROD_IMAGEN'))
+      {
+        $datos['Mensaje'] = "Hey!:(";
+        $datos['Descripcion'] = "El Producto No Fue Ingresado".$this->upload->display_errors();
+        $datos['Ir'] = "AgregarProducto";
+        $this->layout->view('/Administrador/Mensajes', $datos );
+      }
+      else
+      {
+        $Imagen = array('upload_data' => $this->upload->data());
+        $data = $this->Productos->create(array(
+          'PROD_ID' => 0,
+          'PROD_NOMBRE' => $_POST['PROD_NOMBRE'],
+          'PROD_DESC' => $_POST['PROD_DESC'],
+          'PROD_PRECIO' => $_POST['PROD_PRECIO'],
+          'PROD_IMAGEN' => $Imagen['upload_data']['raw_name'],
+          'PROD_CAT_ID' => $_POST['PROD_CAT_ID'],
+          'PROD_ESTADO' => $_POST['PROD_ESTADO']
+          )
+        );
+        $data->insert();
+
+        $datos['Mensaje'] = "Hey!:)";
+        $datos['Descripcion'] = "El Producto Fue Ingresado Exitosamente";
+        $datos['Ir'] = "Productos";
+        $this->layout->view('/Administrador/Mensajes', $datos);
+      }
+    }
   }
   //Fin Productos
 
@@ -134,37 +161,56 @@ class Administrador extends CI_Controller{
   }
 
   public function NuevaPublicacion(){
-          $config['upload_path']          = './Resources/images/Publicaciones/';
-          $config['allowed_types']        = 'gif|jpg|png';
-          $config['file_name']            = 'PUB_';
-          $config['remove_spaces']        = true;
-          $config['max_size']             = 3000;
 
-          $this->load->library('upload', $config);
+    $this->form_validation->set_rules('PUB_TITULO','TITULO','trim|required|min_length[3]');
+    $this->form_validation->set_rules('PUB_FECHA','FECHA','required');
+    $this->form_validation->set_rules('PUB_UBICACION','UBICACION','trim|required');
+    $this->form_validation->set_rules('PUB_DESC_C','DESCRIPCION CORTA','trim|required');
+    $this->form_validation->set_rules('PUB_DESC_L','DESCRIPCION LARGA','trim|required');
+    $this->form_validation->set_rules('PUB_AUTOR','AUTOR','trim|required');
+    $this->form_validation->set_rules('PUB_ESTADO','ESTADO','required');
 
-          if ( ! $this->upload->do_upload('PUB_IMAGEN'))
-          {
-            $error = array('error' => $this->upload->display_errors());
-            $this->layout->view('/Administrador/Publicaciones', $error );
-          }
-          else
-          {
-            $Imagen = array('upload_data' => $this->upload->data());
-            $data = $this->Publicaciones->create(array(
-              'PUB_ID' => 0,
-              'PUB_TITULO' => $_POST['PUB_TITULO'],
-              'PUB_FECHA' => $_POST['PUB_FECHA'],
-              'PUB_UBICACION' => $_POST['PUB_UBICACION'],
-              'PUB_DESC_C' => $_POST['PUB_DESC_C'],
-              'PUB_DESC_L' => $_POST['PUB_DESC_L'],
-              'PUB_AUTOR' => $_POST['PUB_AUTOR'],
-              'PUB_IMAGEN' => $Imagen['upload_data']['raw_name'],
-              'PUB_ESTADO' => $_POST['PUB_ESTADO']
-              )
-            );
-            $data->insert();
-            $this->layout->view('/Administrador/Publicaciones');
-          }
+    if ($this->form_validation->run() == FALSE) {
+      $this->layout->view('/Administrador/AgregarPublicacion');
+    } else {
+      $config['upload_path']          = './Resources/images/Publicaciones/';
+      $config['allowed_types']        = 'gif|jpg|png';
+      $config['file_name']            = 'PUB_';
+      $config['remove_spaces']        = true;
+      $config['max_size']             = 5000;
+
+      $this->load->library('upload', $config);
+
+      if ( ! $this->upload->do_upload('PUB_IMAGEN'))
+      {
+        $datos['Mensaje'] = "Hey!:(";
+        $datos['Descripcion'] = "La Publicacion No Fue Ingresada".$this->upload->display_errors();
+        $datos['Ir'] = "AgregarPublicacion";
+        $this->layout->view('/Administrador/Mensajes', $datos );
+      }
+      else
+      {
+        $Imagen = array('upload_data' => $this->upload->data());
+        $data = $this->Publicaciones->create(array(
+          'PUB_ID' => 0,
+          'PUB_TITULO' => $_POST['PUB_TITULO'],
+          'PUB_FECHA' => $_POST['PUB_FECHA'],
+          'PUB_UBICACION' => $_POST['PUB_UBICACION'],
+          'PUB_DESC_C' => $_POST['PUB_DESC_C'],
+          'PUB_DESC_L' => $_POST['PUB_DESC_L'],
+          'PUB_AUTOR' => $_POST['PUB_AUTOR'],
+          'PUB_IMAGEN' => $Imagen['upload_data']['raw_name'],
+          'PUB_ESTADO' => $_POST['PUB_ESTADO']
+          )
+        );
+        $data->insert();
+
+        $datos['Mensaje'] = "Hey!:)";
+        $datos['Descripcion'] = "La Publicacion Fue Ingresada Exitosamente";
+        $datos['Ir'] = "Publicaciones";
+        $this->layout->view('/Administrador/Mensajes', $datos);
+      }
+    }
   }
   //Fin Publicaciones
 

@@ -20,6 +20,15 @@
 		<link href="<?= base_url('Resources/css/flag-icon.min.css') ?>" rel="stylesheet"/>
 </head>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.9";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <body class="pricing">
 
 	<nav class="navbar navbar-default navbar-transparent navbar-fixed-top navbar-color-on-scroll" color-on-scroll="100">
@@ -107,12 +116,11 @@
 				</div>
 
 				<div class="item">
-					<div class="page-header header-filter" style="background-image: url('<?= base_url("Resources/images/ZicaroPapel/Background.jpg") ?>');">
+					<div class="page-header header-filter" style="background-image: url('<?= base_url("Resources/images/ZicaroPapel/Slide3.png") ?>');">
 						<div class="container">
 							<div class="row">
 								<div class="col-md-8 col-md-offset-2 text-center">
 									<h1 class="title"><?= $Enunciado ?></h1>
-									<img src="<?= base_url('/Resources/images/ZicaroPapel/Slide1.jpg'); ?>" alt="">
 								</div>
 							</div>
 						</div>
@@ -120,12 +128,11 @@
 				</div>
 
 				<div class="item">
-					<div class="page-header header-filter" style="background-image: url('<?= base_url("Resources/images/ZicaroPapel/Background.jpg") ?>');">
+					<div class="page-header header-filter" style="background-image: url('<?= base_url("Resources/images/ZicaroPapel/Slide4.png") ?>');">
 						<div class="container">
 							<div class="row">
 								<div class="col-md-8 col-md-offset-2 text-right">
 									<h1 class="title"><?= $Enunciado ?></h1>
-									<img src="<?= base_url('/Resources/images/ZicaroPapel/Slide2.jpg'); ?>" alt="">
 								</div>
 							</div>
 						</div>
