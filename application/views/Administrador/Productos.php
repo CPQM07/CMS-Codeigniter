@@ -32,7 +32,7 @@
                         <th>PRECIO</th>
                         <th>CATEGORIA</th>
                         <th>VISIBILIDAD</th>
-                        <th class="text-right">ACCIONES</th>
+                        <!--<th class="text-right">ACCIONES</th>-->
                     </tr>
                 </tfoot>
                 <tbody>
@@ -49,10 +49,10 @@
                           <td><a href="<?= site_url('/Administrador/CambiarEstado/2/');?><?=$value->get('PROD_ID');?>" class="btn btn-warning"><i class="fa fa-eye-slash"></i></a></td>
                           <?php endif; ?>
 
-                          <td class="text-right">
+                          <!--<td class="text-right">
                               <a href="#" class="btn btn-simple btn-info btn-icon like"><i class="fa fa-eye"></i></a>
                               <a href="#" class="btn btn-simple btn-warning btn-icon edit"><i class="fa fa-pencil"></i></a>
-                          </td>
+                          </td>-->
                       </tr>
                     <?php endforeach; ?>
                 </tbody>

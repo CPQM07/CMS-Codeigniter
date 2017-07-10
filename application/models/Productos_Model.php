@@ -65,11 +65,21 @@ public function findAll(){
 public function findById($id){
    $result = null;
    $this->db->where('PROD_ID',$id);
-   $consulta = $this->db->get('usuario');
+   $consulta = $this->db->get('PRODUCTOS');
    if($consulta->num_rows() == 1){
      $result = $this->create($consulta->row());
    }
 
+   return $result;
+ }
+
+ public function findByCat($id){
+   $result=array();
+   $consulta = $this->db->where('PROD_CAT_ID',$id);
+   $consulta = $this->db->get('PRODUCTOS');
+     foreach ($consulta->result() as $row) {
+     $result[] = $this->create($row);
+   }
    return $result;
  }
 
@@ -79,10 +89,20 @@ public function findById($id){
     }
   }
 
-  public function countAll($Categoria = null){
-    if ($Categoria!= null) $this->db->where('PROD_CAT_ID',$Categoria);
-    $result = $this->db->count_all('PRODUCTOS');
-    return intval($result);
+  public function Count_All()
+  {
+    $allPost = $this->db->query('SELECT count(*) AS number FROM PRODUCTOS')->row()->number;
+    return intval($allPost);
+  }
+
+  public function Get_Pagination($Por_Pagina)
+  {
+    $result=array();
+    $consulta = $this->db->get("PRODUCTOS", $Por_Pagina, $this->uri->segment(3));
+      foreach ($consulta->result() as $row) {
+      $result[] = $this->create($row);
+    }
+    return $result;
   }
 
 }

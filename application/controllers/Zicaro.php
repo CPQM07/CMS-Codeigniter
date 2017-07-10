@@ -68,24 +68,78 @@ class Zicaro extends CI_Controller{
 
   function Catalogo()
   {
-    $config['base_url'] = base_url("index.php/Zicaro/Catalogo/");
-    $config['total_rows'] = $this->Productos->countAll(null);
-    $config['per_page'] = 6;
-    $config['uri_segment'] = 3;
-    $config['num_links'] = 5;
-    $config['use_page_numbers'] = TRUE;
-    $config['firts_url'] = base_url("index.php/Zicaro/Catalogo/");
+      $config['base_url'] = base_url('index.php/Zicaro/Catalogo/');
+      $config['total_rows'] = $this->Productos->Count_All();
+      $config['per_page'] = 6;
+      $config['uri_segment'] = 3;
+      $config['num_links'] = 5;
+      //ESTILOS
+      $config['full_tag_open'] = '<ul class="pagination">';
+      $config['full_tag_close'] = '</ul>';
+      $config['first_link'] = false;
+      $config['last_link'] = false;
+      $config['first_tag_open'] = '<li>';
+      $config['first_tag_close'] = '</li>';
+      $config['prev_link'] = '&laquo';
+      $config['prev_tag_open'] = '<li class="prev">';
+      $config['prev_tag_close'] = '</li>';
+      $config['next_link'] = '&raquo';
+      $config['next_tag_open'] = '<li>';
+      $config['next_tag_close'] = '</li>';
+      $config['last_tag_open'] = '<li>';
+      $config['last_tag_close'] = '</li>';
+      $config['cur_tag_open'] = '<li class="active"><a href="#">';
+      $config['cur_tag_close'] = '</a></li>';
+      $config['num_tag_open'] = '<li>';
+      $config['num_tag_close'] = '</li>';
+      //FIN ESTILOS
+      $this->pagination->initialize($config);
 
-    $this->pagination->initialize($config);
+      $datos['Productos'] = $this->Productos->Get_Pagination($config['per_page']);
+      $datos['Categorias'] = $this->Categorias->findAll();
+      $datos['Paginacion'] = $this->pagination->create_links();
+      $datos['TipeView'] = "NOTICE";
+      $datos['Enunciado'] = "CATÁLOGO";
 
-    $datos['Paginacion'] = $this->pagination->create_links();
+      $this->layout->view('/Zicaro/Catalogo', $datos, false);
+  }
 
-    $datos['Productos'] = $this->Productos->findAll();
-    $datos['Categorias'] = $this->Categorias->findAll();
+  function Categorias($id)
+  {
+      $config['base_url'] = base_url('index.php/Zicaro/Catalogo/');
+      $config['total_rows'] = $this->Productos->Count_All();
+      $config['per_page'] = 6;
+      $config['uri_segment'] = 3;
+      $config['num_links'] = 5;
+      //ESTILOS
+      $config['full_tag_open'] = '<ul class="pagination">';
+      $config['full_tag_close'] = '</ul>';
+      $config['first_link'] = false;
+      $config['last_link'] = false;
+      $config['first_tag_open'] = '<li>';
+      $config['first_tag_close'] = '</li>';
+      $config['prev_link'] = '&laquo';
+      $config['prev_tag_open'] = '<li class="prev">';
+      $config['prev_tag_close'] = '</li>';
+      $config['next_link'] = '&raquo';
+      $config['next_tag_open'] = '<li>';
+      $config['next_tag_close'] = '</li>';
+      $config['last_tag_open'] = '<li>';
+      $config['last_tag_close'] = '</li>';
+      $config['cur_tag_open'] = '<li class="active"><a href="#">';
+      $config['cur_tag_close'] = '</a></li>';
+      $config['num_tag_open'] = '<li>';
+      $config['num_tag_close'] = '</li>';
+      //FIN ESTILOS
+      $this->pagination->initialize($config);
 
-    $datos['TipeView'] = "NOTICE";
-    $datos['Enunciado'] = "CATALOGO";
-    $this->layout->view('/Zicaro/Catalogo', $datos, false);
+      $datos['Productos'] = $this->Productos->findByCat($id);
+      $datos['Categorias'] = $this->Categorias->findAll();
+      $datos['Paginacion'] = $this->pagination->create_links();
+      $datos['TipeView'] = "NOTICE";
+      $datos['Enunciado'] = "CATÁLOGO";
+
+      $this->layout->view('/Zicaro/Catalogo', $datos, false);
   }
 
   function Publicaciones()
