@@ -111,11 +111,12 @@ class Administrador extends CI_Controller{
           'PROD_NOMBRE' => $_POST['PROD_NOMBRE'],
           'PROD_DESC' => $_POST['PROD_DESC'],
           'PROD_PRECIO' => $_POST['PROD_PRECIO'],
-          'PROD_IMAGEN' => $Imagen['upload_data']['raw_name'],
+          'PROD_IMAGEN' => $Imagen['upload_data']['file_name'],
           'PROD_CAT_ID' => $_POST['PROD_CAT_ID'],
           'PROD_ESTADO' => $_POST['PROD_ESTADO']
           )
         );
+        //var_dump($Imagen);die();
         $data->insert();
 
         $datos['Mensaje'] = "Hey!:)";
@@ -199,7 +200,7 @@ class Administrador extends CI_Controller{
           'PUB_DESC_C' => $_POST['PUB_DESC_C'],
           'PUB_DESC_L' => $_POST['PUB_DESC_L'],
           'PUB_AUTOR' => $_POST['PUB_AUTOR'],
-          'PUB_IMAGEN' => $Imagen['upload_data']['raw_name'],
+          'PUB_IMAGEN' => $Imagen['upload_data']['file_name'],
           'PUB_ESTADO' => $_POST['PUB_ESTADO']
           )
         );
@@ -221,6 +222,51 @@ class Administrador extends CI_Controller{
     $datos['URL'] = "Usuarios";
     $this->layout->view('/Administrador/Usuarios', $datos);
   }
+
+  function AgregarUsuario()
+  {
+    $datos['URL'] = "Usuarios";
+    $this->layout->view('/Administrador/AgregarUsuario', $datos);
+  }
+
+  public function NuevoUsuario(){
+
+    $this->form_validation->set_rules('USU_RUT','RUT','trim|required|min_length[7]|max_length[8]');
+    $this->form_validation->set_rules('USU_DV','DV','required|exact_length[1]');
+    $this->form_validation->set_rules('USU_TIPO','TIPO DE USUARIO','required');
+    $this->form_validation->set_rules('USU_NOMBRES','NOMBRES','trim|required');
+    $this->form_validation->set_rules('USU_APELLIDOS','APELLIDOS','trim|required');
+    $this->form_validation->set_rules('USU_EMAIL','CORREO ELECTRÓNICO','trim|required|valid_email');
+    $this->form_validation->set_rules('USU_TELEFONO','TELEFONO CONTACTO','trim|required');
+    $this->form_validation->set_rules('USU_CLAVE','CONTRASEÑA','trim|required');
+    $this->form_validation->set_rules('USU_CLAVE_2','CONFIRMAR CONTRASEÑA','trim|required|matches[USU_CLAVE]');
+    $this->form_validation->set_rules('USU_ESTADO','ESTADO','trim|required');
+
+    if ($this->form_validation->run() == FALSE) {
+      $this->layout->view('/Administrador/AgregarUsuario');
+    } else {
+        $data = $this->Usuarios->create(array(
+          'USU_ID' => 0,
+          'USU_RUT' => $_POST['USU_RUT'],
+          'USU_DV' => $_POST['USU_DV'],
+          'USU_TIPO' => $_POST['USU_TIPO'],
+          'USU_NOMBRES' => $_POST['USU_NOMBRES'],
+          'USU_APELLIDOS' => $_POST['USU_APELLIDOS'],
+          'USU_EMAIL' => $_POST['USU_EMAIL'],
+          'USU_TELEFONO' => $_POST['USU_TELEFONO'],
+          'USU_CLAVE' => $_POST['USU_CLAVE'],
+          'USU_ESTADO' => $_POST['USU_ESTADO']
+          )
+        );
+        $data->insert();
+
+        $datos['Mensaje'] = "Hey!:)";
+        $datos['Descripcion'] = "El Usuario Fue Ingresado Exitosamente";
+        $datos['Ir'] = "Usuarios";
+        $this->layout->view('/Administrador/Mensajes', $datos);
+    }
+  }
+
   //Fin Usuarios
 
 }

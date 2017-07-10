@@ -9,8 +9,10 @@ parent::__construct();
 }
 
 private  $_columns  =  array(
+'USU_ID' => 0,
 'USU_RUT' => 0,
 'USU_DV' => 0,
+'USU_TIPO' => 1,
 'USU_NOMBRES' => '',
 'USU_APELLIDOS' => '',
 'USU_EMAIL' => '',

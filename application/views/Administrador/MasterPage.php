@@ -67,13 +67,15 @@
 											<p>PUBLICACIONES</p>
 										</a>
 									</li>
-
+									
+									<?php if ($usuario["tipo"] == 0): ?>
 									<li <?php if (isset($URL) && $URL == "Usuarios") : ?> class="active" <?php endif ?>>
 										<a href="<?= site_url('/Administrador/Usuarios'); ?>">
 											<i class="fa fa-users"></i>
 											<p>USUARIOS</p>
 										</a>
 									</li>
+									<?php endif; ?>
 
                 </ul>
             </div>

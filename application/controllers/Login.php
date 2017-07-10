@@ -53,6 +53,7 @@ class Login extends CI_Controller {
 				$sess_array = array(
 				  'rut' => $usuario->get('USU_RUT'),
 				  'dv' => $usuario->get('USU_DV'),
+					'tipo' => $usuario->get('USU_TIPO'),
 				  'nombres' => $usuario->get('USU_NOMBRES'),
 				  'apellidos' => $usuario->get('USU_APELLIDOS'),
 				  'correo' => $usuario->get('USU_EMAIL'),

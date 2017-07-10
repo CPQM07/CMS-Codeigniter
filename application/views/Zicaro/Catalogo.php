@@ -29,7 +29,7 @@
             <div class="col-sm-4">
               <div class="card card-blog">
                 <div class="card-image">
-                  <img src="<?= base_url("Resources/images/Productos/").$value->get('PROD_IMAGEN').".jpg" ?>" alt="">
+                  <img src="<?= base_url("Resources/images/Productos/").$value->get('PROD_IMAGEN') ?>" alt="">
                 </div>
 
                 <div class="card-content">

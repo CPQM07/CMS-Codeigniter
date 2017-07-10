@@ -6,7 +6,7 @@
             <div class="card card-blog">
               <div class="card-image">
                 <a href="<?= site_url('/Zicaro/PublicacionDetalle/'); ?><?= $value->get('PUB_ID'); ?>">
-                <img class="img" src="<?= base_url("Resources/images/Publicaciones/".$value->get('PUB_IMAGEN').".jpg") ?>" />
+                <img class="img" src="<?= base_url("Resources/images/Publicaciones/".$value->get('PUB_IMAGEN')) ?>" />
                 </a>
               </div>
               <div class="card-content">
