@@ -154,7 +154,7 @@
                         <script>
                             document.write(new Date().getFullYear())
                         </script>
-                        <a href="#"><span class="text-danger">CPQM07</span></a>
+                        <a href="https://www.linkedin.com/in/christopher-quezada-409308124/"><span class="text-danger">CPQM07</span></a>
                     </p>
                 </div>
             </footer>
@@ -243,28 +243,6 @@
 
 				});
 
-				var table = $('#datatables').DataTable();
-
-				// Edit record
-				table.on('click', '.edit', function() {
-						$tr = $(this).closest('tr');
-
-						var data = table.row($tr).data();
-						alert('You press on Row: ' + data[0] + ' ' + data[1] + ' ' + data[2] + '\'s row.');
-				});
-
-				// Delete a record
-				table.on('click', '.remove', function(e) {
-						$tr = $(this).closest('tr');
-						table.row($tr).remove().draw();
-						e.preventDefault();
-				});
-
-				//Like record
-				table.on('click', '.like', function() {
-						alert('You clicked on Like button');
-				});
-
 				$('.card .material-datatables label').addClass('form-group');
 				});
 </script>
@@ -294,36 +272,6 @@ $(function () {
         $(".notificacion").fadeOut(3000);
     },2000);
 });
-</script>
-
-<script type="text/javascript">
-var options = {
-  debug: 'info',
-  modules: {
-    toolbar: [
-		  ['bold', 'italic', 'underline', 'strike'],
-		  ['blockquote', 'code-block'],
-
-		  [{ 'header': 1 }, { 'header': 2 }],
-		  [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-		  [{ 'script': 'sub'}, { 'script': 'super' }],
-		  [{ 'indent': '-1'}, { 'indent': '+1' }],
-		  [{ 'direction': 'rtl' }],
-
-		  [{ 'size': ['small', false, 'large', 'huge'] }],
-		  [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-
-		  [{ 'color': [] }, { 'background': [] }],
-		  [{ 'font': [] }],
-		  [{ 'align': [] }],
-
-		  ['clean']
-		]
-  },
-  placeholder: 'Cuerpo de la Publicacion...',
-  theme: 'snow'
-};
-var editor = new Quill('.editor', options);
 </script>
 
 </html>
