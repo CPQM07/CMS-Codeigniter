@@ -49,7 +49,7 @@ class Administrador extends CI_Controller{
       redirect('/Administrador/Publicaciones');
     } elseif ($tipo == 7) {
       $this->session->set_flashdata('Deshabilitar', 'Se Deshabilitó Correctamente');
-      $this->Usuarios->update($id, array('USU_ESTADO' => 2));
+      $this->Usuarios->update($id, array('USU_ESTADO' => 0));
       redirect('/Administrador/Usuarios');
     } elseif ($tipo == 8) {
       $this->session->set_flashdata('Habilitar', 'Se Habilitó Correctamente');
@@ -254,7 +254,7 @@ class Administrador extends CI_Controller{
           'USU_APELLIDOS' => $_POST['USU_APELLIDOS'],
           'USU_EMAIL' => $_POST['USU_EMAIL'],
           'USU_TELEFONO' => $_POST['USU_TELEFONO'],
-          'USU_CLAVE' => $_POST['USU_CLAVE'],
+          'USU_CLAVE' => $_POST['USU_CLAVE_2'],
           'USU_ESTADO' => $_POST['USU_ESTADO']
           )
         );

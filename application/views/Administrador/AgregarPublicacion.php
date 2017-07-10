@@ -162,7 +162,7 @@
                                       </div>
                                       <div class="radio">
                                           <label>
-                                              <input type="radio" name="PUB_ESTADO" value="2"> OCULTO
+                                              <input type="radio" name="PUB_ESTADO" value="0"> OCULTO
                                           </label>
                                       </div>
                                   </div>

@@ -3,8 +3,9 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<link rel="shortcut icon" href="<?= base_url('Resources/images/ZicaroPapel/LogoZicaroTransparent.ico') ?>">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="theme-color" content="#4caf50">
 
 	<title>ZICARO PAPEL</title>
 	<meta name="theme-color" content="#00695C">

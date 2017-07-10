@@ -110,7 +110,7 @@
                                                   </div>
                                                   <div class="radio">
                                                       <label>
-                                                          <input type="radio" name="CAT[CAT_ESTADO]" value="2"> OCULTO
+                                                          <input type="radio" name="CAT[CAT_ESTADO]" value="0"> OCULTO
                                                       </label>
                                                   </div>
                                               </div>

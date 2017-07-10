@@ -4,6 +4,7 @@
 	<meta charset="utf-8" />
 	<link rel="shortcut icon" href="<?= base_url() ?>Resources/images/ZicaroPapel/LogoZicaroTransparent.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="theme-color" content="#8e24aa">
 
 	<title>ZICARO PAPEL - ADM</title>
 		<!-- Theme included stylesheets -->
@@ -67,7 +68,7 @@
 											<p>PUBLICACIONES</p>
 										</a>
 									</li>
-									
+
 									<?php if ($usuario["tipo"] == 0): ?>
 									<li <?php if (isset($URL) && $URL == "Usuarios") : ?> class="active" <?php endif ?>>
 										<a href="<?= site_url('/Administrador/Usuarios'); ?>">
