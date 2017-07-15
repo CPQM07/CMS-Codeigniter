@@ -40,18 +40,17 @@
                           <td><?= $value->get('PUB_ID'); ?></td>
                           <td><?= $value->get('PUB_TITULO'); ?></td>
                           <td><?= $value->get('PUB_FECHA'); ?></td>
-                          <td><?= $value->get('PUB_AUTOR'); ?></td>
+                          <td><?= $value->get('PUB_USU_ID'); ?></td>
 
                           <?php if ($value->get('PUB_ESTADO') == 1): ?>
-                          <td><a href="<?= site_url('/Administrador/CambiarEstado/5/');?><?=$value->get('PUB_ID');?>" class="btn btn-info"><i class="fa fa-eye"></i></a></td>
+                          <td><a href="<?= site_url('/Administrador/CambiarEstado/6/');?><?=$value->get('PUB_ID');?>" class="btn btn-info"><i class="fa fa-eye"></i></a></td>
                           <?php else: ?>
-                          <td><a href="<?= site_url('/Administrador/CambiarEstado/6/');?><?=$value->get('PUB_ID');?>" class="btn btn-warning"><i class="fa fa-eye-slash"></i></a></td>
+                          <td><a href="<?= site_url('/Administrador/CambiarEstado/5/');?><?=$value->get('PUB_ID');?>" class="btn btn-warning"><i class="fa fa-eye-slash"></i></a></td>
                           <?php endif; ?>
 
-                          <!--<td class="text-right">
-                              <a href="#" class="btn btn-simple btn-info btn-icon like"><i class="fa fa-eye"></i></a>
-                              <a href="#" class="btn btn-simple btn-warning btn-icon edit"><i class="fa fa-pencil"></i></a>
-                          </td>-->
+                          <td class="text-right">
+                              <a href="#" class="btn btn-warning btn-icon"><i class="fa fa-pencil"></i></a>
+                          </td>
                       </tr>
                     <?php endforeach; ?>
                 </tbody>

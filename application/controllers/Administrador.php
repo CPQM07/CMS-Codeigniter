@@ -178,6 +178,7 @@ class Administrador extends CI_Controller{
   function AgregarPublicacion()
   {
     $datos['URL'] = "Publicaciones";
+    $datos['Usuarios'] = $this->Usuarios->findAll();
     $this->layout->view('/Administrador/AgregarPublicacion', $datos);
   }
 
@@ -188,7 +189,7 @@ class Administrador extends CI_Controller{
     $this->form_validation->set_rules('PUB_UBICACION','UBICACION','trim|required');
     $this->form_validation->set_rules('PUB_DESC_C','DESCRIPCION CORTA','trim|required');
     $this->form_validation->set_rules('PUB_DESC_L','DESCRIPCION LARGA','trim|required');
-    $this->form_validation->set_rules('PUB_AUTOR','AUTOR','trim|required');
+    //$this->form_validation->set_rules('PUB_USU_ID','AUTOR','trim|required');
     $this->form_validation->set_rules('PUB_ESTADO','ESTADO','required');
 
     if ($this->form_validation->run() == FALSE) {
@@ -219,7 +220,7 @@ class Administrador extends CI_Controller{
           'PUB_UBICACION' => $_POST['PUB_UBICACION'],
           'PUB_DESC_C' => $_POST['PUB_DESC_C'],
           'PUB_DESC_L' => $_POST['PUB_DESC_L'],
-          'PUB_AUTOR' => $_POST['PUB_AUTOR'],
+          'PUB_USU_ID' => $_POST['PUB_USU_ID'],
           'PUB_IMAGEN' => $Imagen['upload_data']['file_name'],
           'PUB_ESTADO' => $_POST['PUB_ESTADO']
           )
@@ -256,6 +257,7 @@ class Administrador extends CI_Controller{
     $this->form_validation->set_rules('USU_TIPO','TIPO DE USUARIO','required');
     $this->form_validation->set_rules('USU_NOMBRES','NOMBRES','trim|required');
     $this->form_validation->set_rules('USU_APELLIDOS','APELLIDOS','trim|required');
+    $this->form_validation->set_rules('USU_BIO','BIOGRAFIA','trim');
     $this->form_validation->set_rules('USU_EMAIL','CORREO ELECTRÓNICO','trim|required|valid_email');
     $this->form_validation->set_rules('USU_TELEFONO','TELEFONO CONTACTO','trim|required');
     $this->form_validation->set_rules('USU_CLAVE','CONTRASEÑA','trim|required');
@@ -272,6 +274,7 @@ class Administrador extends CI_Controller{
           'USU_TIPO' => $_POST['USU_TIPO'],
           'USU_NOMBRES' => $_POST['USU_NOMBRES'],
           'USU_APELLIDOS' => $_POST['USU_APELLIDOS'],
+          'USU_BIO' => $_POST['USU_BIO'],
           'USU_EMAIL' => $_POST['USU_EMAIL'],
           'USU_TELEFONO' => $_POST['USU_TELEFONO'],
           'USU_CLAVE' => $_POST['USU_CLAVE_2'],
@@ -287,9 +290,9 @@ class Administrador extends CI_Controller{
     }
   }
 
-  function VerPerfil($RUT)
+  function VerPerfil($ID)
   {
-    $datos['Usuarios'] = $this->Usuarios->findById($RUT);
+    $datos['Usuarios'] = $this->Usuarios->findById($ID);
     $datos['URL'] = "Usuarios";
     $this->layout->view('/Administrador/Perfil', $datos);
   }

@@ -8,40 +8,62 @@
 				</em>
 			</p>
 			<small>
-				<?= $Detalles->get('PUB_AUTOR'); ?>
+				<?= $Detalles->get('USU_NOMBRES'); ?>
 			</small>
 		</blockquote>
 	</div>
 
 	<div class="section col-md-10 col-md-offset-1">
 		<div class="col-md-12">
-			<img class="img-rounded img-responsive img-raised" alt="<?= $Titulo ?>" src="<?= base_url("Resources/images/Publicaciones/".$Detalles->get('PUB_IMAGEN').".jpg") ?>">
+			<img class="img-rounded img-responsive img-raised" alt="<?= $Titulo ?>" src="<?= base_url("Resources/images/Publicaciones/".$Detalles->get('PUB_IMAGEN')) ?>">
 		</div>
 	</div>
 
 	<div class="section section-blog-info">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<div class="pull-right">
-					<div class="fb-share-button" data-href="http://zicaro.cl/index.php/Zicaro/PublicacionDetalle/<?= $Detalles->get('PUB_ID'); ?>" data-layout="box_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore"
-						target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fzicaro.cl%2Findex.php%2FZicaro%2FPublicacionDetalle%2F<?= $Detalles->get('PUB_ID'); ?>&amp;src=sdkpreparse">Compartir</a>
-					</div>
-				</div>
-				<div class="card card-profile">
-					<div class="row">
-						<div class="col-md-2">
-							<div class="card-avatar">
-									<img class="img" src="<?= base_url('Resources/images/ZicaroPapel/LogoZicaroTransparent.png') ?>">
-								<div class="ripple-container"></div>
-							</div>
-						</div>
-						<div class="col-md-8">
-							<h4 class="card-title">Autor: <?= $Detalles->get('PUB_AUTOR'); ?></h4>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+	<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+
+	<div class="row">
+	<div class="col-md-6">
+
+	</div>
+	<div class="col-md-6">
+	<a href="" class="btn btn-google btn-round pull-right">
+	<i class="fa fa-google"></i> 232
+	</a>
+	<a href="" class="btn btn-twitter btn-round pull-right">
+	<i class="fa fa-twitter"></i> 910
+	</a>
+	<a href="" class="btn btn-facebook btn-round pull-right">
+	<i class="fa fa-facebook-square"></i> 872
+	</a>
+
+	</div>
+	</div>
+
+	<hr />
+
+	<div class="card card-profile card-plain">
+	<div class="row">
+	<div class="col-md-2">
+	<div class="card-avatar">
+	<a href="">
+	<img class="img" src="<?= base_url('Resources/images/ZicaroPapel/LogoZicaroTransparent.png'); ?>">
+	</a>
+	<div class="ripple-container"></div></div>
+	</div>
+	<div class="col-md-8">
+	<h4 class="card-title"><?= $Detalles->get('USU_NOMBRES'); ?></h4>
+	<p class="description"><?= $Detalles->get('USU_BIO'); ?></p>
+	</div>
+	<div class="col-md-2">
+	<button type="button" class="btn btn-default pull-right btn-round">Seguir</button>
+	</div>
+	</div>
+	</div>
+
+	</div>
+	</div>
 	</div>
 
 	<div class="section section-comments">

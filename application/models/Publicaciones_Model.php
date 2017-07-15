@@ -15,7 +15,7 @@ private  $_columns  =  array(
 'PUB_UBICACION' => '',
 'PUB_DESC_C' => '',
 'PUB_DESC_L' => '',
-'PUB_AUTOR' => '',
+'PUB_USU_ID' => 0,
 'PUB_IMAGEN' => '',
 'PUB_ESTADO' => ''
 );
@@ -37,19 +37,19 @@ public function insert(){
 $this->db->insert('PUBLICACIONES',$this->_columns);
 }
 
-public function update($id, $data) {
-  $PUBLICACIONES = $this->db->get_where('PUBLICACIONES',array('PUB_ID'=>$id));
+public function update($ID, $data) {
+  $PUBLICACIONES = $this->db->get_where('PUBLICACIONES',array('PUB_ID'=>$ID));
   if($PUBLICACIONES->num_rows() > 0){
-    $this->db->where('PUB_ID', $id);
+    $this->db->where('PUB_ID', $ID);
     return $this->db->update('PUBLICACIONES', $data);
     }else{
-  $data['PUB_ID'] = $id;
+  $data['PUB_ID'] = $ID;
   return $this->db->insert('PUBLICACIONES',$data);
   }
 }
 
-public function delete($id){
-  $this->db->where('PUB_ID',$id);
+public function delete($ID){
+  $this->db->where('PUB_ID',$ID);
   return $this->db->delete('PUBLICACIONES');
 }
 
@@ -57,6 +57,7 @@ public function delete($id){
 public function findAll(){
   $result=array();
   $bit = null;
+  $consulta = $this->db->join('USUARIOS', 'USUARIOS.USU_ID = PUBLICACIONES.PUB_USU_ID');
   $consulta = $this->db->get('PUBLICACIONES');
     foreach ($consulta->result() as $row) {
     $result[] = $this->create($row);
@@ -67,7 +68,8 @@ public function findAll(){
 public function findById($ID){
    $result = null;
    $this->db->where('PUB_ID',$ID);
-     $consulta = $this->db->get('PUBLICACIONES');
+   $consulta = $this->db->join('USUARIOS', 'USUARIOS.USU_ID = PUBLICACIONES.PUB_USU_ID');
+   $consulta = $this->db->get('PUBLICACIONES');
    if($consulta->num_rows() == 1){
      $result = $this->create($consulta->row());
    }

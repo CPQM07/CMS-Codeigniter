@@ -43,6 +43,15 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="form-group label-floating">
+                            <label class="control-label">BIOGRAFIA</label>
+                              <textarea name="USU_BIO" rows="5" class="form-control" minLength="20"><?= $Usuarios->get('USU_BIO'); ?></textarea>
+                        </div>
+                      </div>
+                    </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group label-floating">

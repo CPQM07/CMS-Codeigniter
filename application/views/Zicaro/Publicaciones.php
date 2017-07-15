@@ -22,7 +22,7 @@
                   <div class="author">
                     <a href="<?= site_url('/Zicaro/PublicacionDetalle/'); ?><?= $value->get('PUB_ID'); ?>">
                     <img src="<?= base_url('Resources/images/ZicaroPapel/LogoZicaroTransparent.png'); ?>" class="avatar img-raised">
-                    <span><?= $value->get('PUB_AUTOR'); ?></span>
+                    <span><?= $value->get('USU_NOMBRES'); ?></span>
                     </a>
                   </div>
                   <div class="stats">
@@ -36,7 +36,7 @@
       <?php endforeach; ?>
     </div>
   <div class="col-md-3">
-    <a class="twitter-timeline" data-height="2000px" data-dnt="true" data-theme="light" data-link-color="#981CEB" href="https://twitter.com/zicaropapel">Zicaropapel</a>
+    <a class="twitter-timeline" data-height="1500px" data-dnt="true" data-theme="light" data-link-color="#981CEB" href="https://twitter.com/zicaropapel">Zicaropapel</a>
     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
 </div>

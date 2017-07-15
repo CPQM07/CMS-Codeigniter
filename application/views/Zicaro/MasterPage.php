@@ -169,7 +169,7 @@
 
 <?php else: ?>
 	<?php if ($TipeView == "PUB"): ?>
-		<div class="page-header header-filter header-small" style="background-image: url('<?= base_url("Resources/images/Publicaciones/".$Detalles->get('PUB_IMAGEN').".jpg") ?>');">
+		<div class="page-header header-filter header-small" style="background-image: url('<?= base_url("Resources/images/Publicaciones/".$Detalles->get('PUB_IMAGEN')) ?>');">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2">

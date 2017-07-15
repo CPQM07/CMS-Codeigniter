@@ -75,8 +75,13 @@
                           <div class="card-content">
                               <h4 class="card-title">AUTOR</h4>
                               <div class="form-group">
-                                  <label class="label-control">Ingrese Mombre del Autor del POST</label>
-                                  <input name="PUB_AUTOR" id="PUB_AUTOR" value="<?= set_value('PUB_AUTOR'); ?>" type="text" class="form-control"/>
+                                  <label class="label-control">Autor del POST</label>
+                                  <select class="selectpicker" name="PUB_USU_ID" id="PUB_USU_ID" data-style="select-with-transition" title="Single Select" data-size="7">
+                                    <option disabled selected>Seleccione Autor asociado</option>
+                                      <?php foreach ($Usuarios as $key => $value): ?>
+                                        <option value="<?= $value->get('USU_ID'); ?>"><?= $value->get('USU_NOMBRES'); ?></option>
+                                      <?php endforeach; ?>
+                                  </select>
                               </div>
                           </div>
                       </div>

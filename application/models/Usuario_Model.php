@@ -15,6 +15,7 @@ private  $_columns  =  array(
 'USU_TIPO' => 1,
 'USU_NOMBRES' => '',
 'USU_APELLIDOS' => '',
+'USU_BIO' => '',
 'USU_EMAIL' => '',
 'USU_TELEFONO' => 0,
 'USU_CLAVE' => '',
@@ -66,9 +67,9 @@ public function findAll(){
   return $result;
 }
 
- public function findById($RUT){
+ public function findById($ID){
     $result = null;
-    $this->db->where('USU_RUT',$RUT);
+    $this->db->where('USU_ID',$ID);
     $consulta = $this->db->get('USUARIOS');
     if($consulta->num_rows() == 1){
       $result = $this->create($consulta->row());

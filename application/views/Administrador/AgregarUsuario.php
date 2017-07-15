@@ -74,6 +74,17 @@
             </div>
 
             <div class="row">
+                <label class="col-sm-3 label-on-left">Biografia</label>
+                <div class="col-sm-9">
+                    <div class="form-group label-floating is-empty">
+                        <label class="control-label"></label>
+                        <textarea name="USU_BIO" id="USU_BIO" rows="5" class="form-control" minLength="20"><?= set_value('USU_BIO'); ?></textarea>
+                        <span class="help-block">Ingrese BIOGRAFIA nuevo Usuario</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
                 <label class="col-sm-3 label-on-left">Correo</label>
                 <div class="col-sm-9">
                     <div class="form-group label-floating is-empty">
