@@ -48,13 +48,12 @@
                         <p class="card-description">
                           Puedes compartir este producto con tus amigos...
                         </p>
-                        <a href="" class="btn btn-just-icon btn-round btn-white btn-twitter">
-                          <i class="fa fa-twitter"></i>
-                        </a>
 
-                        <a href="" class="btn btn-just-icon btn-round btn-white btn-facebook">
+                        <a data-href="http://ZicaroPapel.cl/index.php/Zicaro/Producto/<?= $value->get('PROD_ID'); ?>" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2FZicaroPapel.cl%2Findex.php%2FZicaro%2FProducto%2F<?= $value->get('PROD_ID'); ?>&amp;src=sdkpreparse"
+                        data-mobile-iframe="true" target="_blank" class="btn btn-just-icon btn-round btn-white btn-facebook">
                           <i class="fa fa-facebook"></i>
                         </a>
+
                       </div>
                     </div>
                   </div>
@@ -77,6 +76,7 @@
                 </div>
 
               </div>
+              <hr>
             </div>
           <?php endif; ?>
           <?php endforeach; ?>
