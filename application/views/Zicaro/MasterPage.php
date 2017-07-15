@@ -221,12 +221,12 @@
 					<div class="col-md-4">
 						<ul class="social-buttons pull-right">
 							<li>
-								<a href="https://www.fairtrade.net/">
+								<a href="https://www.fairtrade.net/" target="_blank">
 									<img width="80px" src="<?= base_url('/Resources/images/ZicaroPapel/FairTrade.png'); ?>">
 								</a>
 							</li>
 							<li>
-								<a href="https://simple.ripley.cl/tienda/zicaropapel-2244">
+								<a href="https://simple.ripley.cl/tienda/zicaropapel-2244" target="_blank">
 									<img width="80px" src="<?= base_url('/Resources/images/ZicaroPapel/MercadoRipley.png'); ?>">
 								</a>
 							</li>
