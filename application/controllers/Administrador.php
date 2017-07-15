@@ -78,9 +78,9 @@ class Administrador extends CI_Controller{
     $this->layout->view('/Administrador/Mensajes');
   }
 
-  public function NuevoProducto(){
+  function NuevoProducto(){
 
-    $this->form_validation->set_rules('PROD_NOMBRE','Nombre','trim|required|min_length[3]|alpha');
+    $this->form_validation->set_rules('PROD_NOMBRE','Nombre','trim|required|min_length[3]');
     $this->form_validation->set_rules('PROD_PRECIO','Precio','trim|required|numeric');
     $this->form_validation->set_rules('PROD_DESC','Descripcion','trim|required|min_length[3]|max_length[200]');
 
@@ -126,6 +126,26 @@ class Administrador extends CI_Controller{
       }
     }
   }
+
+  function EditarProducto($id){
+    $datos['Productos'] = $this->Productos->findById($id);
+    $datos['Categorias'] = $this->Categorias->findAll();
+    $this->layout->view('/Administrador/EditarProducto', $datos);
+  }
+
+  function ActualizarProducto($id){
+    $data = array(
+      'PROD_ID' => 0,
+      'PROD_NOMBRE' => $_POST['PROD_NOMBRE'],
+      'PROD_DESC' => $_POST['PROD_DESC'],
+      'PROD_PRECIO' => $_POST['PROD_PRECIO'],
+      'PROD_CAT_ID' => $_POST['PROD_CAT_ID'],
+      'PROD_ESTADO' => $_POST['PROD_ESTADO']
+    );
+    //var_dump($Imagen);die();
+    $data->update();
+  }
+
   //Fin Productos
 
   //Inicio Categorias
@@ -161,7 +181,7 @@ class Administrador extends CI_Controller{
     $this->layout->view('/Administrador/AgregarPublicacion', $datos);
   }
 
-  public function NuevaPublicacion(){
+  function NuevaPublicacion(){
 
     $this->form_validation->set_rules('PUB_TITULO','TITULO','trim|required|min_length[3]');
     $this->form_validation->set_rules('PUB_FECHA','FECHA','required');
@@ -229,7 +249,7 @@ class Administrador extends CI_Controller{
     $this->layout->view('/Administrador/AgregarUsuario', $datos);
   }
 
-  public function NuevoUsuario(){
+  function NuevoUsuario(){
 
     $this->form_validation->set_rules('USU_RUT','RUT','trim|required|min_length[7]|max_length[8]');
     $this->form_validation->set_rules('USU_DV','DV','required|exact_length[1]');
@@ -265,6 +285,13 @@ class Administrador extends CI_Controller{
         $datos['Ir'] = "Usuarios";
         $this->layout->view('/Administrador/Mensajes', $datos);
     }
+  }
+
+  function VerPerfil($RUT)
+  {
+    $datos['Usuarios'] = $this->Usuarios->findById($RUT);
+    $datos['URL'] = "Usuarios";
+    $this->layout->view('/Administrador/Perfil', $datos);
   }
 
   //Fin Usuarios

@@ -66,9 +66,9 @@ public function findAll(){
   return $result;
 }
 
- public function findById($id){
+ public function findById($RUT){
     $result = null;
-    $this->db->where('USU_RUT',$id);
+    $this->db->where('USU_RUT',$RUT);
     $consulta = $this->db->get('USUARIOS');
     if($consulta->num_rows() == 1){
       $result = $this->create($consulta->row());

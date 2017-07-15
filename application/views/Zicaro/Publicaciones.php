@@ -21,7 +21,7 @@
                 <div class="footer">
                   <div class="author">
                     <a href="<?= site_url('/Zicaro/PublicacionDetalle/'); ?><?= $value->get('PUB_ID'); ?>">
-                    <img src="<?= base_url('Resources/images/ZicaroPapel/LogoZicaroTransparent.png'); ?>" alt="..." class="avatar img-raised">
+                    <img src="<?= base_url('Resources/images/ZicaroPapel/LogoZicaroTransparent.png'); ?>" class="avatar img-raised">
                     <span><?= $value->get('PUB_AUTOR'); ?></span>
                     </a>
                   </div>

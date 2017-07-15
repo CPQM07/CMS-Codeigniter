@@ -62,9 +62,22 @@ public function findAll(){
   return $result;
 }
 
+public function findInterested(){
+  $result=array();
+  $consulta = $this->db->join('CATEGORIAS', 'CATEGORIAS.CAT_ID = PRODUCTOS.PROD_CAT_ID');
+  $consulta = $this->db->order_by('rand()');
+  $consulta = $this->db->limit(4);
+  $consulta = $this->db->get('PRODUCTOS');
+    foreach ($consulta->result() as $row) {
+    $result[] = $this->create($row);
+  }
+  return $result;
+}
+
 public function findById($id){
    $result = null;
    $this->db->where('PROD_ID',$id);
+   $consulta = $this->db->join('CATEGORIAS', 'CATEGORIAS.CAT_ID = PRODUCTOS.PROD_CAT_ID');
    $consulta = $this->db->get('PRODUCTOS');
    if($consulta->num_rows() == 1){
      $result = $this->create($consulta->row());
@@ -76,6 +89,7 @@ public function findById($id){
  public function findByCat($id){
    $result=array();
    $consulta = $this->db->where('PROD_CAT_ID',$id);
+   $consulta = $this->db->join('CATEGORIAS', 'CATEGORIAS.CAT_ID = PRODUCTOS.PROD_CAT_ID');
    $consulta = $this->db->get('PRODUCTOS');
      foreach ($consulta->result() as $row) {
      $result[] = $this->create($row);

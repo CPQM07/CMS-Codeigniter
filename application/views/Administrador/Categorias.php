@@ -45,8 +45,7 @@
                           <?php endif; ?>
 
                           <td class="text-right">
-                              <a href="#" class="btn btn-simple btn-info btn-icon like"><i class="fa fa-eye"></i></a>
-                              <a href="#" class="btn btn-simple btn-warning btn-icon edit"><i class="fa fa-pencil"></i></a>
+                              <a href="#" class="btn btn-warning btn-icon"><i class="fa fa-pencil"></i></a>
                           </td>
                       </tr>
                     <?php endforeach; ?>

@@ -26,24 +26,61 @@
       <div class="row">
         <?php foreach ($Productos as $key => $value): ?>
           <?php if ($value->get('PROD_ESTADO') == 1): ?>
-            <div class="col-sm-4">
-              <div class="card card-blog">
-                <div class="card-image">
-                  <img src="<?= base_url("Resources/images/Productos/").$value->get('PROD_IMAGEN') ?>" alt="">
+            <div class="col-sm-12 col-md-4">
+              <div class="card card-product card-plain card-rotate">
+                <div class="rotating-card-container">
+                  <div class="card-image">
+                    <div class="front">
+                      <img class="img" src="<?= base_url('Resources/images/Productos/') ?><?= $value->get('PROD_IMAGEN'); ?>">
+                    </div>
+
+                    <div class="back back-background">
+                      <div class="card-content">
+                        <h5 class="card-title">
+                        Acciones Rapidas
+                        </h5>
+                        <div class="footer text-center">
+                          <a href="<?= site_url('/Zicaro/Producto/'); ?><?= $value->get('PROD_ID'); ?>" class="btn btn-round btn-rose">
+                          <i class="material-icons">info</i> Detalles
+                          </a>
+                        </div>
+                        <hr/>
+                        <p class="card-description">
+                          Puedes compartir este producto con tus amigos...
+                        </p>
+                        <a href="" class="btn btn-just-icon btn-round btn-white btn-twitter">
+                          <i class="fa fa-twitter"></i>
+                        </a>
+
+                        <a href="" class="btn btn-just-icon btn-round btn-white btn-facebook">
+                          <i class="fa fa-facebook"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 <div class="card-content">
-                    <h6 class="category text-rose"> <span><i class="fa fa-dollar"></i></span> <?= $value->get('PROD_PRECIO'); ?></h6>
-                    <h4 class="card-title">
-                    <?= $value->get('PROD_NOMBRE'); ?>
-                    <span class="label label-default pull-right"><span class="flag-icon flag-icon-cl"></span> CL</span>
-                    </h4>
+                  <h4 class="card-title">
+                  <a href=""><?= $value->get('PROD_NOMBRE'); ?></a>
+                  </h4>
+                  <p class="card-description"><?= $value->get('PROD_DESC'); ?></p>
+                  <div class="footer">
+                    <div class="price-container">
+                      <span class="price price-old"> &dollar;<?= $value->get('PROD_PRECIO'); ?></span>
+                      <span class="price price-new"> &dollar;<?= $value->get('PROD_PRECIO'); ?></span>
+                    </div>
+                    <div class="stats">
+                      <span><?= $value->get('CAT_NOMBRE'); ?> - <span class="flag-icon flag-icon-cl"></span></span>
+                    </div>
+                  </div>
                 </div>
+
               </div>
             </div>
           <?php endif; ?>
           <?php endforeach; ?>
+
       </div>
     </div>
-    <?php echo $Paginacion ?>
   </div>
