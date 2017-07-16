@@ -5,15 +5,11 @@
 			<p style="font-size: 20px;" class="description">Envianos un mensaje.<br><br></p>
 			<?php if (validation_errors()): ?>
 				<div class="alert alert-primary">
-					<div class="container">
-						<div class="alert-icon">
-							<i class="material-icons">error_outline</i>
-						</div>
-						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-							<span aria-hidden="true"><i class="material-icons">clear</i></span>
-						</button>
-						<b>:(</b> <p><?= validation_errors() ?></p>
+					<div class="alert-icon">
+						<i class="material-icons">error_outline</i>
 					</div>
+					<b>:(</b>
+					<p><?= validation_errors() ?></p>
 				</div>
 			<?php endif; ?>
 			<form role="form" method="post" action="<?= site_url('/Zicaro/Enviar'); ?>">
