@@ -79,7 +79,11 @@
                                   <select class="selectpicker" name="PUB_USU_ID" id="PUB_USU_ID" data-style="select-with-transition" title="Single Select" data-size="7">
                                     <option disabled selected>Seleccione Autor asociado</option>
                                       <?php foreach ($Usuarios as $key => $value): ?>
-                                        <option value="<?= $value->get('USU_ID'); ?>"><?= $value->get('USU_NOMBRES'); ?></option>
+                                        <?php if ($value->get('USU_ESTADO') == 1): ?>
+                                          <option value="<?= $value->get('USU_ID'); ?>"><?= $value->get('USU_NOMBRES'); ?></option>
+                                        <?php else: ?>
+                                          <option disabled>No Hay Usuarios Activos</option>
+                                        <?php endif; ?>
                                       <?php endforeach; ?>
                                   </select>
                               </div>

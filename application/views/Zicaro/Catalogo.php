@@ -24,6 +24,7 @@
 
     <div class="col-md-9">
       <div class="row">
+      <?php if ($Productos > 1): ?>
         <?php foreach ($Productos as $key => $value): ?>
           <?php if ($value->get('PROD_ESTADO') == 1): ?>
             <div class="col-sm-12 col-md-4">
@@ -80,6 +81,17 @@
             </div>
           <?php endif; ?>
           <?php endforeach; ?>
+
+      <?php else: ?>
+        <div class="alert alert-primary">
+          <div class="alert-icon">
+            <i class="material-icons">error_outline</i>
+          </div>
+          <b>:(</b>
+          <p>Momentaneamente no contamos con PRODUCTOS en esta seccion</p>
+        </div>
+      <?php endif; ?>
+
       </div>
       <?= $Paginacion; ?>
     </div>

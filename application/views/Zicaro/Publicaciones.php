@@ -1,5 +1,6 @@
 <div class="row">
   <div class="col-md-9">
+    <?php if ($Publicaciones > 1): ?>
       <?php foreach ($Publicaciones as $key => $value): ?>
         <?php if ($value->get('PUB_ESTADO') == 1): ?>
           <div class="card card-plain card-blog">
@@ -33,6 +34,17 @@
         <?php endif; ?>
       <?php endforeach; ?>
       <?= $Paginacion ?>
+
+    <?php else: ?>
+    <div class="alert alert-primary">
+      <div class="alert-icon">
+        <i class="material-icons">error_outline</i>
+      </div>
+      <b>:(</b>
+      <p>Momentaneamente no contamos con PUBLICACIONES en esta seccion</p>
+    </div>
+    <?php endif; ?>
+
     </div>
 
   <div class="col-md-3">
