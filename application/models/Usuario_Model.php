@@ -40,12 +40,12 @@ $this->db->insert('USUARIOS',$this->_columns);
 }
 
 public function update($id, $data) {
-  $USUARIOS = $this->db->get_where('USUARIOS',array('USU_RUT'=>$id));
+  $USUARIOS = $this->db->get_where('USUARIOS',array('USU_ID'=>$id));
   if($USUARIOS->num_rows() > 0){
-    $this->db->where('USU_RUT', $id);
+    $this->db->where('USU_ID', $id);
     return $this->db->update('USUARIOS', $data);
     }else{
-  $data['USU_RUT'] = $id;
+  $data['USU_ID'] = $id;
   return $this->db->insert('USUARIOS',$data);
   }
 }
@@ -55,7 +55,6 @@ public function delete($id){
   $query = $this->db->query($sql);
   return 1;
 }
-
 
 public function findAll(){
   $result=array();
@@ -82,7 +81,7 @@ public function findAll(){
     foreach ($row as $key => $value) {
       $this->columns[$key] = $value;
       }
-    }
+  }
 
     /*public function getPermisos()
     {
@@ -95,17 +94,6 @@ public function findAll(){
       }
       return $permisos;
     }*/
-
-    public function findByArray($myarray = null){
-        $this->load->database();
-        $res = $this->db->get_where('USUARIOS',$myarray);
-        $result = array();
-           foreach ($res->result() as $row) {
-            $result[] = $this->create($row);
-            }
-          return $result;
-     }
-
 
     function login($rut, $clave){
       $datos=array();

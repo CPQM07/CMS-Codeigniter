@@ -49,7 +49,6 @@ public function delete($id){
   return $this->db->delete('CATEGORIAS');
 }
 
-
 public function findAll(){
   $result=array();
   $bit = null;

@@ -28,12 +28,12 @@
         Tip 3: you can change the color of the sidebar with data-background-color="white | black"
     -->
             <div class="logo">
-                <a href="#" class="simple-text">
+                <a class="simple-text">
                     ZICARO PAPEL
                 </a>
             </div>
             <div class="logo logo-mini">
-                <a href="#" class="simple-text">
+                <a class="simple-text">
                   	ZP
                 </a>
             </div>

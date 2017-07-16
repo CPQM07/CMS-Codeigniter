@@ -115,8 +115,6 @@ public function findById($id){
     return intval($allPost);
   }
 
-
-
   public function Get_Pagination($limit, $start)
   {
     $this->db->limit($limit, $start);

@@ -17,6 +17,7 @@
             <table id="datatables" class="table table-striped table-no-bordered table-hover table-responsive" cellspacing="0" width="100%" style="width:100%">
                 <thead>
                     <tr>
+                      <th>ID</th>
                       <th>RUT</th>
                       <th>DV</th>
                       <th>NOMBRES</th>
@@ -29,6 +30,7 @@
                 </thead>
                 <tfoot>
                     <tr>
+                        <th>ID</th>
                         <th>RUT</th>
                         <th>DV</th>
                         <th>NOMBRES</th>
@@ -42,6 +44,7 @@
                 <tbody>
                     <?php foreach ($Usuarios as $key => $value): ?>
                       <tr>
+                          <td><?= $value->get('USU_ID'); ?></td>
                           <td><?= $value->get('USU_RUT'); ?></td>
                           <td><?= $value->get('USU_DV'); ?></td>
                           <td><?= $value->get('USU_NOMBRES'); ?></td>
@@ -50,13 +53,13 @@
                           <td><?= $value->get('USU_TELEFONO'); ?></td>
 
                           <?php if ($value->get('USU_ESTADO') == 1): ?>
-                          <td><a href="<?= site_url('/Administrador/CambiarEstado/7/');?><?=$value->get('USU_RUT');?>" class="btn btn-info"><i class="fa fa-eye"></i></a></td>
+                          <td><a href="<?= site_url('/Administrador/CambiarEstado/7/');?><?=$value->get('USU_ID');?>" class="btn btn-info"><i class="fa fa-eye"></i></a></td>
                           <?php else: ?>
-                          <td><a href="<?= site_url('/Administrador/CambiarEstado/8/');?><?=$value->get('USU_RUT');?>" class="btn btn-warning"><i class="fa fa-eye-slash"></i></a></td>
+                          <td><a href="<?= site_url('/Administrador/CambiarEstado/8/');?><?=$value->get('USU_ID');?>" class="btn btn-warning"><i class="fa fa-eye-slash"></i></a></td>
                           <?php endif; ?>
 
                           <td class="text-right">
-                              <a href="<?= site_url('/Administrador/VerPerfil/');?><?=$value->get('USU_ID');?>" class="btn btn-warning btn-icon"><i class="fa fa-eye"></i></a>                              
+                              <a href="<?= site_url('/Administrador/VerPerfil/');?><?=$value->get('USU_ID');?>" class="btn btn-warning btn-icon"><i class="fa fa-eye"></i></a>
                           </td>
                       </tr>
                     <?php endforeach; ?>

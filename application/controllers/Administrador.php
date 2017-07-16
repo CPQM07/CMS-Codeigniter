@@ -7,14 +7,14 @@ class Administrador extends CI_Controller{
   {
     parent::__construct();
     if ($this->session->userdata('logged_in')) {
-    $this->load->model('Categorias_Model', 'Categorias');
-    $this->load->model('Productos_Model', 'Productos');
-    $this->load->model('Publicaciones_Model', 'Publicaciones');
-    $this->load->model('Usuario_Model', 'Usuarios');
-    $this->layout->setLayout('/Administrador/MasterPage', false);
-  } else {
-    redirect("/Login/Login");
-  }
+      $this->load->model('Categorias_Model', 'Categorias');
+      $this->load->model('Productos_Model', 'Productos');
+      $this->load->model('Publicaciones_Model', 'Publicaciones');
+      $this->load->model('Usuario_Model', 'Usuarios');
+      $this->layout->setLayout('/Administrador/MasterPage', false);
+      } else {
+        redirect("/Login/Login");
+    }
   }
 
   function Inicio()
@@ -297,6 +297,12 @@ class Administrador extends CI_Controller{
     $this->layout->view('/Administrador/Perfil', $datos);
   }
 
+  function ActualizarPerfil($ID)
+  {
+    $this->Usuarios->update($ID, $_POST['PERFIL']);
+    var_dump($_POST['PERFIL']);
+    redirect('/Administrador/Usuarios');
+  }
   //Fin Usuarios
 
 }

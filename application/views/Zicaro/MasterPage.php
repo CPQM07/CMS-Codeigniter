@@ -52,7 +52,7 @@
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	        </button>
-	        <a class="navbar-brand" href="">
+	        <a href="<?= base_url(); ?>" class="navbar-brand">
 	          <img src="<?= base_url('Resources/images/ZicaroPapel/LogoZicaroTransparent.png') ?>" alt="Zicaro Papel" width="90px">
 	        </a>
 	      </div>

@@ -14,7 +14,7 @@
                         <?php endif; ?>
                     </small>
                 </h4>
-                <form>
+                <form action="<?= site_url('/Administrador/ActualizarPerfil/'); ?><?= $Usuarios->get('USU_ID');  ?>" method="post">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group label-floating">
@@ -33,13 +33,13 @@
                         <div class="col-md-6">
                             <div class="form-group label-floating">
                                 <label class="control-label">NOMBRES</label>
-                                <input type="text" class="form-control" value="<?= $Usuarios->get('USU_NOMBRES'); ?>">
+                                <input type="text" name="PERFIL[USU_NOMBRES]" class="form-control" value="<?= $Usuarios->get('USU_NOMBRES'); ?>">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group label-floating">
                                 <label class="control-label">APELLIDOS</label>
-                                <input type="text" class="form-control" value="<?= $Usuarios->get('USU_APELLIDOS'); ?>">
+                                <input type="text" name="PERFIL[USU_APELLIDOS]" class="form-control" value="<?= $Usuarios->get('USU_APELLIDOS'); ?>">
                             </div>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                       <div class="col-sm-12">
                         <div class="form-group label-floating">
                             <label class="control-label">BIOGRAFIA</label>
-                              <textarea name="USU_BIO" rows="5" class="form-control" minLength="20"><?= $Usuarios->get('USU_BIO'); ?></textarea>
+                              <textarea name="PERFIL[USU_BIO]" rows="5" class="form-control" minLength="20"><?= $Usuarios->get('USU_BIO'); ?></textarea>
                         </div>
                       </div>
                     </div>
@@ -56,28 +56,22 @@
                         <div class="col-md-6">
                             <div class="form-group label-floating">
                                 <label class="control-label">CORREO</label>
-                                <input type="text" class="form-control" value="<?= $Usuarios->get('USU_EMAIL');  ?>">
+                                <input type="text" name="PERFIL[USU_EMAIL]" class="form-control" value="<?= $Usuarios->get('USU_EMAIL');  ?>">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group label-floating">
                                 <label class="control-label">TELEFONO</label>
-                                <input type="text" class="form-control" value="<?= $Usuarios->get('USU_TELEFONO');  ?>">
+                                <input type="text" name="PERFIL[USU_TELEFONO]" class="form-control" value="<?= $Usuarios->get('USU_TELEFONO');  ?>">
                             </div>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="form-group label-floating">
                                 <label class="control-label">CONTRASEÑA</label>
-                                <input type="password" class="form-control" value="<?= $Usuarios->get('USU_CLAVE');  ?>">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group label-floating">
-                                <label class="control-label">CONFIRMAR CONTRASEÑA</label>
-                                <input type="password" class="form-control" value="">
+                                <input type="password" name="PERFIL[USU_CLAVE]" class="form-control" value="<?= $Usuarios->get('USU_CLAVE'); ?>">
                             </div>
                         </div>
                     </div>
