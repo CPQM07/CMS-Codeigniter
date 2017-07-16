@@ -103,11 +103,19 @@ public function findById($id){
     }
   }
 
-  public function Count_All()
+  public function Count_By_Cat($ID)
   {
-    $allPost = $this->db->query('SELECT count(*) AS number FROM PRODUCTOS')->row()->number;
+    $allPost = $this->db->query("SELECT count(*) AS number FROM PRODUCTOS WHERE PROD_CAT_ID =$ID")->row()->number;
     return intval($allPost);
   }
+
+  public function Count_All()
+  {
+    $allPost = $this->db->query("SELECT count(*) AS number FROM PRODUCTOS")->row()->number;
+    return intval($allPost);
+  }
+
+
 
   public function Get_Pagination($limit, $start)
   {

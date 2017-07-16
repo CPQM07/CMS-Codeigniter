@@ -117,7 +117,7 @@ class Zicaro extends CI_Controller{
   function Categorias($ID)
   {
       $config["base_url"] = base_url()."index.php/Zicaro/Categorias/".$ID."/";
-      $config["total_rows"] = $this->Productos->Count_All();
+      $config["total_rows"] = $this->Productos->Count_By_Cat($ID);
       $config["per_page"] = 6;
       $config["uri_segment"] = 4;
       $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
