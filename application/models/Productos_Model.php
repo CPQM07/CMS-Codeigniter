@@ -123,4 +123,19 @@ public function findById($id){
     return false;
   }
 
+  public function Get_Pagination_Cat($limit, $start, $id)
+  {
+    $this->db->limit($limit, $start);
+    $consulta = $this->db->where('PROD_CAT_ID',$id);
+    $consulta = $this->db->join('CATEGORIAS', 'CATEGORIAS.CAT_ID = PRODUCTOS.PROD_CAT_ID');
+    $consulta = $this->db->get("PRODUCTOS");
+    if ($consulta->num_rows() > 0) {
+      foreach ($consulta->result() as $row) {
+        $result[] = $this->create($row);
+      }
+      return $result;
+    }
+    return false;
+  }
+
 }

@@ -68,7 +68,7 @@ class Zicaro extends CI_Controller{
 
   function Catalogo()
   {
-      $config["base_url"] = base_url('index.php/Zicaro/Catalogo/');
+      $config["base_url"] = base_url()."index.php/Zicaro/Catalogo/";
       $config["total_rows"] = $this->Productos->Count_All();
       $config["per_page"] = 6;
       $config["uri_segment"] = 3;
@@ -116,7 +116,34 @@ class Zicaro extends CI_Controller{
 
   function Categorias($ID)
   {
-      $datos['Productos'] = $this->Productos->findByCat($ID);
+      $config["base_url"] = base_url()."index.php/Zicaro/Categorias/".$ID."/";
+      $config["total_rows"] = $this->Productos->Count_All();
+      $config["per_page"] = 6;
+      $config["uri_segment"] = 4;
+      $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+      $datos["Productos"] = $this->Productos->Get_Pagination_Cat($config["per_page"], $page, $ID);
+
+      /*PERSONALIZACION*/
+      $config['full_tag_open']   = '<ul class="pagination">';
+      $config['full_tag_close']  = '</ul>';
+      $config['first_tag_open']  = '<li>';
+      $config['first_tag_close'] = '</li>';
+      $config['prev_link']       = '&laquo';
+      $config['prev_tag_open']   = '<li class="prev">';
+      $config['prev_tag_close']  = '</li>';
+      $config['next_link']       = '&raquo';
+      $config['next_tag_open']   = '<li>';
+      $config['next_tag_close']  = '</li>';
+      $config['last_tag_open']   = '<li>';
+      $config['last_tag_close']  = '</li>';
+      $config['cur_tag_open']    = '<li class="active"><a href="#">';
+      $config['cur_tag_close']   = '</a></li>';
+      $config['num_tag_open']    = '<li>';
+      $config['num_tag_close']   = '</li>';
+      /*PERSONALIZACION*/
+
+      $this->pagination->initialize($config);
+      $datos["Paginacion"] = $this->pagination->create_links();
       $datos['Categorias'] = $this->Categorias->findAll();
       $datos['TipeView'] = "NOTICE";
       $datos['Enunciado'] = "CATÁLOGO";
@@ -126,7 +153,7 @@ class Zicaro extends CI_Controller{
 
   function Publicaciones()
   {
-    $config["base_url"] = base_url('index.php/Zicaro/Publicaciones/');
+    $config["base_url"] = base_url()."index.php/Zicaro/Publicaciones/";
     $config["total_rows"] = $this->Publicaciones->Count_All();
     $config["per_page"] = 4;
     $config["uri_segment"] = 3;
