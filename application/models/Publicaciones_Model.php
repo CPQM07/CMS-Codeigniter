@@ -82,4 +82,24 @@ public function findById($ID){
       $this->columns[$key] = $value;
       }
     }
+
+    public function Count_All()
+    {
+      $allPost = $this->db->query('SELECT count(*) AS number FROM PUBLICACIONES')->row()->number;
+      return intval($allPost);
+    }
+
+    public function Get_Pagination($limit, $start)
+    {
+      $this->db->limit($limit, $start);
+      $consulta = $this->db->join('USUARIOS', 'USUARIOS.USU_ID = PUBLICACIONES.PUB_USU_ID');
+      $consulta = $this->db->get("PUBLICACIONES");
+      if ($consulta->num_rows() > 0) {
+        foreach ($consulta->result() as $row) {
+          $result[] = $this->create($row);
+        }
+        return $result;
+      }
+      return false;
+    }
 }

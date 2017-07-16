@@ -109,14 +109,18 @@ public function findById($id){
     return intval($allPost);
   }
 
-  public function Get_Pagination($Por_Pagina)
+  public function Get_Pagination($limit, $start)
   {
-    $result=array();
-    $consulta = $this->db->get("PRODUCTOS", $Por_Pagina, $this->uri->segment(3));
+    $this->db->limit($limit, $start);
+    $consulta = $this->db->join('CATEGORIAS', 'CATEGORIAS.CAT_ID = PRODUCTOS.PROD_CAT_ID');
+    $consulta = $this->db->get("PRODUCTOS");
+    if ($consulta->num_rows() > 0) {
       foreach ($consulta->result() as $row) {
-      $result[] = $this->create($row);
+        $result[] = $this->create($row);
+      }
+      return $result;
     }
-    return $result;
+    return false;
   }
 
 }

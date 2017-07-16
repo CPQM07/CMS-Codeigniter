@@ -39,9 +39,9 @@
                           <td><?= $value->get('CAT_DESC'); ?></td>
 
                           <?php if ($value->get('CAT_ESTADO') == 1): ?>
-                          <td><a href="<?= site_url('/Administrador/CambiarEstado/3/');?><?=$value->get('CAT_ID');?>" class="btn btn-info"><i class="fa fa-eye"></i></a></td>
+                          <td><a href="<?= site_url('/Administrador/CambiarEstado/4/');?><?=$value->get('CAT_ID');?>" class="btn btn-info"><i class="fa fa-eye"></i></a></td>
                           <?php else: ?>
-                          <td><a href="<?= site_url('/Administrador/CambiarEstado/4/');?><?=$value->get('CAT_ID');?>" class="btn btn-warning"><i class="fa fa-eye-slash"></i></a></td>
+                          <td><a href="<?= site_url('/Administrador/CambiarEstado/3/');?><?=$value->get('CAT_ID');?>" class="btn btn-warning"><i class="fa fa-eye-slash"></i></a></td>
                           <?php endif; ?>
 
                           <td class="text-right">

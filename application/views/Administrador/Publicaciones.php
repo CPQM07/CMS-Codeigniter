@@ -31,7 +31,7 @@
                       <th>FECHA</th>
                       <th>AUTOR</th>
                       <th>VISIBILIDAD</th>
-                      <!--<th class="text-right">ACCIONES</th>-->
+                      <th class="text-right">ACCIONES</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -40,7 +40,7 @@
                           <td><?= $value->get('PUB_ID'); ?></td>
                           <td><?= $value->get('PUB_TITULO'); ?></td>
                           <td><?= $value->get('PUB_FECHA'); ?></td>
-                          <td><?= $value->get('PUB_USU_ID'); ?></td>
+                          <td><?= $value->get('USU_NOMBRES'); ?> <?= $value->get('USU_APELLIDOS'); ?></td>
 
                           <?php if ($value->get('PUB_ESTADO') == 1): ?>
                           <td><a href="<?= site_url('/Administrador/CambiarEstado/6/');?><?=$value->get('PUB_ID');?>" class="btn btn-info"><i class="fa fa-eye"></i></a></td>

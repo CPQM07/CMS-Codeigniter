@@ -80,7 +80,7 @@
             </div>
           <?php endif; ?>
           <?php endforeach; ?>
-
       </div>
+      <?= $Paginacion; ?>
     </div>
   </div>

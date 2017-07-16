@@ -3,16 +3,12 @@
 		<div class="col-sm-12 col-md-4">
 			<div class="card card-plain card-blog">
 				<div class="card-image">
-					<a href="">
 						<img class="img img-raised" src="<?= base_url("Resources/images/Publicaciones/".$Detalles->get('PUB_IMAGEN')) ?>"/>
-					</a>
 				</div>
 				<div class="card-content">
-					<h6 class="category text-primary">
-						<i class="material-icons">location_on</i> <?= $Detalles->get('PUB_UBICACION') ?>
-					</h6>
+					<h6 class="category text-primary"> <span class="text-rose"><i class="fa fa-map-marker"></i></span> <?= $Detalles->get('PUB_UBICACION'); ?></h6>
 					<h4 class="card-title">
-						<a href=""><?= $Detalles->get('PUB_TITULO') ?></a>
+						<?= $Detalles->get('PUB_TITULO') ?>
 					</h4>
 				</div>
 			</div>
