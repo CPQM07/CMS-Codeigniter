@@ -176,7 +176,7 @@
 						<div class="brand">
 							<h1 class="title"><?= $Titulo ?></h1>
 							<h3> <small><i class="fa fa-map-marker"></i></small> <?= $Ubicacion ?></h3>
-							<h6 class="title"><?= $Fecha ?></h6>
+							<h4 class="title"><?= $Fecha ?></h4>
 						</div>
 					</div>
 				</div>
