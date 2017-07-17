@@ -59,7 +59,7 @@
                           <?php endif; ?>
 
                           <td class="text-right">
-                              <a href="<?= site_url('/Administrador/VerPerfil/');?><?=$value->get('USU_ID');?>" class="btn btn-warning btn-icon"><i class="fa fa-eye"></i></a>
+                              <a href="<?= site_url('/Administrador/VerPerfil/');?><?=$value->get('USU_ID');?>" class="btn btn-warning btn-icon"><i class="fa fa-pencil "></i></a>
                           </td>
                       </tr>
                     <?php endforeach; ?>

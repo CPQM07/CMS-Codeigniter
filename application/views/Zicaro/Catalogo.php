@@ -29,13 +29,14 @@
     </div>
 
     <div class="col-md-9">
+      <?= $Paginacion; ?>
       <div class="row">
       <?php if ($Productos > 1): ?>
         <?php foreach ($Productos as $key => $value): ?>
           <?php if ($value->get('PROD_ESTADO') == 1): ?>
             <div class="col-sm-12 col-md-4">
               <div class="card card-product card-plain card-rotate">
-                <div class="rotating-card-container">
+                <div class="rotating-card-container"><br>
                   <div class="card-image">
                     <div class="front">
                       <img class="img" src="<?= base_url('Resources/images/Productos/') ?><?= $value->get('PROD_IMAGEN'); ?>">
@@ -43,9 +44,6 @@
 
                     <div class="back back-background">
                       <div class="card-content">
-                        <h5 class="card-title">
-                        Acciones Rapidas
-                        </h5>
                         <div class="footer text-center">
                           <a href="<?= site_url('/Zicaro/Producto/'); ?><?= $value->get('PROD_ID'); ?>" class="btn btn-round btn-rose">
                           <i class="material-icons">info</i> Detalles

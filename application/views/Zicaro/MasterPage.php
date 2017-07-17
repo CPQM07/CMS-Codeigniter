@@ -213,12 +213,12 @@
 
 			<div class="content">
 				<div class="row">
-					<div class="col-md-4">
-						<h5>ZICARO PAPEL</h5>
+					<div class="col-sm-12 col-md-4">
+						<a href="<?= base_url(); ?>"><h5>ZICARO PAPEL</h5></a>
 						<p></p>
 					</div>
 
-					<div class="col-md-4">
+					<div class="col-sm-12 col-md-8">
 						<ul class="social-buttons pull-right">
 							<li>
 								<a href="https://www.fairtrade.net/" target="_blank">
@@ -233,7 +233,7 @@
 						</ul>
 					</div>
 
-					<div class="col-md-4">
+					<!--<div class="col-md-4">
 						<ul class="social-buttons pull-right">
 							<li>
 								<a href="https://twitter.com/zicaropapel" target="_blank" class="btn btn-just-icon btn-simple">
@@ -251,7 +251,7 @@
 								</a>
 							</li>
 						</ul>
-					</div>
+					</div>-->
 
 				</div>
 			</div>
