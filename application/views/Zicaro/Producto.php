@@ -22,6 +22,9 @@
                         <span class="text-rose"><h4>$ <?= $Producto->get('PROD_PRECIO'); ?></h4></span>
                       </div>
                     <hr>
+                    <div class="stats pull-left">
+                      <span class="text-rose"><i class="fa fa-barcode"></i> SKU: PROD-<?= $Producto->get('CAT_ID'); ?>-<?= $Producto->get('PROD_ID'); ?></span>
+                    </div>
                     <div class="stats pull-right">
                       <span class="text-rose"><?= $Producto->get('CAT_NOMBRE'); ?> - <span class="flag-icon flag-icon-cl"></span></span>
                     </div>
@@ -93,8 +96,8 @@
           </div>
           <h4 class="info-title"><span class="btn-tooltip" data-toggle="tooltip" data-placement="right" title="Fallas del producto, no asociadas al mal uso ni manipulacion de estos." data-container="body">GARANTIA *</span></h4>
             <p>
-                6 Meses - Carteras <br>
-                3 Meses - Joyas
+                6 Meses - <strong><em>CARTERAS</em></strong> <br>
+                3 Meses - <strong><em>JOYAS</em></strong>
             </p>
 
         </div>

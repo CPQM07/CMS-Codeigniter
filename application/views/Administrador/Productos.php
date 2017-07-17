@@ -17,7 +17,7 @@
             <table id="datatables" class="table table-striped table-no-bordered table-hover table-responsive" cellspacing="0" width="100%" style="width:100%">
                 <thead>
                     <tr>
-                      <th>ID</th>
+                      <th>SKU</th>
                       <th>NOMBRE</th>
                       <th>PRECIO</th>
                       <th>CATEGORIA</th>
@@ -27,7 +27,7 @@
                 </thead>
                 <tfoot>
                     <tr>
-                        <th>ID</th>
+                        <th>SKU</th>
                         <th>NOMBRE</th>
                         <th>PRECIO</th>
                         <th>CATEGORIA</th>
@@ -38,7 +38,7 @@
                 <tbody>
                     <?php foreach ($Productos as $key => $value): ?>
                       <tr>
-                          <td><?= $value->get('PROD_ID'); ?></td>
+                          <td>PROD-<?= $value->get('CAT_ID'); ?>-<?= $value->get('PROD_ID'); ?></td>
                           <td><?= $value->get('PROD_NOMBRE'); ?></td>
                           <td><?= $value->get('PROD_PRECIO'); ?></td>
                           <td><?= $value->get('CAT_NOMBRE'); ?></td>
