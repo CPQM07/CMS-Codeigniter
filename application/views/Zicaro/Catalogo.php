@@ -71,7 +71,7 @@
                   <p class="card-description"><?= $value->get('PROD_DESC'); ?></p>
                   <div class="footer">
                     <div class="price-container">
-                      <span class="price price-old"> &dollar;<?= $value->get('PROD_PRECIO'); ?></span>
+                      <!--<span class="price price-old"> &dollar;<?= $value->get('PROD_PRECIO'); ?></span>-->
                       <span class="price price-new"> &dollar;<?= $value->get('PROD_PRECIO'); ?></span>
                     </div>
                     <div class="stats">
