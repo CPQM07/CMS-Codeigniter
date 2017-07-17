@@ -14,7 +14,13 @@
           <div id="collapse" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading">
             <div class="panel-body">
               <?php foreach ($Categorias as $key => $value): ?>
-                <a href="<?= site_url('/Zicaro/Categorias/'); ?><?= $value->get('CAT_ID'); ?>" class="btn btn-block btn-primary btn-sm btn-round" href=""><?= $value->get('CAT_NOMBRE'); ?></a>
+                <?php if ($this->uri->segment(3) == $value->get('CAT_ID')): ?>
+                  <a href="<?= site_url('/Zicaro/Categorias/'); ?><?= $value->get('CAT_ID'); ?>"
+                  class="btn btn-block btn-primary btn-sm btn-round" href=""><?= $value->get('CAT_NOMBRE'); ?></a>
+                <?php else: ?>
+                  <a href="<?= site_url('/Zicaro/Categorias/'); ?><?= $value->get('CAT_ID'); ?>"
+                  class="btn btn-block btn-default btn-sm btn-round" href=""><?= $value->get('CAT_NOMBRE'); ?></a>
+                <?php endif; ?>
               <?php endforeach; ?>
             </div>
           </div>

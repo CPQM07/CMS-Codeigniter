@@ -8,6 +8,9 @@ class Login extends CI_Controller {
 		parent::__construct();
 		$this->load->model('Usuario_Model', 'USUARIO');
 	}
+
+	public function index(){redirect('Login/Login');}
+	
 	public function Login()
 	{
 		$this->load->helper('form');

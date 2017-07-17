@@ -27,11 +27,11 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+													<!--<img src="<?= base_url('Resources/images/ZicaroPapel/LogoZicaroTransparent.png') ?>" width="80px" height="80px">-->
 													<form action="<?=site_url('Login/Login')?>" method="POST">
                                 <div class="card card-login card-hidden">
-                                    <div class="card-header text-center" data-background-color="orange">
-                                        <h4 class="card-title">Bienvenido</h4>																				
-																				<img width="80px" src="<?= base_url('Resources/images/ZicaroPapel/LogoZicaroTransparent.png') ?>">
+                                    <div class="card-header text-center" data-background-color="purple">
+                                        <h4 class="card-title">Bienvenido a ZicaroPapel</h4>
 																				<?=(isset($error))? $error : ""; ?>
                                     </div>
                                     <div class="card-content">
@@ -55,7 +55,7 @@
                                         </div>
                                     </div>
                                     <div class="footer text-center">
-                                        <button type="submit" class="btn btn-danger btn-red btn-simple btn-wd btn-lg">Ingresar</button>
+                                        <button type="submit" class="btn btn-primary btn-simple btn-wd btn-lg">Ingresar</button>
                                     </div>
                                 </div>
                             </form>
