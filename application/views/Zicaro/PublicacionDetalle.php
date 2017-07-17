@@ -21,7 +21,7 @@
 	<!--SOCIAL MEDIA-->
 	<div class="col-md-4 col-md-offset-4">
 		<a data-href="http://ZicaroPapel.cl/index.php/Zicaro/PublicacionDetalle/12" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2FZicaroPapel.cl%2Findex.php%2FZicaro%2FPublicacionDetalle%2F<?= $Detalles->get('PUB_ID'); ?>&amp;src=sdkpreparse"
-		class="btn btn-block btn-facebook btn-round pull-right" data-mobile-iframe="true">
+		class="btn btn-block btn-info btn-round pull-right" data-mobile-iframe="true">
 		<i class="fa fa-facebook-square"></i> COMPARTIR
 		</a>
 	</div>

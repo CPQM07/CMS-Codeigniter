@@ -65,9 +65,18 @@
         </div>
       </div>
 
-    <div class="col-sm-12 col-md-4 col-md-offset-4">
-      <a href="<?= site_url('/Zicaro/Catalogo'); ?>" class="btn btn-block btn-round btn-rose"><i class="fa fa-chevron-left"></i> VOLVER</a>
-    </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <a data-href="http://ZicaroPapel.cl/index.php/Zicaro/Producto/<?= $Producto->get('PROD_ID'); ?>" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2FZicaroPapel.cl%2Findex.php%2FZicaro%2FProducto%2F<?= $Producto->get('PROD_ID'); ?>&amp;src=sdkpreparse"
+            data-mobile-iframe="true" target="_blank" class="btn btn-block btn-round btn-info">
+            <i class="fa fa-facebook"></i> COMPARTIR
+          </a>
+        </div>
+
+        <div class="col-sm-12 col-md-6">
+          <a href="<?= site_url('/Zicaro/Catalogo'); ?>" class="btn btn-block btn-round btn-rose"><i class="fa fa-chevron-left"></i> VOLVER</a>
+        </div>
+      </div>
 
   </div>
 
