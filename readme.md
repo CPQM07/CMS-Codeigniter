@@ -1,4 +1,4 @@
-<img src="http://zicaropapel.cl/Resources/images/ZicaroPapel/LogoZicaroTransparent.png" alt="ZICARO PAPEL"><br>
+<img src="http://zicaropapel.cl/Resources/images/ZicaroPapel/ZICAROPAPEL.png" alt="ZICARO PAPEL"><br>
 <b>ZICARO PAPEL</b>
 
 <p>Nace de la idea de unir dos elementos, por un lado recuperar todo el papel que llega a nuestras manos y segundo dar una posibilidad de desarrollo a toda persona que necesite trabajar desde su hogar, ya sea dueñas de casa, discapacitados o simplemente gente creativa impedida de realizar una labor en otro lugar.
