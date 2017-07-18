@@ -12,11 +12,12 @@ Esperamos perpetuarnos en el tiempo entregando un producto novedoso, tanto desde
 Información de Lanzamiento
 *******************
 
-Este repositorio contiene el código fuente de la plataforma de <b>ZICARO PAPEL</b>, destinada principalmente a la gestion
+Este repositorio contiene el código fuente de la plataforma de ZICARO PAPEL, destinada principalmente a la gestión
 de Productos & Publicaciones de su área comercial.
+<img src="http://zicaropapel.cl/Resources/images/ZicaroPapel/LogoZicaroTransparent.png" alt="ZICARO PAPEL">
 
 **************************
-Para más informacion, visite:
+Para más información, visite:
 **************************
 
-ZICAROPAPEL<http://zicaropapel.cl/Zicaro/QuienesSomos>`_.
+<a href="http://zicaropapel.cl/Zicaro/QuienesSomos">ZICARO PAPEL</a>
