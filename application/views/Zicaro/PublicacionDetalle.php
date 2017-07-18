@@ -20,7 +20,7 @@
 
 	<!--SOCIAL MEDIA-->
 	<div class="col-md-4 col-md-offset-4">
-		<a data-href="http://ZicaroPapel.cl/index.php/Zicaro/PublicacionDetalle/12" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2FZicaroPapel.cl%2Findex.php%2FZicaro%2FPublicacionDetalle%2F<?= $Detalles->get('PUB_ID'); ?>&amp;src=sdkpreparse"
+		<a data-href="http://ZicaroPapel.cl/Zicaro/PublicacionDetalle/12" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2FZicaroPapel.cl%2FZicaro%2FPublicacionDetalle%2F<?= $Detalles->get('PUB_ID'); ?>&amp;src=sdkpreparse"
 		class="btn btn-block btn-info btn-round pull-right" data-mobile-iframe="true">
 		<i class="fa fa-facebook-square"></i> COMPARTIR
 		</a>
@@ -46,7 +46,7 @@
 	<!--FACEBOOK COMMENTS-->
 	<div class="section section-comments">
 		<div class="media-area">
-			<div class="fb-comments" width="100%" data-href="http://zicaro.cl/index.php/Zicaro/Publicaciones/<?= $Detalles->get('PUB_ID'); ?>" data-numposts="5"></div>
+			<div class="fb-comments" width="100%" data-href="http://zicaro.cl/Zicaro/Publicaciones/<?= $Detalles->get('PUB_ID'); ?>" data-numposts="5"></div>
 		</div>
 	</div>
 	<!--FIN FACEBOOK COMMENTS-->

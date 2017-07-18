@@ -24,7 +24,7 @@
                       <th>APELLIDOS</th>
                       <th>CORREO</th>
                       <th>NUMERO</th>
-                      <th>VISIBILIDAD</th>
+                      <th>ESTADO</th>
                       <th class="text-right">ACCIONES</th>
                     </tr>
                 </thead>
@@ -37,7 +37,7 @@
                         <th>APELLIDOS</th>
                         <th>CORREO</th>
                         <th>NUMERO</th>
-                        <th>VISIBILIDAD</th>
+                        <th>ESTADO</th>
                         <th class="text-right">ACCIONES</th>
                     </tr>
                 </tfoot>

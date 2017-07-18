@@ -136,12 +136,12 @@
                         <div class="col-sm-9 checkbox-radios">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="USU_ESTADO" value="1"> VISIBLE
+                                    <input type="radio" name="USU_ESTADO" value="1"> ACTIVO
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="USU_ESTADO" value="0"> OCULTO
+                                    <input type="radio" name="USU_ESTADO" value="0"> INACTIVO
                                 </label>
                             </div>
                         </div>

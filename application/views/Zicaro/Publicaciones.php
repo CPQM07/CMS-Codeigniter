@@ -19,7 +19,7 @@
                   </a>
                 </h3>
                 <p class="card-description">
-                  <?= $value->get('PUB_DESC_C'); ?>
+                  <?= $value->get('PUB_DESC_C'); ?><br>
                   <a href="<?= site_url('/Zicaro/PublicacionDetalle/'); ?><?= $value->get('PUB_ID'); ?>" class="btn btn-round btn-small btn-primary">Leer Más</a>
                 </p>
                 <p class="author">

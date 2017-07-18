@@ -19,9 +19,10 @@
                       <th>ID</th>
                       <th>TITULO</th>
                       <th>FECHA</th>
+                      <th>UBICACION</th>
                       <th>AUTOR</th>
-                      <th>VISIBILIDAD</th>
-                      <th class="text-right">ACCIONES</th>
+                      <th class="text-right">VISIBILIDAD</th>
+                      <!--<th class="text-right">ACCIONES</th>-->
                     </tr>
                 </thead>
                 <tfoot>
@@ -29,9 +30,10 @@
                       <th>ID</th>
                       <th>TITULO</th>
                       <th>FECHA</th>
+                      <th>UBICACION</th>
                       <th>AUTOR</th>
-                      <th>VISIBILIDAD</th>
-                      <th class="text-right">ACCIONES</th>
+                      <th class="text-right">VISIBILIDAD</th>
+                      <!--<th class="text-right">ACCIONES</th>-->
                     </tr>
                 </tfoot>
                 <tbody>
@@ -40,17 +42,18 @@
                           <td><?= $value->get('PUB_ID'); ?></td>
                           <td><?= $value->get('PUB_TITULO'); ?></td>
                           <td><?= $value->get('PUB_FECHA'); ?></td>
+                          <td><?= $value->get('PUB_UBICACION'); ?></td>
                           <td><?= $value->get('USU_NOMBRES'); ?> <?= $value->get('USU_APELLIDOS'); ?></td>
 
                           <?php if ($value->get('PUB_ESTADO') == 1): ?>
-                          <td><a href="<?= site_url('/Administrador/CambiarEstado/6/');?><?=$value->get('PUB_ID');?>" class="btn btn-info"><i class="fa fa-eye"></i></a></td>
+                          <td class="text-right"><a href="<?= site_url('/Administrador/CambiarEstado/5/');?><?=$value->get('PUB_ID');?>" class="btn btn-info"><i class="fa fa-eye"></i></a></td>
                           <?php else: ?>
-                          <td><a href="<?= site_url('/Administrador/CambiarEstado/5/');?><?=$value->get('PUB_ID');?>" class="btn btn-warning"><i class="fa fa-eye-slash"></i></a></td>
+                          <td class="text-right"><a href="<?= site_url('/Administrador/CambiarEstado/6/');?><?=$value->get('PUB_ID');?>" class="btn btn-rose"><i class="fa fa-eye-slash"></i></a></td>
                           <?php endif; ?>
 
-                          <td class="text-right">
+                          <!--<td class="text-right">
                               <a href="#" class="btn btn-warning btn-icon"><i class="fa fa-pencil"></i></a>
-                          </td>
+                          </td>-->
                       </tr>
                     <?php endforeach; ?>
                 </tbody>

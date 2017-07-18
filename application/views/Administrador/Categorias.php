@@ -18,17 +18,15 @@
                       <th>ID</th>
                       <th>NOMBRE</th>
                       <th>DESCRIPCION</th>
-                      <th>VISIBILIDAD</th>
-                      <th class="text-right">ACCIONES</th>
+                      <th class="text-right">VISIBILIDAD</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
-                        <th>ID</th>
-                        <th>NOMBRE</th>
-                        <th>DESCRIPCION</th>
-                        <th>VISIBILIDAD</th>
-                        <th class="text-right">ACCIONES</th>
+                      <th>ID</th>
+                      <th>NOMBRE</th>
+                      <th>DESCRIPCION</th>
+                      <th class="text-right">VISIBILIDAD</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -39,14 +37,10 @@
                           <td><?= $value->get('CAT_DESC'); ?></td>
 
                           <?php if ($value->get('CAT_ESTADO') == 1): ?>
-                          <td><a href="<?= site_url('/Administrador/CambiarEstado/4/');?><?=$value->get('CAT_ID');?>" class="btn btn-info"><i class="fa fa-eye"></i></a></td>
+                          <td class="text-right"><a href="<?= site_url('/Administrador/CambiarEstado/3/');?><?=$value->get('CAT_ID');?>" class="btn btn-info"><i class="fa fa-eye"></i></a></td>
                           <?php else: ?>
-                          <td><a href="<?= site_url('/Administrador/CambiarEstado/3/');?><?=$value->get('CAT_ID');?>" class="btn btn-warning"><i class="fa fa-eye-slash"></i></a></td>
+                          <td class="text-right"><a href="<?= site_url('/Administrador/CambiarEstado/4/');?><?=$value->get('CAT_ID');?>" class="btn btn-rose"><i class="fa fa-eye-slash"></i></a></td>
                           <?php endif; ?>
-
-                          <td class="text-right">
-                              <a href="#" class="btn btn-warning btn-icon"><i class="fa fa-pencil"></i></a>
-                          </td>
                       </tr>
                     <?php endforeach; ?>
                 </tbody>

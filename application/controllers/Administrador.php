@@ -25,7 +25,7 @@ class Administrador extends CI_Controller{
   function CambiarEstado($tipo, $id){
     if ($tipo == 1) {
       $this->session->set_flashdata('Deshabilitar', 'Se Deshabilitó Correctamente');
-      $this->Productos->update($id, array('PROD_ESTADO' => 2));
+      $this->Productos->update($id, array('PROD_ESTADO' => 0));
       redirect('/Administrador/Productos');
     } elseif ($tipo == 2) {
       $this->session->set_flashdata('Habilitar', 'Se Habilitó Correctamente');
@@ -33,7 +33,7 @@ class Administrador extends CI_Controller{
       redirect('/Administrador/Productos');
     } elseif ($tipo == 3) {
       $this->session->set_flashdata('Deshabilitar', 'Se Deshabilitó Correctamente');
-      $this->Categorias->update($id, array('CAT_ESTADO' => 2));
+      $this->Categorias->update($id, array('CAT_ESTADO' => 0));
       redirect('/Administrador/Categorias');
     } elseif ($tipo == 4) {
       $this->session->set_flashdata('Habilitar', 'Se Habilitó Correctamente');
@@ -41,7 +41,7 @@ class Administrador extends CI_Controller{
       redirect('/Administrador/Categorias');
     } elseif ($tipo == 5) {
       $this->session->set_flashdata('Deshabilitar', 'Se Deshabilitó Correctamente');
-      $this->Publicaciones->update($id, array('PUB_ESTADO' => 2));
+      $this->Publicaciones->update($id, array('PUB_ESTADO' => 0));
       redirect('/Administrador/Publicaciones');
     } elseif ($tipo == 6) {
       $this->session->set_flashdata('Habilitar', 'Se Habilitó Correctamente');
