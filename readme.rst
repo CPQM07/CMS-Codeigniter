@@ -19,4 +19,4 @@ de Productos & Publicaciones de su área comercial.
 Para más informacion, visite:
 **************************
 
-ZICAROPAPEL <http://zicaropapel.cl/Zicaro/QuienesSomos>`_.
+ZICAROPAPEL<http://zicaropapel.cl/Zicaro/QuienesSomos>`_.
