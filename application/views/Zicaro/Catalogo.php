@@ -36,13 +36,13 @@
           <?php if ($value->get('PROD_ESTADO') == 1): ?>
             <div class="col-sm-12 col-md-4">
               <div class="card card-product card-plain card-rotate">
-                <div class="rotating-card-container"><br>
+                <!--<div class="rotating-card-container"><br>-->
                   <div class="card-image">
                     <div class="front">
                       <img class="img" src="<?= base_url('Resources/images/Productos/') ?><?= $value->get('PROD_IMAGEN'); ?>">
                     </div>
 
-                    <div class="back back-background">
+                    <!--<div class="back back-background">
                       <div class="card-content">
                         <div class="footer text-center">
                           <a href="<?= site_url('/Zicaro/Producto/'); ?><?= $value->get('PROD_ID'); ?>" class="btn btn-round btn-rose">
@@ -61,7 +61,7 @@
 
                       </div>
                     </div>
-                  </div>
+                  </div>-->
                 </div>
 
                 <div class="card-content">
